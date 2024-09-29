@@ -1,0 +1,257 @@
+/* Styling for the body with a background image */
+body {
+    font-family: 'Poppins', sans-serif; /* Menggunakan font Poppins dari Google Fonts */
+    background-image: url("background.jpeg"); /* Menambahkan gambar sebagai background */
+    background-size: cover; /* Menutupi seluruh halaman */
+    background-position: center; /* Posisi gambar berada di tengah */
+    background-repeat: no-repeat; /* Tidak mengulang gambar */
+    margin: 0; /* Menghilangkan margin default */
+    padding: 0; /* Menghilangkan padding default */
+  }
+  
+  /* Container for the entire layout */
+  .container {
+    display: flex; /* Membuat layout fleksibel dengan display flex */
+    height: 100vh; /* Mengatur tinggi kontainer agar memenuhi seluruh viewport */
+  }
+  
+  /* Sidebar styling */
+  .sidebar {
+    position: fixed; /* Posisi sidebar tetap di kiri halaman */
+    top: 0;
+    left: 0;
+    width: 200px; /* Lebar sidebar 250px */
+    height: 100vh; /* Sidebar mengisi tinggi viewport */
+    background-color: rgb(255, 255, 255); /* Warna background sidebar putih */
+    padding: 20px; /* Padding di dalam sidebar */
+    color: rgb(0, 0, 0); /* Warna teks sidebar hitam */
+    text-align: justify; /* Justifikasi teks */
+    border-right: 1px solid rgb(0, 0, 0); /* Border kanan sidebar berwarna hitam */
+    
+}
+  
+  /* Logo styling */
+  .logo {
+    width: 200px; /* Lebar logo */
+    margin-bottom: 20px; /* Jarak bawah logo */
+    margin-left: 0px; /* Jarak kiri logo */
+  }
+  
+  /* Sidebar menu styling */
+  .sidebar ul {
+    list-style: none; /* Menghilangkan tanda bullet dari list */
+    padding: 0; /* Menghilangkan padding default list */
+  }
+  
+  .sidebar ul li {
+    margin: 1px 0; /* Jarak antar item menu */
+    display: flex; /* Menggunakan flexbox agar item dalam menu mudah diatur */
+    align-items: center; /* Item menu disejajarkan secara vertikal */
+    padding: 10px; /* Padding untuk item menu */
+    border-radius: 5px; /* Sudut item menu melengkung */
+  }
+  
+  .sidebar ul li a {
+    color: rgb(2, 2, 2); /* Warna teks link hitam */
+    text-decoration: none; /* Menghilangkan garis bawah pada link */
+    font-size: 18px; /* Ukuran font untuk link */
+    flex-grow: 1; /* Link mengambil ruang yang tersedia di dalam list item */
+  }
+  
+  .sidebar ul li.active {
+    background-color: #000000; /* Warna background item aktif hitam */
+  }
+  
+  .sidebar ul li.active a {
+    font-weight: bold; /* Teks pada item aktif lebih tebal */
+    color: #ffffff; /* Warna teks item aktif putih */
+  }
+  
+  .sidebar ul li:hover {
+    background-color: #000000; /* Warna background item saat di-hover hitam */
+  }
+  
+  .sidebar ul li:hover a {
+    color: #ffffff; /* Warna teks item saat di-hover putih */
+  }
+  
+  .sidebar ul li:hover .menu-icon svg {
+    fill: #ffffff; /* Warna ikon menu berubah putih saat di-hover */
+  }
+  
+  .sidebar ul li.active .menu-icon svg {
+    fill: #ffffff; /* Warna ikon menu pada item aktif berubah menjadi putih */
+  }
+  
+  .sidebar ul li.active .menu-icon {
+    background-color: #000000; /* Background ikon pada item aktif hitam */
+    padding: 10px; /* Padding di sekitar ikon pada item aktif */
+    border-radius: 5px 0 0 5px; /* Ikon di item aktif melengkung di satu sisi */
+  }
+  
+  /* Main content styling */
+  .content {
+    flex-grow: 1; /* Konten utama mengambil ruang yang tersisa dari sidebar */
+    background-color: rgba(255, 255, 255, 0.509); /* Warna background konten transparan */
+    padding: 20px; /* Padding untuk konten utama */
+    margin-left: 250px; /* Membuat konten tidak tertimpa sidebar */
+  }
+  
+  /* Search bar styling */
+  .search-bar {
+    display: flex; /* Menggunakan flexbox untuk search bar */
+    position: fixed; /* Posisi tetap untuk search bar */
+    top: 0px; /* Posisi dari atas halaman */
+    left: 290px; /* Posisi dari kiri, menyesuaikan dengan lebar sidebar */
+    justify-content: space-between; /* Mengatur jarak antara elemen di dalam search bar */
+    width: calc(100% - 250px); /* Lebar search bar menyesuaikan dengan lebar viewport dikurangi sidebar */
+    align-items: center; /* Menyelaraskan item di dalam search bar secara vertikal */
+    padding: 20px; /* Padding untuk search bar */
+    background-color: rgba(255, 255, 255, 0); /* Warna background transparan */
+    border-radius: 0px; /* Tidak ada sudut melengkung */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Bayangan lembut di bawah search bar */
+    border-bottom: 1px solid rgb(0, 0, 0); /* Border bawah hitam */
+  }
+  
+  .search-bar input {
+    width: 80%; /* Lebar input search bar */
+    padding: 8px; /* Padding di dalam input */
+    border: 1px solid #ccc; /* Border abu-abu */
+    border-radius: 20px; /* Sudut melengkung pada input */
+  }
+  
+  /* Icon styling in search bar */
+  .search-bar .icons i {
+    margin-left: 15px; /* Jarak antara ikon */
+    font-size: 18px; /* Ukuran font ikon */
+    cursor: pointer; /* Ikon berubah menjadi pointer saat di-hover */
+  }
+  
+  /* Product grid styling */
+  .product-grid {
+    margin-top: 60px;
+    margin-left: 0px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Ukuran grid lebih besar untuk konsistensi */
+    gap: 20px; /* Jarak antar produk */
+    overflow-y: auto;
+    height: 80vh;
+    padding-left: 30px; /* Memberikan ruang tambahan agar tidak tertimpa sidebar */
+  }
+  
+  /* Product card styling */
+  .product {
+    background-color: rgb(31, 31, 31);
+    padding: 15px;
+    border-radius: 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 200px; /* Menetapkan tinggi yang sama untuk semua kartu produk */
+    width: 100%; /* Lebar produk mengikuti grid */
+    max-width: 150px; /* Batas maksimum lebar produk */
+  }
+
+  .product-details {
+    display: flex; /* Menggunakan flexbox untuk menempatkan judul dan tombol dalam satu baris */
+    align-items: center; /* Memusatkan konten secara vertikal */
+}
+  
+  /* Image styling inside product */
+  .product img {
+    width: 170px; /* Gambar memenuhi seluruh lebar produk */
+    height: 1700px; /* Menjaga proporsi asli gambar */
+    min-height: 170px;
+    min-width: 170px;
+    max-height: 100%; /* Memastikan gambar tidak melebihi tinggi maksimal box */
+    object-fit: cover; /* Memastikan gambar terpotong rapi tanpa distorsi */
+    border-radius: 20px;
+    margin-bottom: 10px;
+    margin-top: 0px;
+  }
+  
+  
+  /* Product title styling */
+  .product h2 {
+    font-size: 10px;
+    color: #ffffff;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 0px;
+    margin-right: auto;
+    /* text-align: center; */
+    flex-grow: 1;
+    display: flex;
+    /* justify-content: center;
+    align-items: center; */
+    height: 50px; /* Membuat ruang yang seragam untuk judul produk */
+  }
+
+  .product p {
+    font-size: 10px; /* Ukuran font untuk deskripsi produk */
+    color: #ffffff; /* Warna font untuk deskripsi produk */
+    margin-bottom: 20px; /* Jarak bawah untuk deskripsi produk */
+    margin-left: 0px;
+    margin-right: auto;
+    /* text-align: center;     Posisi teks deskripsi produk */
+  }
+  
+  /* Add to cart button styling */
+  .add-to-cart {
+    padding: 0; /* Hilangkan padding agar tidak ada ruang ekstra */
+    background-color: white; /* Hilangkan warna latar belakang */
+    border: none; /* Hilangkan border */
+    border-radius: 50%;
+    cursor: pointer; /* Tetap jaga cursor sebagai pointer untuk ikon interaktif */
+    width: 22px; /* Sesuaikan lebar agar hanya sesuai dengan ikon */
+    height: 23px; /* Sesuaikan tinggi agar hanya sesuai dengan ikon */
+    margin-left: auto;
+  }
+  
+  .add-to-cart svg {
+    fill: currentColor; /* Warna ikon sesuai dengan konteks */
+    width: 23px; /* Ubah ukuran ikon jika diperlukan */
+    height: 23px; /* Sesuaikan tinggi ikon */
+  }
+  
+  .add-to-cart:hover {
+    background-color: #000000;
+    color: rgb(255, 255, 255);
+  }
+  
+  /* Responsive styling for smaller screens */
+  @media (max-width: 768px) {
+    .product-grid {
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Produk menyesuaikan layar lebih kecil */
+    }
+  
+    .product {
+      height: 250px; /* Menyesuaikan tinggi untuk layar kecil */
+    }
+  
+    .product img {
+      height: 120px; /* Menyesuaikan tinggi gambar untuk layar kecil */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .product-grid {
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    }
+  
+    .product {
+      height: 200px; /* Menyesuaikan tinggi untuk layar sangat kecil */
+    }
+  
+    .product img {
+      height: 100px; /* Menyesuaikan tinggi gambar untuk layar sangat kecil */
+    }
+  
+    .add-to-cart {
+      padding: 6px;
+    }
+  }
+  
