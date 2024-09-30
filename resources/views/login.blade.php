@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>DelDeals Login</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/login.css">
 </head>
 <body>
-    <div class="background">
+    <div class="background img">
         <img src="img/wa.jpg" alt="background">
     </div>
     <div class="container">
@@ -16,19 +16,24 @@
             <div class="logo">
                 <img src="img/logo.jpg" alt="DelDeals Logo">
             </div>
-            <form>
+            <form onsubmit="return login()"> <!-- Fungsi login dipanggil dari file eksternal -->
                 <div class="input-box">
-                    <input type="text" placeholder="Username" required>
+                    <input type="text" id="username" placeholder="Username" required>
                 </div>
                 <div class="input-box">
-                    <input type="password" placeholder="Password" required>
+                    <input type="password" id="password" placeholder="Password" required>
                 </div>
                 <div class="forgot-password">
                     <a href="#">*Forgot Password</a>
                 </div>
-                <button type="submit" class="login-btn">LOGIN</button>
+                <button type="submit" class="login-btn">
+                    LOG IN
+                </button>
             </form>
         </div>
     </div>
+
+    <!-- Link ke file JavaScript eksternal -->
+    <script src="js/login.js"></script>
 </body>
 </html>

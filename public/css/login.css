@@ -66,7 +66,7 @@
         color: #333;
     }
 
-    .login-btn, .signup-btn {
+    .login-btn, .signup-btn, .signin-btn {
         background-color: #000;
         color: #fff;
         padding: 10px 20px;
@@ -107,3 +107,18 @@
         opacity: 0.3;
         z-index: -1; /* Gambar background ada di bawah elemen lainnya */
     }
+
+    .sign-in-btn {
+        background-color: #4CAF50; /* Hijau untuk tombol Sign In */
+        color: white;
+    }
+
+    .sign-up-btn {
+        background-color: #008CBA; /* Biru untuk tombol Sign Up */
+        color: white;
+    }
+
+    .sign-in-btn:hover, .sign-up-btn:hover {
+        opacity: 0.8; /* Efek hover */
+    }
+    

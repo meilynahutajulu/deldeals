@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DELDEALS</title>
-    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="css/home.css">
 </head>
 <body>
     <div class="container">
         <!-- Sidebar with Logo -->
         <aside class="sidebar">
             <!-- Logo -->
-            <img src="logo.png" alt="DELDEALS Logo" class="logo">
+            <img src="img/logo.jpg" alt="DELDEALS Logo" class="logo">
             <h1>DELDEALS</h1>
             <ul>
                 <li class="active">
@@ -53,7 +53,7 @@
                             <path d="M10.828.122A.5.5 0 0 1 11 .5V1h.5A1.5 1.5 0 0 1 13 2.5V15h1.5a.5.5 0 0 1 0 1h-13a.5.5 0 0 1 0-1H3V1.5a.5.5 0 0 1 .43-.495l7-1a.5.5 0 0 1 .398.117M11.5 2H11v13h1V2.5a.5.5 0 0 0-.5-.5M4 1.934V15h6V1.077z"/>
                         </svg>
                     </div>
-                    <a href="#logout" onclick="logout()">Logout</a>
+                    <a href="/dashboard" onclick="logout()">Logout</a>
                 </li>
             </ul>
         </aside>
