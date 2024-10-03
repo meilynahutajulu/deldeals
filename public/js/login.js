@@ -11,3 +11,8 @@ function login() {
         return false; // Mencegah form di-submit
     }
 }
+
+function signup(){
+    window.location.href = '/registrasi';
+    return false;
+}

@@ -11,6 +11,14 @@
     <div class="background img">
         <img src="img/wa.jpg" alt="background">
     </div>
+    <form onsubmit="return signup()">
+        <div class = "sign-in-btn-box">
+            <button type="submit" class="sign-in-btn"> 
+                SIGN UP
+            </button>
+        </div>
+    </form>
+    
     <div class="container">
         <div class="login-box">
             <div class="logo">

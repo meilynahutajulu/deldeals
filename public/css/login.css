@@ -34,7 +34,7 @@
     }
 
     .logo img {
-        width: 100px;
+        width: 150px;
         margin-bottom: 20px;
     }
 
@@ -77,23 +77,8 @@
         width: 100%;
     }
 
-    .signup-btn {
-        position: absolute;
-        top: 10px;
-        right: 10px;
-        background-color: transparent;
-        border: 2px solid #000;
-        padding: 5px 10px;
-        font-size: 14px;
-    }
-
-    .signup-btn:hover {
-        background-color: #000;
-        color: #fff;
-    }
-
     .login-btn:hover {
-        background-color: #333;
+        background-color: #000000d0;
     }
 
     .background img {
@@ -108,17 +93,30 @@
         z-index: -1; /* Gambar background ada di bawah elemen lainnya */
     }
 
+    /* .sign-in-btn-box{
+        background-color: rgb(0, 0, 0);
+        border-radius: 5px;
+        padding: 15px;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        width: 80px;
+        position: absolute;
+        top: 5%;
+        right: 5%;
+    } */
+
     .sign-in-btn {
-        background-color: #4CAF50; /* Hijau untuk tombol Sign In */
+        background-color: #000000; /* Hijau untuk tombol Sign In */
         color: white;
+        position: absolute;
+        border: none;
+        border-radius: 5px;     
+        top: 5%;
+        right: 5%;
+        width: 75px;
+        height: 30px;
     }
 
-    .sign-up-btn {
-        background-color: #008CBA; /* Biru untuk tombol Sign Up */
-        color: white;
+    .sign-in-btn:hover {
+        background-color: #000000d0;
     }
-
-    .sign-in-btn:hover, .sign-up-btn:hover {
-        opacity: 0.8; /* Efek hover */
-    }
-    

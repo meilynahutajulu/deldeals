@@ -67,3 +67,11 @@
         justify-content: center;
         align-items: center;
     }
+
+    .sign-in-btn{
+        background-color: #8b8b8b; /* Hijau untuk tombol Sign In */
+        color: white;
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
