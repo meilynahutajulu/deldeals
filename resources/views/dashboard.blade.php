@@ -18,11 +18,9 @@
                 <img src="img/logo.jpg" alt="DelDeals Logo">
             </div>
             <form >
-                <button type="submit" class="sign-up-btn">SIGN UP</button>
-                <button type="submit" class="sign-in-btn">
-                    <a href="/login" onclick="login()">SIGN IN</a>
+                <button type="submit" class="sign-up-btn">
+                <a href="/login" onclick="login()">ENTER</a>
                 </button>
-                
             </form>
         </div>
     </div>

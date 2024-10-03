@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
 
 Route::get('/', function () {
-    return view('login');
+    return view('dashboard');
 });
 
 
@@ -26,4 +26,12 @@ Route::get('/dashboard', function () {
 
 Route::get('/registrasi', function () {
     return view('home');
+});
+
+Route::get('/pengaturan', function () {
+    return view('pengaturan');
+});
+
+Route::get('/penilaian', function () {
+    return view('penilaian');
 });

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DELDEALS</title>
-    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="css/home.css">
 </head>
 <body>
     <div class="container">
@@ -31,7 +31,7 @@
                     <h2>FlashDisk</h2>
                     <p>Rp 50.000</p>
                     <button class="add-to-cart">
-                    @include('layout.button_add')
+                    @include('layout.button_add')   
                     </button>
                 </div>
                 <div class="product">
