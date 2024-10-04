@@ -64,7 +64,7 @@ nav ul li a:hover {
     margin-left: 5px;
 }
 
-.logout {
+/* .logout {
     margin-top: auto;
     background-color: #FF6B6B;
     color: white;
@@ -73,7 +73,7 @@ nav ul li a:hover {
     border-radius: 8px;
     cursor: pointer;
     font-size: 16px;
-}
+} */
 
 .logout:hover {
     background-color: #FF5252;
