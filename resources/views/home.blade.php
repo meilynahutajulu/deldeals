@@ -5,8 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DELDEALS</title>
     <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/wallpaper.css">
 </head>
 <body>
+        
+        <!-- wallpaper -->
+    @include('layout.wallpaper')
     <div class="container">
         <!-- Sidebar with Logo -->
         @include('layout.sidebar')

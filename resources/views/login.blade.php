@@ -6,16 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>DelDeals Login</title>
     <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/wallpaper.css">
 </head>
 <body>
-    <div class="background img">
-        <img src="img/wa.jpg" alt="background">
-    </div>
+
+    <!-- wallpaper -->
+    @include('layout.wallpaper')
     <form onsubmit="return signup()">
         <div class = "sign-in-btn-box">
-            <button type="submit" class="sign-in-btn"> 
-                SIGN UP
-            </button>
+        <button type="button" class="sign-in-btn" onclick="location.href='{{ url('/register') }}';">SIGN UP</button>
         </div>
     </form>
     
@@ -34,9 +33,7 @@
                 <div class="forgot-password">
                     <a href="#">*Forgot Password</a>
                 </div>
-                <button type="submit" class="login-btn">
-                    LOG IN
-                </button>
+                <button type="submit" class="login-btn">LOG IN</button>
             </form>
         </div>
     </div>

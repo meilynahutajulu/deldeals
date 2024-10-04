@@ -1,77 +1,65 @@
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-    .auth-buttons {
-        text-align: center;
-        margin-top: 20px;
-    }
+.auth-buttons {
+    text-align: center;
+    margin-top: 20px;
+}
 
-    body {
-        font-family: Arial, sans-serif;
-        background-color: #f0f0f0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-    }
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
 
-    .logo img {
-        width: 100px;
-        margin-bottom: 20px;
-    }
+.logo img {
+    width: 100px;
+    margin-bottom: 20px;
+}
 
-    .sign-in-btn, .sign-up-btn {
-        padding: 10px 20px;
-        font-size: 16px;
-        margin: 10px;
-        cursor: pointer;
-        border: none;
-        border-radius: 5px;
-    }
+.sign-in-btn, .sign-up-btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    margin: 10px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+}
 
-    .sign-in-btn {
-        background-color: #4CAF50; /* Hijau untuk tombol Sign In */
-        color: white;
-    }
+.sign-in-btn {
+    background-color: #4CAF50; /* Hijau untuk tombol Sign In */
+    color: white;
+}
 
-    .sign-up-btn {
-        background-color: #008CBA; /* Biru untuk tombol Sign Up */
-        color: white;
-    }
+.sign-up-btn {
+    background-color: #008CBA; /* Biru untuk tombol Sign Up */
+    color: white;
+}
 
-    .sign-in-btn:hover, .sign-up-btn:hover {
-        opacity: 0.8; /* Efek hover */
-    }
+.sign-in-btn:hover, .sign-up-btn:hover {
+    opacity: 0.8; /* Efek hover */
+}
 
-    .background img {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        filter: blur(3px);  
-        opacity: 0.3;
-        z-index: -1; /* Gambar background ada di bawah elemen lainnya */
-    }
+.container {
+    background-image: url('/public/img/wa.jpg'); /* Background pattern sesuai gambar */
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
-    .container {
-        background-image: url('/public/img/background.jpg'); /* Background pattern sesuai gambar */
-        background-size: cover;
-        width: 100%;
-        height: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .sign-in-btn{
-        background-color: #8b8b8b; /* Hijau untuk tombol Sign In */
-        color: white;
-        position: absolute;
-        top: 0;
-        right: 0;
-    }
+.sign-in-btn{
+    background-color: #8b8b8b; /* Hijau untuk tombol Sign In */
+    color: white;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
