@@ -1,12 +1,12 @@
 /* Styling for the body with a background image */
 body {
-    font-family: 'Poppins', sans-serif;
-    background-image: url("background.jpeg"); /* Path to wallpaper */
-    background-size: cover; /* Cover the whole page */
-    background-position: center;
-    background-repeat: no-repeat;
-    margin: 0;
-    padding: 0;
+    font-family: Arial, sans-serif;
+    background-image: url('img/wa.jpg'); /* Gambar wallpaper */
+    background-size: cover; /* Menutupi seluruh halaman */
+    background-repeat: no-repeat; /* Tidak mengulang gambar */
+    background-position: center; /* Pusatkan gambar */
+    height: 100vh; /* Tinggi body memenuhi layar */
+    margin: 0; /* Hapus margin default */
 }
 
 /* Container for the entire layout */

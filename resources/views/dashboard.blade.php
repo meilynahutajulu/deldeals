@@ -6,11 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/wallpaper.css">
 </head>
 <body>
-    <div class ="background img">
-        <img src="img/wa.jpg" alt="background">
-    </div>
+    <!-- wallpaper -->
+    @include('layout.wallpaper')
     <div class="container">
         <div class="login-box">
             <h1>Welcom to DelDeals</h1>
