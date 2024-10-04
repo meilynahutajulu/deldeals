@@ -4,10 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register</title>
-    <link rel="stylesheet" href="register.css">
+    <link rel="stylesheet" href="css/register.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/wallpaper.css">
 </head>
 <body>
+    <!-- wallpaper -->
+    @include('layout.wallpaper')
     <div class="container">
         <h1 class="register-header">Register</h1>
         <p class="register-subheader">Please register to Login</p>
