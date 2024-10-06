@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>DelDeals Login</title>
     <link rel="stylesheet" href="css/login.css">
-    <link rel="stylesheet" href="css/wallpaper.css">
+    <link rel="stylesheet" href="css/layout/wallpaper.css">
 </head>
 <body>
 
