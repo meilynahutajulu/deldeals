@@ -14,7 +14,7 @@
     @include('layout.wallpaper')
     <form onsubmit="return signup()">
         <div class = "sign-in-btn-box">
-        <button type="button" class="sign-in-btn" onclick="location.href='{{ url('/register') }}';">SIGN UP</button>
+        <button type="button" class="sign-in-btn" onclick="location.href='{{ url('/registrasi') }}';">SIGN UP</button>
         </div>
     </form>
     
