@@ -2,48 +2,24 @@
 
 body {
     font-family: Arial, sans-serif;
-<<<<<<< Updated upstream
-    height: 100vh; /* Tinggi body memenuhi layar */
-    margin: 0; /* Hapus margin default */
-    justify-content: center;
-    align-items: center;
-    display: flex;
-}
-
-.container {
-    margin: 100px;
-    padding: 60px;
-    /* background-color: rgb(255, 255, 255); */
-    text-align: center;
-}
-
-
-/* h1 {
-=======
     background-color: #ffffff;
 }
 
 .container {
     width: 400px;
-    height: auto;
     margin: 50px auto;
     padding: 20px;
     background-color: #fff;
     text-align: center;
-    border-radius: 10px;    
+    border-radius: 10px;
 }
 
 h1 {
->>>>>>> Stashed changes
     text-align: center;
     font-size: 36px;
     font-weight: bold;
     margin-bottom: 10px;
-<<<<<<< Updated upstream
-} */
-=======
 }
->>>>>>> Stashed changes
 
 form {
     margin-bottom: 20px;
@@ -53,7 +29,6 @@ label {
     display: none;
 }
 
-<<<<<<< Updated upstream
 input {
     width: 90%;
     padding: 15px;
@@ -61,33 +36,6 @@ input {
     border: 2px solid #ddd;
     border-radius: 5px;
     font-size: 16px;
-=======
-.input-container {
-    position: relative;
-    margin-bottom: 20px;
-}
-
-.icon {
-    position: absolute;
-    left: 35px; /* Menempatkan ikon di sebelah kiri input */
-    top: 28%;
-    font-size: 18px;
-    color: #bbb;
-}
-
-.input-container input {
-    width: 90%;
-    padding: 15px 15px 15px 45px; /* Tambahkan padding kiri untuk memberi ruang pada ikon */
-    margin-bottom: 10px;
-    border: 2px solid #ddd;
-    border-radius: 5px;
-    font-size: 14px;
-    box-sizing: border-box;
-}
-
-input::placeholder {
-    color: #bbb;
->>>>>>> Stashed changes
 }
 
 button[type="submit"] {
@@ -102,7 +50,6 @@ button[type="submit"] {
 }
 
 button[type="submit"]:hover {
-<<<<<<< Updated upstream
     background-color: #444;
 }
 
@@ -125,13 +72,6 @@ input::placeholder {
 
 .register-header {
     font-size: 85.8px; /* Ukuran sesuai dengan yang terlihat pada gambar */
-=======
-    background-color: #000000d0;
-}
-
-.register-header {
-    font-size: 40px;
->>>>>>> Stashed changes
     font-family: 'Pacifico', cursive;
     margin-bottom: 10px;
     color: #000;
@@ -142,8 +82,6 @@ input::placeholder {
     font-size: 14px;
     color: #777;
 }
-<<<<<<< Updated upstream
-=======
 
 .background img {
     position: absolute;
@@ -156,4 +94,3 @@ input::placeholder {
     opacity: 0.3;
     z-index: -1; /* Gambar background ada di bawah elemen lainnya */
 }
->>>>>>> Stashed changes

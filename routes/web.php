@@ -25,6 +25,7 @@ Route::get('/dashboard', function () {
 });
 
 Route::get('/registrasi', function () {
+<<<<<<< Updated upstream
     return view('home');
 });
 
@@ -34,4 +35,7 @@ Route::get('/pengaturan', function () {
 
 Route::get('/penilaian', function () {
     return view('penilaian');
+=======
+    return view('registrasi');
+>>>>>>> Stashed changes
 });

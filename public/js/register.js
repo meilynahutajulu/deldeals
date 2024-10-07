@@ -8,4 +8,13 @@ form.addEventListener('submit', (e) => {
     const pesan = document.getElementById('pesan').value;
 
     hasil.innerHTML = `Nama: ${nama}<br>Email: ${email}<br>Pesan: ${pesan}`;
+<<<<<<< Updated upstream
 });
+=======
+});
+
+function signin(){
+    window.location.href = '/';
+    return false;
+}
+>>>>>>> Stashed changes
