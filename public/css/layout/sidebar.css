@@ -3,7 +3,7 @@
     position: fixed;
     top: 0;
     left: 0;
-    width: 230px;
+    width: 210px;
     height: 100vh;
     background-color: #ffffff;
     padding: 20px;
@@ -22,9 +22,9 @@
 }
 
 .sidebar img{
-    width: 250px;
+    width: 230px;
     height: auto;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
 
 .sidebar ul li {

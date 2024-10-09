@@ -36,7 +36,7 @@ body {
 /* Product grid and product card styling */
 .product-grid {
     margin-top: 60px;
-    margin-left: 300px;
+    margin-left: 260px;
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
@@ -45,7 +45,7 @@ body {
 }
 
 .product {
-    background-color: white;
+    background-color: rgb(37, 37, 37);
     padding: 15px;
     border-radius: 8px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
@@ -66,16 +66,16 @@ body {
 
 .add-to-cart {
     padding: 10px;
-    background-color: #ffffff;
-    color: black;
+    background-color: #ffffff00;
+    color: rgb(255, 255, 255);
     border: none;
     border-radius: 4px;
     cursor: pointer;
 }
 
 .add-to-cart:hover {
-    background-color: #000000;
-    color: rgb(255, 255, 255);
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
 }
 
 .product h2 {
@@ -86,6 +86,11 @@ body {
     justify-content: center;
     align-items: center;
     text-align: center;
+    color: #ffffff;
+}
+
+.product p {
+    color: #ffffff;
 }
 
 

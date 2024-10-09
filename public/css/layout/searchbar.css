@@ -4,7 +4,7 @@
     position: fixed;
     margin-left: 0; /* Atur margin kiri dengan angka atau hilangkan jika tidak diperlukan */
     top: 0px;
-    left: 270px; /* Atur posisi kiri agar sesuai dengan layout */
+    left: 250px; /* Atur posisi kiri agar sesuai dengan layout */
     justify-content: space-between;
     width: calc(100% - 300px); /* Lebar search bar dikurangi dengan 300px */
     align-items: center;
