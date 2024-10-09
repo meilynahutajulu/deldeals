@@ -31,7 +31,7 @@
                     <input type="password" id="password" placeholder="Password" required>
                 </div>
                 <div class="forgot-password">
-                    <a href="#">*Forgot Password</a>
+                    <button type="button" class="forgot-password" onclick="location.href='{{ url('/forgot-pass') }}';">*Forgot Password</button>
                 </div>
                 <button type="submit" class="login-btn">LOG IN</button>
             </form>
