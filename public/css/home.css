@@ -15,20 +15,6 @@ body {
     height: 100vh; /* Full height of the viewport */
 }
 
-/* Sidebar styling */
-.sidebar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 225px;
-    height: 100vh;
-    background-color: rgb(255, 255, 255);
-    padding: 20px;
-    color: rgb(0, 0, 0);
-    text-align: justify;
-    border-right: 1px solid rgb(0, 0, 0);
-}
-
 /* Logo styling */
 .logo {
     width: 200px;
@@ -36,57 +22,7 @@ body {
     margin-left: 20px;
 }
 
-/* Sidebar menu styling */
-.sidebar ul {
-    list-style: none;
-    padding: 0;
-}
 
-.sidebar ul li {
-    margin: 15px 0;
-    display: flex;
-    align-items: center;
-    padding: 10px;
-    border-radius: 5px;
-}
-
-.sidebar ul li a {
-    color: rgb(2, 2, 2);
-    text-decoration: none;
-    font-size: 18px;
-    flex-grow: 1;
-}
-
-.sidebar ul li.active {
-    background-color: #000000; /* Background color is black */
-}
-
-.sidebar ul li.active a {
-    font-weight: bold;
-    color: #ffffff; /* Text color is white */
-}
-
-.sidebar ul li:hover {
-    background-color: #000000; /* Change background color on hover */
-}
-
-.sidebar ul li:hover a {
-    color: #ffffff; /* Change text color to white on hover */
-}
-
-.sidebar ul li:hover .menu-icon svg {
-    fill: #ffffff; /* Change SVG icon color to white on hover */
-}
-
-.sidebar ul li.active .menu-icon svg {
-    fill: #ffffff; /* Change SVG icon color to white for active link */
-}
-
-.sidebar ul li.active .menu-icon {
-    background-color: #000000; /* Background color is black */
-    padding: 10px;
-    border-radius: 5px 0 0 5px;
-}
 
 /* Main content styling */
 .content {
@@ -95,36 +31,7 @@ body {
     padding: 20px;
 }
 
-/* Search bar styling */
-.search-bar {
-    display: flex;
-    position: fixed;
-    margin-left: px;
-    top: 0px;
-    left: 290px;
-    justify-content: space-between;
-    width: calc(100% - 250px);
-    align-items: center;
-    padding: 20px;
-    background-color: rgba(255, 255, 255, 0);
-    border-radius: 0px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    border-bottom: 1px solid rgb(0, 0, 0)
-}
 
-.search-bar input {
-    width: 80%;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 20px;
-}
-
-/* Icon styling in search bar */
-.search-bar .icons i {
-    margin-left: 15px;
-    font-size: 18px;
-    cursor: pointer;
-}
 
 /* Product grid and product card styling */
 .product-grid {
@@ -183,15 +90,3 @@ body {
 
 
 
-/* Add styles for menu icons in sidebar */
-.sidebar ul li .menu-icon {
-    width: 20px;
-    height: 20px;
-    margin-right: 10px;
-}
-
-.sidebar ul li .menu-icon svg {
-    width: 100%;
-    height: 100%;
-    fill: rgb(0, 0, 0); /* Default icon color */
-}

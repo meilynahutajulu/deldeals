@@ -5,7 +5,7 @@
             <img src="img/logo.jpg" alt="DELDEALS Logo" class="logo">
             <!-- <h1>DELDEALS</h1> -->
             <ul>
-                <li class="active">
+                <li class="{{ Request::is('home') ? 'active' : '' }}">
                 <a href="{{ url('/home') }}">    
                     <div class="menu-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-house-door-fill" viewBox="0 0 16 16">
@@ -14,7 +14,7 @@
                     </div>
                     Beranda</a>
                 </li>
-                <li>
+                <li class="{{ Request::is('pengaturan') ? 'active' : '' }}">
                 <a href="{{ url('/pengaturan') }}">
                     <div class="menu-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-gear-wide" viewBox="0 0 16 16">
@@ -23,7 +23,7 @@
                     </div>
                     Pengaturan</a>
                 </li>
-                <li>
+                <li class="{{ Request::is('tokosaya') ? 'active' : '' }}">
                 <a href="{{ url('/tokosaya') }}">
                     <div class="menu-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-shop" viewBox="0 0 16 16">

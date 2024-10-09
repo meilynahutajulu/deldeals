@@ -6,7 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <link rel="stylesheet" href="css/login.css">
-    <link rel="stylesheet" href="css/wallpaper.css">
+    <link rel="stylesheet" href="css/dashboardy.css">
+    <link rel="stylesheet" href="css/layout/wallpaper.css">
 </head>
 <body>
     <!-- wallpaper -->
@@ -17,6 +18,7 @@
             <div class="logo">
                 <img src="img/logo.jpg" alt="DelDeals Logo">
             </div>
+            <h1>Temukan, Tawar, Transaksi..</h1>
             <form >
                 <button type="submit" class="sign-up-btn">
                 <a href="/login" onclick="login()">ENTER</a>

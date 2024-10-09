@@ -1,0 +1,80 @@
+/* Sidebar styling */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 230px;
+    height: 100vh;
+    background-color: #ffffff;
+    padding: 20px;
+    color: rgb(0, 0, 0);
+    text-align: justify;
+    border-right: 1px solid rgb(0, 0, 0);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Sidebar menu styling */
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar img{
+    width: 250px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.sidebar ul li {
+    margin: 15px 0;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background-color 0.1, color 0.5s;
+}
+
+.sidebar ul li a {
+    color: rgb(2, 2, 2);
+    text-decoration: none;
+    font-size: 20px;
+    flex-grow: 1;
+    transition: color 0.1s;
+    display: flex;
+}
+
+.sidebar ul li.active,
+.sidebar ul li:hover {
+    background-color: #000000; /* Background color is black */
+}
+
+.sidebar ul li.active a,
+.sidebar ul li:hover a {
+    color: #ffffff; /* Text color is white */
+}
+
+.sidebar ul li.active .menu-icon,
+.sidebar ul li:hover .menu-icon {
+    background-color: #000000;
+    border-radius: 5px 0 0 5px;
+}
+
+.sidebar ul li .menu-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    transition: fill 0.1s, background-color 0.1s;
+}
+
+.sidebar ul li .menu-icon svg {
+    width: 100%;
+    height: 100%;
+    fill: rgb(0, 0, 0); /* Default icon color */
+}
+
+.sidebar ul li.active .menu-icon svg,
+.sidebar ul li:hover .menu-icon svg {
+    fill: #ffffff; /* Change SVG icon color to white for active link or on hover */
+}

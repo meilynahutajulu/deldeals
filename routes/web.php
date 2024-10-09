@@ -26,3 +26,11 @@ Route::get('/dashboard', function () {
 Route::get('/registrasi', function () {
     return view('registrasi');
 });
+
+Route::get('/tokosaya', function () {
+    return view('tokosaya');
+});
+
+Route::get('/pengaturan', function () {
+    return view('pengaturan');
+});
