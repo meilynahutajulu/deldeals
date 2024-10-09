@@ -1,30 +1,90 @@
-/* Search bar styling */
+/* Styling untuk search bar */
 .search-bar {
     display: flex;
     position: fixed;
-    margin-left: px;
+    margin-left: 0; /* Atur margin kiri dengan angka atau hilangkan jika tidak diperlukan */
     top: 0px;
-    left: 270px;
+    left: 270px; /* Atur posisi kiri agar sesuai dengan layout */
     justify-content: space-between;
-    width: calc(100% - 250px);
+    width: calc(100% - 300px); /* Lebar search bar dikurangi dengan 300px */
     align-items: center;
     padding: 20px;
-    background-color: rgba(255, 255, 255, 0);
+    background-color: rgba(255, 255, 255, 0); /* Transparansi background */
     border-radius: 0px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    border-bottom: 1px solid rgb(0, 0, 0)
+    border-bottom: 1px solid rgb(0, 0, 0); /* Border bawah */
 }
 
+/* Styling untuk input pada search bar */
 .search-bar input {
-    width: 80%;
+    width: 80%; /* Lebar input 80% dari container */
     padding: 8px;
     border: 1px solid #ccc;
-    border-radius: 20px;
+    border-radius: 20px; /* Membulatkan border */
+    outline: none; /* Hilangkan outline pada fokus input */
+    font-size: 16px; /* Ukuran font pada input */
+    transition: border-color 0.3s ease; /* Efek transisi saat fokus pada input */
 }
 
-/* Icon styling in search bar */
-.search-bar .icons i {
-    margin-left: 15px;
-    font-size: 18px;
-    cursor: pointer;
+.search-bar input:focus {
+    border-color: #000000; /* Ubah warna border saat input mendapatkan fokus */
+}
+
+/* Styling untuk ikon dalam search bar */
+.search-bar .icons {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Jarak antar ikon */
+    position: relative; /* Posisi relatif untuk dropdown atau elemen yang melayang */
+    margin-left: 10px;
+}
+
+/* Styling untuk svg dalam search bar */
+.search-bar .icons svg {
+    width: 27px; /* Ukuran default ikon */
+    height: 27px; /* Ukuran default ikon */
+    cursor: pointer; /* Ubah cursor menjadi pointer untuk ikon yang bisa diklik */
+    transition: transform 0.2s ease-in-out; /* Efek animasi saat ikon diklik */
+    margin-top: 1px;
+    gap: 4px;
+    padding: px;
+}
+
+.search-bar .icons svg:hover {
+    transform: scale(1.1); /* Memperbesar ikon saat hover */
+}
+
+/* Styling untuk div dengan svg di dalam .icons */
+.search-bar .icons div {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Mengatur jarak antar ikon */
+    position: relative;
+}
+
+/* Styling untuk dropdown (jika ada) */
+.profile-dropdown {
+    position: absolute;
+    top: 0px; /* Posisi dropdown di bawah ikon */
+    right: 0;
+    background-color: rgba(255, 255, 255, 0);
+    border-radius: 5px;
+    display: none; /* Sembunyikan dropdown secara default */
+    z-index: 1000;
+}
+
+.profile-dropdown a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: black;
+    font-size: 14px;
+}
+
+.profile-dropdown a:hover {
+    background-color: #f1f1f1;
+}
+
+.profile-dropdown.show {
+    display: block; /* Menampilkan dropdown ketika class 'show' ditambahkan */
 }
