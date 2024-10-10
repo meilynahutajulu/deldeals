@@ -34,11 +34,11 @@ h3{
 }
 
 .edit-btn {
-    background-color: #000000;
+    background-color: #464646;
     color: white;
     padding: 10px 15px;
     border: none;
-    border-radius: 8px;
+    border-radius: 20px;
     cursor: pointer;
     font-size: 16px;
     margin-top: 20px; /* Memberikan jarak di atas tombol */
@@ -46,7 +46,7 @@ h3{
 }
 
 .edit-btn:hover {
-    background-color: #545454;
+    background-color: #939393;
 }
 
 /* Styling untuk search bar */
