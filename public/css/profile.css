@@ -1,92 +1,24 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
-}
-
-body {
-    display: flex;
-    height: 100vh;
-}
-
-.container {
-    display: flex;
-    width: 100%;
-}
-
-.logo img {
-    width: 100px;
-    height: auto;
-    margin-bottom: 30px;
-}
-
-nav ul {
-    list-style: none;
-    width: 100%;
-}
-
-nav ul li {
-    margin: 20px 0;
-}
-
-nav ul li a {
-    text-decoration: none;
-    color: #333;
-    font-size: 18px;
-    display: block;
-    text-align: center;
-    padding: 10px;
-    border-radius: 8px;
-    transition: background 0.3s;
-}
-
-nav ul li a.active,
-nav ul li a:hover {
-    background-color: #E0E0E0;
-}
-
-.notification-dot {
-    width: 8px;
-    height: 8px;
-    background-color: red;
-    border-radius: 50%;
-    display: inline-block;
-    margin-left: 5px;
-}
-
-.logout {
-    margin-top: auto;
-    background-color: #FF6B6B;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 16px;
-}
-
-.logout:hover {
-    background-color: #FF5252;
-}
-
-.profile-content {
-    flex: 1;
-    padding: 20px;
-}
-
-h1 {
-    font-size: 24px;
-    margin-bottom: 20px;
-}
-
+/* Styling untuk kartu profil */
 .profile-card {
     display: flex;
     background-color: #fff;
     border: 1px solid #ddd;
     border-radius: 10px;
-    padding: 20px;
-    width: 500px;
+    padding: 50px;
+    width: 700px;
+    margin-left: 300px;
+    margin-top: 80px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.795);
+    flex-direction: row; /* Mengatur elemen di dalam profile-card secara horizontal */
+}
+
+h1{
+    display: flex;
+    font-size: 25px;
+}
+
+h3{
+    display: flex;
 }
 
 .profile-picture img {
@@ -102,16 +34,84 @@ h1 {
 }
 
 .edit-btn {
-    background-color: #4CAF50;
+    background-color: #464646;
     color: white;
     padding: 10px 15px;
     border: none;
-    border-radius: 8px;
+    border-radius: 20px;
     cursor: pointer;
     font-size: 16px;
-    margin-top: 10px;
+    margin-top: 20px; /* Memberikan jarak di atas tombol */
+    margin-left: 1000px; /* Menyelaraskan tombol ke posisi kiri yang sama dengan profile-card */
 }
 
 .edit-btn:hover {
-    background-color: #45a049;
+    background-color: #939393;
+}
+
+/* Styling untuk search bar */
+.search-bar {
+    display: flex;
+    position: fixed;
+    left: 251px; /* Posisi kiri agar sesuai dengan layout */
+    top: 0;
+    justify-content: space-between;
+    width: calc(100% - 300px); /* Lebar search bar dikurangi 300px */
+    align-items: center;
+    padding: 20px;
+    background-color: rgb(255, 255, 255); /* Transparansi background */
+    border-bottom: 1px solid #000; /* Border bawah */
+}
+
+.search-bar input:focus {
+    border-color: #000000; /* Ubah warna border saat input mendapatkan fokus */
+}
+
+/* Ikon dalam search bar */
+.search-bar .icons {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Pindahkan ikon ke sebelah kiri */
+    gap: 10px;
+    margin-left: 830px; /* Memberikan sedikit jarak dari sisi kiri */
+}
+
+/* SVG Ikon */
+.search-bar .icons svg {
+    width: 27px;
+    height: 27px;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+    margin-left: 0; /* Menghilangkan margin-right untuk memposisikan di kiri */
+}
+
+.search-bar .icons svg:hover {
+    transform: scale(1.1); /* Memperbesar ikon saat hover */
+}
+
+/* Styling dropdown profil (jika ada) */
+.profile-dropdown {
+    position: absolute;
+    top: 0px; /* Posisi dropdown di bawah ikon */
+    right: 0;
+    background-color: rgba(255, 255, 255, 0);
+    border-radius: 5px;
+    display: none; /* Sembunyikan dropdown secara default */
+    z-index: 1000;
+}
+
+.profile-dropdown a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: black;
+    font-size: 14px;
+}
+
+.profile-dropdown a:hover {
+    background-color: #f1f1f1;
+}
+
+.profile-dropdown.show {
+    display: block; /* Menampilkan dropdown ketika class 'show' ditambahkan */
 }
