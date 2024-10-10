@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\UserController;
 
 Route::get('/', function () {
     return view('dashboard');
@@ -38,3 +39,11 @@ Route::get('/pengaturan', function () {
 Route::get('/profile', function () {
     return view('profile');
 });
+
+Route::get('/forgot-pass', function () {
+    return view('forgot');
+});
+
+Route::get('/register', [UserController::class, 'create'])->name('register');
+Route::post('/register', [UserController::class, 'store'])->name('pengguna.store');
+

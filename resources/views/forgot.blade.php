@@ -5,18 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>DelDeals Login</title>
-    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/forgot.css">
     <link rel="stylesheet" href="css/layout/wallpaper.css">
 </head>
 <body>
 
     <!-- wallpaper -->
     @include('layout.wallpaper')
-    <form onsubmit="return signup()">
-        <div class = "sign-in-btn-box">
-        <button type="button" class="sign-in-btn" onclick="location.href='{{ url('/registrasi') }}';">SIGN UP</button>
-        </div>
-    </form>
     
     <div class="container">
         <div class="login-box">

@@ -16,7 +16,7 @@
         <div class="login-box">
             <h1>Welcom to DelDeals</h1>
             <div class="logo">
-                <img src="img/logo.jpg" alt="DelDeals Logo">
+                <img src="img/Picture1.png" alt="DelDeals Logo">
             </div>
             <h1>Temukan, Tawar, Transaksi..</h1>
             <form >
