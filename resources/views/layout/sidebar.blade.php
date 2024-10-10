@@ -1,8 +1,9 @@
+<link rel="stylesheet" href="css/layout/sidebar.css">
 
         <!-- baru -->
         <aside class="sidebar">
             <!-- Logo -->
-            <img src="img/Picture1.png" alt="DELDEALS Logo" class="logo">
+            <img src="img/logo.jpg" alt="DELDEALS Logo" class="logo">
             <!-- <h1>DELDEALS</h1> -->
             <ul>
                 <li class="{{ Request::is('home') ? 'active' : '' }}">
