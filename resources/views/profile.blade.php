@@ -60,7 +60,7 @@
             <h1>Profil Pengguna</h1>
         <div class="profile-card">
             <div class="profile-picture">
-                <img src="User profile.png" alt="Profile Picture">
+                <img src="img/profile.jpg" alt="Profile Picture">
             </div>
             <div class="profile-details">
                 <p><strong>Username:</strong> @bernadyaaa_1bulan</p>
