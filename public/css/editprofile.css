@@ -1,0 +1,109 @@
+/* Styling untuk kartu profil */
+.profile-card {
+    display: flex;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 50px;
+    width: 700px;
+    margin-left: 300px;
+    margin-top: 80px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.795);
+    flex-direction: row; /* Mengatur elemen di dalam profile-card secara horizontal */
+}
+
+h1{
+    display: flex;
+    font-size: 25px;
+}
+
+h3{
+    display: flex;
+}
+
+.profile-picture img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+.profile-details p {
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.profile-details input {
+    font-size: 16px;
+    margin-bottom: 10px;
+    padding: 5px;
+    width: 100%;
+    border-radius: 50px;
+}
+
+button {
+    background-color: #464646;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: #939393;
+}
+
+
+.edit-btn {
+    background-color: #464646;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px; /* Memberikan jarak di atas tombol */
+    margin-left: 1000px; /* Menyelaraskan tombol ke posisi kiri yang sama dengan profile-card */
+}
+
+.edit-btn:hover {
+    background-color: #939393;
+}
+
+/* Styling untuk search bar */
+.search-bar {
+    display: flex;
+    position: fixed;
+    left: 251px; /* Posisi kiri agar sesuai dengan layout */
+    top: 0;
+    justify-content: space-between;
+    width: 1000px; /* Lebar search bar dikurangi 300px */
+    align-items: center;
+    padding: 20px;
+    background-color: rgb(255, 255, 255); /* Transparansi background */
+    border-bottom: 1px solid #000; /* Border bawah */
+}
+
+.search-bar .icons svg:hover {
+    transform: scale(1.1); /* Memperbesar ikon saat hover */
+}
+
+/* Styling untuk div dengan svg di dalam .icons */
+.search-bar .icons div {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Mengatur jarak antar ikon */
+    position: relative;
+}
+
+.search-bar .icons {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Jarak antar ikon */
+    position: relative; /* Posisi relatif untuk dropdown atau elemen yang melayang */
+    margin-left: 10px;
+}
+
