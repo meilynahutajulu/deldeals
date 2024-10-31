@@ -21,26 +21,26 @@
             <!-- Product grid -->
             <div class="product-grid">
                 <div class="product">
-                    <img src="Tuperware.jpeg" alt="Tumbler Tupperware">
+                    <img src="img/Tuperware.jpeg" alt="Tumbler Tupperware">
                     <h2>Tumbler Tupperware</h2>
                     <p>Rp 100.000</p>
                     <button class="add-to-cart">@include('layout.button_add')</button>
                           
                 </div>
                 <div class="product">
-                    <img src="FlashDisk.jpeg" alt="FlashDisk">
+                    <img src="img/FlashDisk.jpeg" alt="FlashDisk">
                     <h2>FlashDisk</h2>
                     <p>Rp 50.000</p>
                     <button class="add-to-cart">@include('layout.button_add')</button>
                 </div>
                 <div class="product">
-                    <img src="image/laptop.jpg" alt="laptop">
+                    <img src="img/laptop.jpg" alt="laptop">
                     <h2>laptop</h2>
                     <p>Rp 20.000.000</p>
                     <button class="add-to-cart">@include('layout.button_add')</button>
                 </div>
                 <div class="product">
-                    <img src="image/kue.jpg" alt="kue">
+                    <img src="img/kue.jpg" alt="kue">
                     <h2>kue</h2>
                     <p>Rp 50.000</p>
                     <button class="add-to-cart">@include('layout.button_add')</button>
@@ -52,7 +52,7 @@
                     <button class="add-to-cart">@include('layout.button_add')</button>
                 </div>
                 <div class="product">
-                    <img src="image/flashdisk.jpg" alt="flashdisk">
+                    <img src="img/FlashDisk.jpeg" alt="flashdisk">
                     <h2>flashdisk</h2>
                     <p>Rp 30.000</p>
                     <button class="add-to-cart">@include('layout.button_add')</button>

@@ -8,14 +8,14 @@
 </head>
 <body>
     <!-- wallpaper -->
-@include('layout.wallpaper')
-    <div class="container">
-        <!-- Sidebar with Logo -->
-        @include('layout.sidebar')
+    @include('layout.wallpaper')
+        <div class="container">
+            <!-- Sidebar with Logo -->
+            @include('layout.sidebar')
 
-        <main class="profile-content">
-        <div class="search-bar" style="display: flex; align-items: center; justify-content: space-between;">
-            <h3>Pofil Pengguna</h3>
+            <main class="profile-content">
+            <div class="search-bar" style="display: flex; align-items: center; justify-content: space-between;">
+                <h3>Pofil Pengguna</h3>
 
     <div class="icons" style="display: flex; align-items: center; gap: 15px; position: relative;">
             <div class="bell-icon" onclick="toggleDropdown()" style="cursor: pointer;">
