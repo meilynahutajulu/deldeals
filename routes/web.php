@@ -48,5 +48,9 @@ Route::get('/editprofile', function () {
     return view('editprofile');
 });
 
+Route::get('/kerangjang', function () {
+    return view('kerangjang');
+});
+
 Route::get('/register', [UserController::class, 'create'])->name('register');
 Route::post('/register', [UserController::class, 'store'])->name('pengguna.store');
