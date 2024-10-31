@@ -57,7 +57,7 @@ h3{
     top: 0px;
     left: 250px; /* Atur posisi kiri agar sesuai dengan layout */
     justify-content: space-between;
-    width: calc(100% - 300px); /* Lebar search bar dikurangi dengan 300px */
+    width: calc(100% - 290px); /* Lebar search bar dikurangi dengan 300px */
     align-items: center;
     padding: 20px;
     background-color: rgb(255, 255, 255); /* Transparansi background */
