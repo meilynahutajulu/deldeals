@@ -66,21 +66,6 @@ h3{
     border-bottom: 1px solid rgb(0, 0, 0); /* Border bawah */
 }
 
-/* Styling untuk input pada search bar */
-.search-bar input {
-    width: 80%; /* Lebar input 80% dari container */
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 20px; /* Membulatkan border */
-    outline: none; /* Hilangkan outline pada fokus input */
-    font-size: 16px; /* Ukuran font pada input */
-    transition: border-color 0.3s ease; /* Efek transisi saat fokus pada input */
-}
-
-.search-bar input:focus {
-    border-color: #000000; /* Ubah warna border saat input mendapatkan fokus */
-}
-
 /* Styling untuk ikon dalam search bar */
 .search-bar .icons {
     display: flex;
