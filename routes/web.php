@@ -44,5 +44,9 @@ Route::get('/forgot-pass', function () {
     return view('forgot');
 });
 
+Route::get('/editprofile', function () {
+    return view('editprofile');
+});
+
 Route::get('/register', [UserController::class, 'create'])->name('register');
 Route::post('/register', [UserController::class, 'store'])->name('pengguna.store');

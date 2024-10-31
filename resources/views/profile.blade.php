@@ -13,6 +13,7 @@
             <!-- Sidebar with Logo -->
             @include('layout.sidebar')
 
+            
             <main class="profile-content">
             <div class="search-bar" style="display: flex; align-items: center; justify-content: space-between;">
                 <h3>Pofil Pengguna</h3>
