@@ -14,16 +14,18 @@
 .bell-icon:hover svg {
     color: #555; /* Darker shade on hover */
 }
+
 .dropdown-content {
     display: none;
     position: absolute;
     background-color: #444;
-    min-width: 160px; /* Lebar yang lebih sesuai */
-    right: 0; /* Posisikan di kanan dengan jarak dari tepi */
-    margin-right: 10px; /* Jarak dari tepi layar */
+    min-width: 160px;
+    right: 0;
+    margin-right: 10px;
     box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
     z-index: 1;
 }
+
 
 .dropdown-content a {
     color: white;
