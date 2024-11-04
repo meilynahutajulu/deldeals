@@ -48,8 +48,8 @@ Route::get('/editprofile', function () {
     return view('editprofile');
 });
 
-Route::get('/kerangjang', function () {
-    return view('kerangjang');
+Route::get('/keranjang', function () {
+    return view('keranjang');
 });
 
 Route::get('/register', [UserController::class, 'create'])->name('register');
