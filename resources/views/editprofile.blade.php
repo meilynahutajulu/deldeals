@@ -35,13 +35,6 @@
                 </svg>
                 </a>
             </div>    
-            <!-- Dropdown Menu -->
-            <!-- <div id="dropdown-box" class="dropdown-content" style="display: none; position: absolute; top: 40px; right: 0; background-color: white; box-shadow: 0px 8px 16px rgba(0,0,0,0.1); padding: 10px; border-radius: 5px; z-index: 100;">
-                <a href="#">Profil</a>
-                <a href="#">Pengaturan</a>
-                <a href="#">Keluar</a>
-            </div> -->
-        <!-- </div> -->
             <div class="cart-icon" onclick="toggleDropdown()" style="cursor: pointer;">
                 <!-- Cart Icon (SVG) -->
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart4" viewBox="0 0 16 16">
