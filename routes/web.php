@@ -66,3 +66,7 @@ Route::get('/forgot_password', function () {
 Route::get('/otp', function () {
     return view('otp');
 });
+
+Route::get('/change-password', function () {
+    return view('changePassword');
+});
