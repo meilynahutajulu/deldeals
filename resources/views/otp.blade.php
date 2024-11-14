@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Forgot Password</title>
-    <link rel="stylesheet" href="css/forgot.css">
+    <link rel="stylesheet" href="css/otp.css">
     <link rel="stylesheet" href="css/layout/wallpaper.css">
 </head>
 <body>
@@ -20,21 +20,24 @@
             </div>
 
             
-            <form onsubmit="return sendOtp()"> <!-- Fungsi otp dipanggil dari file eksternal -->
+            <form onsubmit="return verifyOTP()"> <!-- Fungsi otp dipanggil dari file eksternal -->
                 <div class="text-box">
-                    <h1>Forgot Password</h1>
-                    <p>Enter your register email address</p>
+                    <h1>ENTER OTP</h1>
+                    <p>Check your email address</p>
                 </div>
-                <div class="input-box">
-                    <input type="email" id="email" placeholder="Email" required>
+                <div class="otp-inputs">
+                    <input type="text" maxlength="1" class="otp-box" autofocus>
+                    <input type="text" maxlength="1" class="otp-box">
+                    <input type="text" maxlength="1" class="otp-box">
+                    <input type="text" maxlength="1" class="otp-box">
                 </div>
-
-                <button type="submit" class="send-otp-btn">SEND OTP</button>
+                <button type="submit" class="verify-button">VERIFY</button>
+                <p id = "result"></p>
             </form>
         </div>
     </div>
 
     <!-- Link ke file JavaScript eksternal -->
-    <script src="js/login.js"></script>
+    <script src="js/otp.js"></script>
 </body>
 </html>

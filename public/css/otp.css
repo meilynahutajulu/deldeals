@@ -52,6 +52,26 @@ body {
     position: relative;
 }
 
+.otp-inputs {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.otp-box {
+    width: 50px;
+    height: 40px;
+    font-size: 20px;
+    text-align: center;
+    border: 2px solid #000;
+    border-radius: 20px;
+    outline: none;
+}
+
+.otp-box:focus {
+    border-color: #333;
+}
+
 .logo img {
 
     width: 200px;
@@ -78,22 +98,6 @@ body {
     border-color: #333;
 }
 
-
-.send-otp-btn {
-    background-color: #000;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-bottom: 10px;
-    width: 100%;
-}
-
-.send-otp-btn:hover {
-    background-color: #000000d0;
-}
-
 .background img {
     position: absolute;
     top: 0;
@@ -106,15 +110,19 @@ body {
     z-index: -1; /* Gambar background ada di bawah elemen lainnya */
 }
 
-
-.send-otp-btn{
-    background-color: #000000; /* Hijau untuk tombol Sign In */
-    color: white;
-    position: relative;
+.verify-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #000;
     border: none;
-    border-radius: 20px;  
-    width: auto;
-    height: 35px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.verify-button:hover {
+    background-color: #333;
 }
 
 h1{

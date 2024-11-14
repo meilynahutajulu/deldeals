@@ -30,7 +30,7 @@
                     <input type="password" id="password" placeholder="Password" required>
                 </div>
                 <div class="forgot-password">
-                    <a href="#">*Forgot Password</a>
+                    <a href="/forgot-pass">*Forgot Password</a>
                 </div>
                 <button type="submit" class="login-btn">LOG IN</button>
             </form>

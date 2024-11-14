@@ -59,3 +59,10 @@ Route::get('/main', function () {
     return view('utama');
 });
 
+Route::get('/forgot_password', function () {
+    return view('forgot_password');
+});
+
+Route::get('/otp', function () {
+    return view('otp');
+});
