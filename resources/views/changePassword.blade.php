@@ -20,7 +20,7 @@
             </div>
 
             
-            <form onsubmit="return sendOtp()"> <!-- Fungsi otp dipanggil dari file eksternal -->
+            <form onsubmit="return changePass()"> <!-- Fungsi otp dipanggil dari file eksternal -->
                 <div class="text-box">
                     <h1>CHANGE YOUR PASSWORD</h1>
                 </div>
@@ -31,12 +31,13 @@
                     <input type="text" id="confirm" placeholder="Confirm Password" required>
                 </div>
 
-                <button type="submit" class="send-otp-btn">CHANGE</button>
+                <button type="submit" class="change-button">CHANGE</button>
+                <p id="result"></p>
             </form>
         </div>
     </div>
 
     <!-- Link ke file JavaScript eksternal -->
-    <script src="js/login.js"></script>
+    <script src="js/changePassword.js"></script>
 </body>
 </html>
