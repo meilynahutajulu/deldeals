@@ -13,7 +13,7 @@
     @include('layout.wallpaper')
     <div class="container">
         <div class="login-box">
-            <h1>Welcome to DelDeals</h1>
+            <h1>Welcome to</h1>
             <div class="logo">
                 <img src="img/logo.jpg" alt="DelDeals Logo">
             </div>
