@@ -25,10 +25,10 @@
                     <h1>CHANGE YOUR PASSWORD</h1>
                 </div>
                 <div class="input-box">
-                    <input type="text" id="new" placeholder="New Password" required>
+                    <input type="password" id="new" placeholder="New Password" required>
                 </div>
                 <div class="input-box">
-                    <input type="text" id="confirm" placeholder="Confirm Password" required>
+                    <input type="password" id="confirm" placeholder="Confirm Password" required>
                 </div>
 
                 <button type="submit" class="change-button">CHANGE</button>
