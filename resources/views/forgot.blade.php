@@ -28,13 +28,13 @@
                 <div class="input-box">
                     <input type="email" id="email" placeholder="Email" required>
                 </div>
-
+                <p id = "result"></p>
                 <button type="submit" class="send-otp-btn">SEND OTP</button>
             </form>
         </div>
     </div>
 
     <!-- Link ke file JavaScript eksternal -->
-    <script src="js/login.js"></script>
+    <script src="js/changePassword.js"></script>
 </body>
 </html>

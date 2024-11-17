@@ -17,15 +17,3 @@ function signup(){
     return false;
 }
 
-function sendOtp(){
-    var gmail = document.getElementById('email').value;
-
-    // Simulasi login
-    if (gmail === 'bernadyaaa@gmail.com') {
-        window.location.href = '/otp'; // Pindah ke halaman home
-        return false; // Mencegah form di-submit ulang
-    } else {
-        alert('Email anda tidak terdaftar');
-        return false; // Mencegah form di-submit
-    }
-}
