@@ -17,7 +17,7 @@
                 <img src="img/forgot_pass.png" alt="DelDeals Logo">
             </div>
 
-            <form action="return ">
+            <form onsubmit="return success()">
                 <div class="text-box">
                     <h1>CHANGE YOUR PASSWORD</h1>
                     <p>PASSWORD CHANGE SUCCEFULLY</p>
@@ -26,6 +26,6 @@
             </form>
         </div>        
     </div>
-
+    <script src="js/changePassword.js"></script>
 </body>
 </html>
