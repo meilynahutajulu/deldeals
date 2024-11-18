@@ -71,6 +71,10 @@ Route::get('/change-password', function () {
     return view('changePassword');
 });
 
+Route::get('/succPass', function () {
+    return view('passChangeSuccess');
+});
+
 Route::get('/utama', function () {
     return view('utama');
-});
+}); 

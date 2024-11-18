@@ -5,11 +5,30 @@ function changePass(){
     if(newPass === confirm){
         document.getElementById("result").innerText = "Suitable";
         document.getElementById("result").style.color = "green";
-        window.location.href = '/login';
+        window.location.href = '/succPass';
         return false;
     }else{
         document.getElementById("result").innerText = 'Password isn\'t match';
-        document.getElementById("result").style.color = "red"        
+        document.getElementById("result").style.color = "red";        
         return false;
     }
+}
+
+function sendOtp(){
+    var gmail = document.getElementById('email').value;
+
+    // Simulasi login
+    if (gmail === 'bernadyaaa@gmail.com') {
+        window.location.href = '/otp'; // Pindah ke halaman home
+        return false; // Mencegah form di-submit ulang
+    } else {
+        document.getElementById("result").innerText = 'Email not found';
+        document.getElementById("result").style.color = "red";
+        return false; // Mencegah form di-submit
+    }
+}
+
+function success(){
+    window.location.href = '/login'; // Pindah ke halaman home
+    return false; // Mencegah form di-submit ulang
 }

@@ -31,8 +31,8 @@
                     <input type="text" maxlength="1" class="otp-box">
                     <input type="text" maxlength="1" class="otp-box">
                 </div>
-                <button type="submit" class="verify-button">VERIFY</button>
                 <p id = "result"></p>
+                <button type="submit" class="verify-button">VERIFY</button>
             </form>
         </div>
     </div>
