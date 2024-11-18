@@ -70,3 +70,7 @@ Route::get('/otp', function () {
 Route::get('/change-password', function () {
     return view('changePassword');
 });
+
+Route::get('/utama', function () {
+    return view('utama');
+});

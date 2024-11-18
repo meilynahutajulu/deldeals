@@ -4,7 +4,7 @@ function login() {
 
     // Simulasi login
     if (username === 'admin' && password === 'password') {
-        window.location.href = '/home'; // Pindah ke halaman home
+        window.location.href = '/utama'; // Pindah ke halaman home
         return false; // Mencegah form di-submit ulang
     } else {
         alert('Username atau password salah!');
