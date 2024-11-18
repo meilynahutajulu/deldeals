@@ -77,4 +77,10 @@ Route::get('/succPass', function () {
 
 Route::get('/utama', function () {
     return view('utama');
-}); 
+});
+
+Route::get('/index', function () {
+    return view('index');
+});
+
+Route::get('/pengguna', [UserController::class, 'index'])->name('pengguna.index');

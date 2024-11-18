@@ -32,5 +32,16 @@ class UserController extends Controller
         ]);
 
         return redirect()->route('register')->with('success', 'User berhasil didaftarkan.');
+        return redirect()->route('pengguna.index')->with('success', 'Registrasi berhasil!');
     }
+
+    public function index()
+    {
+    // Ambil semua data pengguna dari tabel
+    $pengguna = Pengguna::all(); // Pastikan model User sudah ada dan sesuai dengan tabel pengguna
+
+    // Kirim data ke view
+    return view('pengguna.index', compact('pengguna'));
+    }
+
 }
