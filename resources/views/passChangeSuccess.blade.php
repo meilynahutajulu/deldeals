@@ -22,7 +22,7 @@
                     <h1>CHANGE YOUR PASSWORD</h1>
                     <p>PASSWORD CHANGE SUCCEFULLY</p>
                 </div>
-                <button type="submit" class="change-button">CHANGE</button>
+                <button type="submit" class="change-button">LOGIN</button>
             </form>
         </div>        
     </div>

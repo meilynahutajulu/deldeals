@@ -34,6 +34,34 @@
                     <p>Rp 200.000</p>
                     <button class="add-to-cart">+</button>
                 </div>
+
+                <div class="product-card">
+                    <div class="image-container">
+                        <img src="{{ asset('img/FlashDisk.jpeg') }}" alt="Flashdisk">
+                    </div>
+                    <h3>FlashDisk</h3>
+                    <p>Rp 200.000</p>
+                    <button class="add-to-cart">+</button>
+                </div>
+
+                <div class="product-card">
+                    <div class="image-container">
+                        <img src="{{ asset('img/pin.jpg') }}" alt="Pin DEL">
+                    </div>
+                    <h3>Pin DEL</h3>
+                    <p>Rp 20.000</p>
+                    <button class="add-to-cart">+</button>
+                </div>
+
+                <div class="product-card">
+                    <div class="image-container">
+                        <img src="{{ asset('img/kaos-del.png') }}" alt="Kaos Del">
+                    </div>
+                    <h3>Kaos DEL</h3>
+                    <p>Rp 200.000</p>
+                    <button class="add-to-cart">+</button>
+                </div>
+
                 <!-- Tambahkan produk lainnya dengan struktur yang sama -->
             </section>
         </main>
