@@ -4,7 +4,9 @@
         <!-- baru -->
         <aside class="sidebar">
             <!-- Logo -->
-            <img src="img/logo.jpg" alt="DELDEALS Logo" class="logo">
+            <a href="{{ url('/main') }}"> 
+                <img src="img/logo.jpg" alt="DELDEALS Logo" class="logo">
+            </a>
             <!-- <h1>DELDEALS</h1> -->
             <ul>
                 <li class="{{ Request::is('utama') ? 'active' : '' }}">
