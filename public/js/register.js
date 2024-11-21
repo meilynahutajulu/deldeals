@@ -10,7 +10,7 @@ form.addEventListener('submit', (e) => {
     hasil.innerHTML = `Nama: ${nama}<br>Email: ${email}<br>Pesan: ${pesan}`;
 });
 
-function signin(){
+function signup(){
     var username = document.getElementById('username').value;
     var nama = document.getElementById('nama').value;
     var email = document.getElementById('email').value;
@@ -25,4 +25,9 @@ function signin(){
         window.location.href = '/login';
         return false; // Mencegah form di-submit
     }
+}
+
+function login(){
+    window.location.href = '/login';
+    return false;
 }
