@@ -32,10 +32,6 @@ Route::get('/tokosaya', function () {
     return view('tokosaya');
 });
 
-Route::get('/pengaturan', function () {
-    return view('pengaturan');
-});
-
 Route::get('/profile', function () {
     return view('profile');
 });
