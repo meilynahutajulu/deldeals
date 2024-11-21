@@ -3,46 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DELDEALS</title>
-    <link rel="stylesheet" href="css/layout/utama.css">
-    <link rel="stylesheet" href="css/home.css">
+    <title>DelDeals Dashboard</title>
+    <link rel="stylesheet" href="{{ asset('css/tokosaya.css') }}">
 </head>
 <body>
-<!-- wallpaper -->
-@include('layout.wallpaper')
-    <div class="container">
-        <!-- Sidebar with Logo -->
-        @include('layout.sidebar')
+    
+    @include('layout.wallpaper')
 
-        <!-- Main content area -->
-        <main class="content">
-            <!-- Search bar -->
+    <form action=""></form>
+    <div class="container">
+        @include('layout.sidebar')
         @include('layout.searchbar')
         
-        <!-- Product grid -->
-        <div class="product-grid">
-                <div class="product">
-                    <img src="Tuperware.jpeg" alt="Tumbler Tupperware">
-                    <h2>Tumbler Tupperware</h2>
+        <!-- Main Content -->
+        <main class="content">
+            <section class="product-list">
+                <!-- Product Cards -->
+                <div class="product-card">
+                    <div class="image-container">
+                        <img src="{{ asset('img/Tuperware.jpeg') }}" alt="Tumbler Tupperware">
+                    </div>
+                    <h3>Tumbler Tupperware</h3>
                     <p>Rp 100.000</p>
-                    <button class="add-to-cart">@include('layout.button_add')</button>
-                          
+                    <button class="add-to-cart">+</button>
                 </div>
-                <div class="product">
-                    <img src="FlashDisk.jpeg" alt="FlashDisk">
-                    <h2>FlashDisk</h2>
-                    <p>Rp 50.000</p>
-                    <button class="add-to-cart">@include('layout.button_add')</button>
+                
+                <div class="product-card">
+                    <div class="image-container">
+                        <img src="{{ asset('img/keyboard.jpg') }}" alt="Keyboard RGB">
+                    </div>
+                    <h3>Keyboard RGB</h3>
+                    <p>Rp 200.000</p>
+                    <button class="add-to-cart">+</button>
                 </div>
-                <div class="product">
-                    <img src="image/laptop.jpg" alt="laptop">
-                    <h2>laptop</h2>
-                    <p>Rp 20.000.000</p>
-                    <button class="add-to-cart">@include('layout.button_add')</button>
-                </div>
-            </div>
-
+                <!-- Tambahkan produk lainnya dengan struktur yang sama -->
+            </section>
         </main>
+        <button type="button" class="add-btn">Add New Item</button>
     </div>
+
+    <script src="{{ asset('js/app.js') }}"></script>
 </body>
 </html>

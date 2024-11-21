@@ -60,7 +60,7 @@
     display: flex;
     align-items: center;
     gap: 10px; /* Mengatur jarak antar ikon */
-    position: relative;
+    /* position: relative; */
 }
 
 /* Styling untuk dropdown (jika ada) */
