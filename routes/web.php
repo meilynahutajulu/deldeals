@@ -52,8 +52,8 @@ Route::get('/keranjang', function () {
     return view('keranjang');
 });
 
-Route::get('/register', [UserController::class, 'create'])->name('register');
-Route::post('/register', [UserController::class, 'store'])->name('pengguna.store');
+Route::get('/registrasi', [UserController::class, 'create'])->name('register');
+Route::post('/registrasi', [UserController::class, 'store'])->name('pengguna.store');
 
 Route::get('/main', function () {
     return view('utama');
