@@ -33,10 +33,6 @@ Route::get('/registrasi', function () {
     return view('registrasi');
 });
 
-Route::get('/newitem', function () {
-    return view('newitem');
-});
-
 Route::get('/tokosaya', function () {
     return view('tokosaya');
 });
@@ -90,4 +86,3 @@ Route::get('/index', function () {
 
 Route::get('/pengguna', [UserController::class, 'index'])->name('pengguna.index');
 
-Route::post('/items', [ItemController::class, 'store'])->name('items.store');
