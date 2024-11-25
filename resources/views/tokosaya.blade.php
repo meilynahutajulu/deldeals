@@ -33,6 +33,7 @@
                     <p>Rp 50.000</p>
                     <button class="add-to-cart">@include('layout.button_add')</button>
                 </div>
+<<<<<<< Updated upstream
                 <div class="product">
                     <img src="image/laptop.jpg" alt="laptop">
                     <h2>laptop</h2>
@@ -40,6 +41,13 @@
                     <button class="add-to-cart">@include('layout.button_add')</button>
                 </div>
             </div>
+=======
+                <!-- Tambahkan produk lainnya dengan struktur yang sama -->
+            </section>
+        </main>
+        <button type="button" class="add-btn" onclick="location.href='{{ url('/add-items') }}';">Add New Item</button>
+    </div>
+>>>>>>> Stashed changes
 
         </main>
     </div>
