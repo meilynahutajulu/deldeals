@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\ItemController;
 
 // use App\Http\Controllers\AuthController;
 
@@ -30,6 +31,10 @@ Route::get('/dashboard', function () {
 
 Route::get('/registrasi', function () {
     return view('registrasi');
+});
+
+Route::get('/newitem', function () {
+    return view('newitem');
 });
 
 Route::get('/tokosaya', function () {
@@ -84,3 +89,5 @@ Route::get('/index', function () {
 });
 
 Route::get('/pengguna', [UserController::class, 'index'])->name('pengguna.index');
+
+Route::post('/items', [ItemController::class, 'store'])->name('items.store');

@@ -39,7 +39,7 @@
                 <!-- Tambahkan produk lainnya dengan struktur yang sama -->
             </section>
         </main>
-        <button type="button" class="add-btn">Add New Item</button>
+        <button type="button" class="add-btn" onclick="location.href='/newitem';">Add New Item</button>
     </div>
 
     <script src="{{ asset('js/app.js') }}"></script>
