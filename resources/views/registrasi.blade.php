@@ -39,7 +39,7 @@
                 <input type="password" name="password" placeholder="Password" class="input-field" required>
             </div>
             <div class="register-box">
-                <button type="submit" class="register-btn">REGISTER</button>
+                <button type="submit" class="register-btn" onclick="location.href='/login';">REGISTER</button>
                 {{-- <button type="submit" class="register-btn">REGISTER</button>    --}}
             </div>
             

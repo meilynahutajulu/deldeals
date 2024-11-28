@@ -3,6 +3,11 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\ItemController;
+
+// use App\Http\Controllers\AuthController;
+
+// Route::post('/login', [AuthController::class, 'login']);
 
 Route::get('/', function () {
     return view('dashboard');
@@ -83,4 +88,5 @@ Route::get('/succPass', function () {
 //     return view('index');
 // });
 
-// Route::get('/pengguna', [UserController::class, 'index'])->name('pengguna.index');
+Route::get('/pengguna', [UserController::class, 'index'])->name('pengguna.index');
+
