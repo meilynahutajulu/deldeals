@@ -4,23 +4,35 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Log; // Impor Log
+use App\Models\Pengguna;
 
 class AuthController extends Controller
 {
     public function login(Request $request)
-    {
-        $credentials = $request->only('username', 'password');
+{
+    // Validasi input
+    $request->validate([
+        'username' => 'required|string',
+        'password' => 'required|string',
+    ]);
 
-        if (Auth::attempt($credentials)) {
-            // Jika login berhasil, buat token atau redirect sesuai kebutuhan
-            return response()->json([
-                'message' => 'Login successful',
-                'redirect_url' => '/utama' // URL tujuan
-            ], 200);
-        } else {
-            // Jika gagal
-            return response()->json(['error' => 'Username or password incorrect'], 401);
-        }
+    // Ambil kredensial dari request
+    $credentials = $request->only('username', 'password');
+
+    // Coba untuk login
+    if (Auth::attempt($credentials)) {
+        // Jika login berhasil, ambil pengguna yang sedang login
+        $user = Auth::user();
+        
+        // Mengembalikan respons dengan redirect_url
+        return response()->json([
+            'message' => 'Login successful',
+            'redirect_url' => '/utama', // Ganti dengan URL yang sesuai
+        ], 200);
+    } else {
+        // Jika login gagal, mengembalikan respons error
+        return response()->json(['error' => 'Username or password incorrect'], 401);
     }
 }
-
+}

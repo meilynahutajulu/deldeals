@@ -5,10 +5,12 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ItemController;
 
-// use App\Http\Controllers\AuthController;
+use App\Http\Controllers\AuthController;
 
-// Route::post('/login', [AuthController::class, 'login']);
+// Rute untuk login
+Route::post('/login', [AuthController::class, 'login']);
 
+// Rute lainnya...
 Route::get('/', function () {
     return view('dashboard');
 });
