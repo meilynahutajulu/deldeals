@@ -42,7 +42,7 @@
                 
                 <!-- Input Username -->
                 <div class="input-box">
-                    <input type="text" id="username" name="username" placeholder="Username" required>
+                    <input type="text" id="username" placeholder="Username" autofocus required>
                 </div>
 
                 <!-- Input Password -->
@@ -54,11 +54,12 @@
                 <div class="forgot-password">
                     <a href="/forgot-pass">*Forgot Password</a>
                 </div>
-                <div class="forgot-password">
-                    <a href="/deldeals/redirect" class="social-login-button">Lanjutkan dengan Google</a>
-                </div>
-
                 <button type="submit" class="login-btn">LOG IN</button>
+                <div class="login-wgoogle">
+                    <a href="/deldeals/redirect" class="social-login-button">
+                        <u>Lanjutkan dengan Google</u>
+                    </a>
+                </div>
             </form>
         </div>
     </div>
