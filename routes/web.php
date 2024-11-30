@@ -7,6 +7,13 @@ use App\Http\Controllers\ItemController;
 
 use App\Http\Controllers\AuthController;
 
+Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
+Route::post('/login', [AuthController::class, 'login']);
+Route::get('/utama', function () {
+    return 'Selamat datang di Dashboard!';
+})->middleware('auth');
+
+
 // Rute untuk login
 Route::post('/login', [AuthController::class, 'login']);
 
