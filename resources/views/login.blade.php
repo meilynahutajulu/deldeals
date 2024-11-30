@@ -31,7 +31,7 @@
                 @csrf
                 <!-- Tampilkan Pesan Error -->
                 @if($errors->any())
-                    <div style="color: red;">
+                    <div style="color: rgb(195, 49, 49);">
                         <ul>
                             @foreach ($errors->all() as $error)
                                 <li>{{ $error }}</li>
@@ -42,12 +42,12 @@
                 
                 <!-- Input Username -->
                 <div class="input-box">
-                    <input type="text" id="username" placeholder="Username" autofocus required>
+                    <input type="text" name ="username" id="username" placeholder="Username" autofocus required>
                 </div>
 
                 <!-- Input Password -->
                 <div class="input-box">
-                    <input type="password" id="password" name="password" placeholder="Password" required>
+                    <input type="password" name="password" id="password" name="password" placeholder="Password" required>
                 </div>
 
                 <!-- Lupa Password -->
