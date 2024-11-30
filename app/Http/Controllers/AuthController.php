@@ -33,7 +33,7 @@ class AuthController extends Controller
             Auth::login($pengguna);
 
             // Redirect ke dashboard
-            return redirect('/utama')->with('success', 'Login berhasil!');
+            return redirect('/main')->with('success', 'Login berhasil!');
         }
 
         // Jika login gagal
