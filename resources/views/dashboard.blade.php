@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/dashboard.css">
     
 </head>
 <body>
@@ -13,7 +13,7 @@
     @include('layout.wallpaper')
     <div class="container">
         <div class="login-box">
-            <h1>Welcom to DelDeals</h1>
+            <h1>Welcome to</h1>
             <div class="logo">
                 <img src="img/logo.jpg" alt="DelDeals Logo">
             </div>

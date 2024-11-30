@@ -31,7 +31,7 @@
                     <input type="password" id="confirm" placeholder="Confirm Password" required>
                 </div>
                 <p id="result"></p>
-                <button type="submit" class="change-button">CHANGE</button>
+                <button type="submit" class="change-button">LOGIN</button>
             </form>
         </div>
     </div>

@@ -27,3 +27,8 @@ function sendOtp(){
         return false; // Mencegah form di-submit
     }
 }
+
+function success(){
+    window.location.href = '/login'; // Pindah ke halaman home
+    return false; // Mencegah form di-submit ulang
+}
