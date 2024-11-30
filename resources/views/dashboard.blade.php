@@ -20,7 +20,7 @@
             <h1>Temukan, Tawar, Transaksi..</h1>
             <form >
                 <button type="submit" class="sign-up-btn">
-                <a href="/login" onclick="login()">ENTER</a>
+                    <a href="/login" onclick="login()">ENTER</a>
                 </button>
             </form>
         </div>

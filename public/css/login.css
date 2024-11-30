@@ -109,13 +109,13 @@ body {
 }
 
 .sign-in-btn {
-    background-color: #000000; /* Hijau untuk tombol Sign In */
+    background-color: #000000;
     color: white;
     position: absolute;
     border: none;
     border-radius: 5px;     
-    top: 5%;
-    right: 5%;
+    top: 2px;
+    right: 2px;
     width: 75px;
     height: 30px;
 }
@@ -125,11 +125,26 @@ body {
 }
 
 .login-btn{
-    background-color: #000000; /* Hijau untuk tombol Sign In */
+    background-color: #000000;
     color: white;
     position: relative;
     border: none;
     border-radius: 20px;  
     width: 100px;
     height: 35px;
+}
+
+.login-wgoogle {
+    text-align: center;
+    font-size: 12px;
+    margin-bottom: 20px;
+}
+
+.login-wgoogle a {
+    text-decoration: none;
+    color: #333;
+}
+
+u{
+    font-size: 14px;
 }
