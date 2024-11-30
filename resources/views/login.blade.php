@@ -32,6 +32,9 @@
                 <div class="forgot-password">
                     <a href="/forgot-pass">*Forgot Password</a>
                 </div>
+                <div class="forgot-password">
+                    <a href="/deldeals/redirect" class="social-login-button">Lanjutkan dengan Google</a>
+                </div>
                 <button type="submit" class="login-btn">LOG IN</button>
             </form>
         </div>
