@@ -3,45 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DelDeals Dashboard</title>
-    <link rel="stylesheet" href="{{ asset('css/tokosaya.css') }}">
+    <title>DELDEALS</title>
+    <link rel="stylesheet" href="css/tokosaya.css">
 </head>
 <body>
-    
-    @include('layout.wallpaper')
-
-    <form action=""></form>
+<!-- wallpaper -->
+@include('layout.wallpaper')
     <div class="container">
+        <!-- Sidebar with Logo -->
         @include('layout.sidebar')
-        @include('layout.searchbar')
-        
-        <!-- Main Content -->
+
+        <!-- Main content area -->
         <main class="content">
-            <section class="product-list">
-                <!-- Product Cards -->
+            <!-- Search bar -->
+        @include('layout.searchbar')
+
+        @if($items->isEmpty())
+            <p>Tidak ada produk yang tersedia.</p>
+        @else
+            @foreach ($items as $item)
                 <div class="product-card">
                     <div class="image-container">
-                        <img src="{{ asset('img/Tuperware.jpeg') }}" alt="Tumbler Tupperware">
+                        <img src="{{ asset($item->image_path) }}" alt="{{ $item->name }}">
                     </div>
-                    <h3>Tumbler Tupperware</h3>
-                    <p>Rp 100.000</p>
+                    <h3>{{ $item->name }}</h3>
+                    <p>Rp {{ number_format($item->price, 2, ',', '.') }}</p>
                     <button class="add-to-cart">+</button>
                 </div>
-                
-                <div class="product-card">
-                    <div class="image-container">
-                        <img src="{{ asset('img/keyboard.jpg') }}" alt="Keyboard RGB">
-                    </div>
-                    <h3>Keyboard RGB</h3>
-                    <p>Rp 200.000</p>
-                    <button class="add-to-cart">+</button>
-                </div>
-                <!-- Tambahkan produk lainnya dengan struktur yang sama -->
-            </section>
-        </main>
-        <button type="button" class="add-btn" onclick="location.href='masukkan link';">Add New Item</button>
+            @endforeach
+        @endif
+        
+        <button class="add-btn" onclick="location.href='/add-items'">Add New Items</button>
+
     </div>
 
-    <script src="{{ asset('js/app.js') }}"></script>
+        </main>
+    </div>
 </body>
 </html>

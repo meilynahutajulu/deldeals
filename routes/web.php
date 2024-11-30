@@ -4,20 +4,9 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ItemController;
+use App\Http\Controllers\Auth\SocialiteController as DelDealsSocialiteController; 
+use App\Http\Controllers\TokoSayaController;
 
-use App\Http\Controllers\AuthController;
-
-Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
-Route::post('/login', [AuthController::class, 'login']);
-Route::get('/utama', function () {
-    return 'Selamat datang di Dashboard!';
-})->middleware('auth');
-
-
-// Rute untuk login
-Route::post('/login', [AuthController::class, 'login']);
-
-// Rute lainnya...
 Route::get('/', function () {
     return view('dashboard');
 });
@@ -44,6 +33,10 @@ Route::get('/registrasi', function () {
 
 Route::get('/tokosaya', function () {
     return view('tokosaya');
+});
+
+Route::get('/pengaturan', function () {
+    return view('pengaturan');
 });
 
 Route::get('/profile', function () {
@@ -85,13 +78,19 @@ Route::get('/succPass', function () {
     return view('passChangeSuccess');
 });
 
-Route::get('/utama', function () {
-    return view('utama');
-});
-
-Route::get('/index', function () {
-    return view('index');
-});
-
 Route::get('/pengguna', [UserController::class, 'index'])->name('pengguna.index');
+
+Route::get('/add-items', function () {
+    return view('add-items');
+});
+
+
+Route::get('/shop', [ItemController::class, 'index'])->name('shop');
+
+Route::post('/add-item', [ItemController::class, 'store']);
+
+Route::get('/deldeals/redirect', [DelDealsSocialiteController::class, 'redirect']);
+Route::get('/deldeals/google/callback', [DelDealsSocialiteController::class, 'callback']);
+
+Route::get('/tokosaya', [TokoSayaController::class, 'index']);
 
