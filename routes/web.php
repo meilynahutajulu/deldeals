@@ -6,6 +6,14 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\ItemController;
 use App\Http\Controllers\Auth\SocialiteController as DelDealsSocialiteController; 
 use App\Http\Controllers\TokoSayaController;
+use App\Http\Controllers\AuthController;
+
+Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
+Route::post('/login', [AuthController::class, 'login']);
+Route::get('/dashboard', function () {
+    return 'Selamat datang di Dashboard!';
+})->middleware('auth');
+
 
 Route::get('/', function () {
     return view('dashboard');
