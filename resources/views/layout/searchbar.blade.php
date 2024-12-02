@@ -42,10 +42,6 @@
                     @include('layout.infoicon')
                 </div>
             </div>
-
-            
-            
-            <button class="add-btn" onclick="location.href='/add-items'">Add New Items</button>
         </main>
     </div>
 </body>
