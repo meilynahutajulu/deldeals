@@ -89,3 +89,30 @@
 .profile-dropdown.show {
     display: block; /* Menampilkan dropdown ketika class 'show' ditambahkan */
 }
+
+/* resources/css/tokosaya.css
+.search-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.search-container input[type="text"] {
+    width: 70%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.search-container button {
+    padding: 10px;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.search-container button:hover {
+    background-color: #444;
+} */

@@ -9,15 +9,15 @@
     margin-left: 300px;
     margin-top: 80px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.795);
-    flex-direction: row; /* Mengatur elemen di dalam profile-card secara horizontal */
+    flex-direction: row;
 }
 
-h1{
+h1 {
     display: flex;
     font-size: 25px;
 }
 
-h3{
+h3 {
     display: flex;
 }
 
@@ -56,68 +56,55 @@ button:hover {
     background-color: #939393;
 }
 
-
-.edit-btn {
-    background-color: #464646;
-    color: white;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 20px;
-    cursor: pointer;
-    font-size: 16px;
-    margin-top: 20px; /* Memberikan jarak di atas tombol */
-    margin-left: 1000px; /* Menyelaraskan tombol ke posisi kiri yang sama dengan profile-card */
-}
-
-.edit-btn:hover {
-    background-color: #939393;
+/* Update untuk posisi tombol Edit Profil */
+#view-section button {
+    position: absolute; /* Menggunakan posisi absolut */
+    right: 50px;  /* Mengatur posisi kiri tombol */
+    bottom: 20px; /* Mengatur posisi bawah tombol */
 }
 
 /* Styling untuk search bar */
 .search-bar {
     display: flex;
     position: fixed;
-    margin-left: 0; /* Atur margin kiri dengan angka atau hilangkan jika tidak diperlukan */
+    margin-left: 0;
     top: 0px;
-    left: 250px; /* Atur posisi kiri agar sesuai dengan layout */
+    left: 250px;
     justify-content: space-between;
-    width: calc(100% - 290px); /* Lebar search bar dikurangi dengan 300px */
+    width: calc(100% - 290px);
     align-items: center;
     padding: 20px;
-    background-color: rgb(255, 255, 255); /* Transparansi background */
+    background-color: rgb(255, 255, 255);
     border-radius: 0px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    border-bottom: 1px solid rgb(0, 0, 0); /* Border bawah */
+    border-bottom: 1px solid rgb(0, 0, 0);
 }
 
-/* Styling untuk ikon dalam search bar */
 .search-bar .icons {
     display: flex;
     align-items: center;
-    gap: 10px; /* Jarak antar ikon */
-    position: relative; /* Posisi relatif untuk dropdown atau elemen yang melayang */
+    gap: 10px;
+    position: relative;
     margin-left: 10px;
 }
 
-/* Styling untuk svg dalam search bar */
 .search-bar .icons svg {
-    width: 27px; /* Ukuran default ikon */
-    height: 27px; /* Ukuran default ikon */
-    cursor: pointer; /* Ubah cursor menjadi pointer untuk ikon yang bisa diklik */
-    transition: transform 0.2s ease-in-out; /* Efek animasi saat ikon diklik */
+    width: 27px;
+    height: 27px;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
     margin-top: 1px;
     gap: 4px;
     padding: px;
 }
 
 .search-bar .icons svg:hover {
-    transform: scale(1.1); /* Memperbesar ikon saat hover */
+    transform: scale(1.1);
 }
 
-/* Styling untuk div dengan svg di dalam .icons */
 .search-bar .icons div {
     display: flex;
     align-items: center;
-    gap: 10px; /* Mengatur jarak antar ikon */
+    gap: 10px;
     position: relative;
 }

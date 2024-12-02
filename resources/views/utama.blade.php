@@ -7,62 +7,28 @@
     <link rel="stylesheet" href="{{ asset('css/utama.css') }}">
 </head>
 <body>
-    
     @include('layout.wallpaper')
     <div class="container">
         @include('layout.sidebar')
         @include('layout.searchbar')
-        
+
         <!-- Main Content -->
         <main class="content">
             <section class="product-list">
-                <!-- Product Cards -->
-                <div class="product-card">
-                    <div class="image-container">
-                        <img src="{{ asset('img/Tuperware.jpeg') }}" alt="Tumbler Tupperware">
-                    </div>
-                    <h3>Tumbler Tupperware</h3>
-                    <p>Rp 100.000</p>
-                    <button class="add-to-cart">+</button>
-                </div>
-                
-                <div class="product-card">
-                    <div class="image-container">
-                        <img src="{{ asset('img/keyboard.jpg') }}" alt="Keyboard RGB">
-                    </div>
-                    <h3>Keyboard RGB</h3>
-                    <p>Rp 200.000</p>
-                    <button class="add-to-cart">+</button>
-                </div>
-
-                <div class="product-card">
-                    <div class="image-container">
-                        <img src="{{ asset('img/FlashDisk.jpeg') }}" alt="Flashdisk">
-                    </div>
-                    <h3>FlashDisk</h3>
-                    <p>Rp 200.000</p>
-                    <button class="add-to-cart">+</button>
-                </div>
-
-                <div class="product-card">
-                    <div class="image-container">
-                        <img src="{{ asset('img/pin.jpg') }}" alt="Pin DEL">
-                    </div>
-                    <h3>Pin DEL</h3>
-                    <p>Rp 20.000</p>
-                    <button class="add-to-cart">+</button>
-                </div>
-
-                <div class="product-card">
-                    <div class="image-container">
-                        <img src="{{ asset('img/kaos-del.png') }}" alt="Kaos Del">
-                    </div>
-                    <h3>Kaos DEL</h3>
-                    <p>Rp 200.000</p>
-                    <button class="add-to-cart">+</button>
-                </div>
-
-                <!-- Tambahkan produk lainnya dengan struktur yang sama -->
+                @if(isset($items) && !$items->isEmpty())
+                    @foreach ($items as $item)
+                        <div class="product-card">
+                            <div class="image-container">
+                                <img src="{{ asset($item->image_path) }}" alt="{{ $item->name }}">
+                            </div>
+                            <h3>{{ $item->name }}</h3>
+                            <p>Rp {{ number_format($item->price, 2, ',', '.') }}</p>
+                            <button class="add-to-cart">+</button>
+                        </div>
+                    @endforeach
+                @else
+                    <p>Tidak ada produk yang tersedia.</p>
+                @endif
             </section>
         </main>
     </div>

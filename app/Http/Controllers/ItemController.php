@@ -30,4 +30,11 @@ class ItemController extends Controller
 
         return redirect()->route('shop')->with('success', 'Produk berhasil ditambahkan!');
     }
+    public function main() {
+        $items = Item::all(); // Fetch data from the database
+        return view('utama', compact('items'));
+    }
+
+    
+    
 }

@@ -7,12 +7,18 @@ use App\Models\Item; // Model untuk mengambil data dari database
 
 class TokoSayaController extends Controller
 {
-    public function index()
-    {
-        // Mengambil semua data dari database
-        $items = Item::all(); // Pastikan Item adalah model yang benar
+    public function index(Request $request)
+{
+    // Ambil query pencarian dari input
+    $search = $request->input('search');
 
-        // Mengirimkan data ke view tokosaya
-        return view('tokosaya', compact('items')); // Mengirimkan $items ke view
-    }
+    // Ambil semua data dari database, jika ada pencarian, filter berdasarkan nama
+    $items = Item::when($search, function ($query, $search) {
+        return $query->where('name', 'like', '%' . $search . '%');
+    })->get();
+
+    // Mengirimkan data ke view tokosaya
+    return view('tokosaya', compact('items', 'search')); // Mengirimkan $items dan $search ke view
+}
+    
 }
