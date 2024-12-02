@@ -8,6 +8,16 @@ use App\Http\Controllers\Auth\SocialiteController as DelDealsSocialiteController
 use App\Http\Controllers\TokoSayaController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ImageUploadController;
+use App\Http\Controllers\ProfileController;
+
+Route::get('/profile', [ProfileController::class, 'show'])->middleware('auth');
+Route::get('/editprofile', [ProfileController::class, 'editProfile'])->middleware('auth');
+Route::put('/profile', [ProfileController::class, 'update'])->name('pengguna.update');
+
+
+Route::get('/profile', [ProfileController::class, 'show'])->middleware('auth');
+Route::get('/editprofile', [ProfileController::class, 'editProfile'])->middleware('auth');
+
 
 Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [AuthController::class, 'authenticate']);

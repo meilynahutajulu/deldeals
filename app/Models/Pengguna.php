@@ -21,4 +21,6 @@ class Pengguna extends Authenticatable
         'created_at', 
         'updated_at'
     ];
+
+    protected $hidden = ['password'];
 }
