@@ -7,17 +7,17 @@
     padding: 50px;
     width: 700px;
     margin-left: 300px;
-    margin-top: 80px;
+    margin-top: 20px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.795);
-    flex-direction: row; /* Mengatur elemen di dalam profile-card secara horizontal */
+    flex-direction: row;
 }
 
-h1{
+h1 {
     display: flex;
     font-size: 25px;
 }
 
-h3{
+h3 {
     display: flex;
 }
 
@@ -33,7 +33,19 @@ h3{
     font-size: 16px;
 }
 
-.edit-btn {
+.profile-card strong {
+    margin-right: 20px;
+}
+
+.profile-details input {
+    font-size: 16px;
+    margin-bottom: 10px;
+    padding: 5px;
+    width: 100%;
+    border-radius: 50px;
+}
+
+button {
     background-color: #464646;
     color: white;
     padding: 10px 15px;
@@ -41,86 +53,143 @@ h3{
     border-radius: 20px;
     cursor: pointer;
     font-size: 16px;
-    margin-top: 20px; /* Memberikan jarak di atas tombol */
-    margin-left: 1000px; /* Menyelaraskan tombol ke posisi kiri yang sama dengan profile-card */
+    margin-top: 20px;
 }
 
-.edit-btn:hover {
+button:hover {
     background-color: #939393;
+}
+
+/* Update untuk posisi tombol Edit Profil */
+#view-section button {
+    position: absolute; /* Menggunakan posisi absolut */
+    right: 50px;  /* Mengatur posisi kiri tombol */
+    bottom: 20px; /* Mengatur posisi bawah tombol */
 }
 
 /* Styling untuk search bar */
 .search-bar {
     display: flex;
     position: fixed;
-    margin-left: 0; /* Atur margin kiri dengan angka atau hilangkan jika tidak diperlukan */
+    margin-left: 0;
     top: 0px;
-    left: 250px; /* Atur posisi kiri agar sesuai dengan layout */
+    left: 250px;
     justify-content: space-between;
-    width: calc(100% - 290px); /* Lebar search bar dikurangi dengan 300px */
+    width: calc(100% - 290px);
     align-items: center;
     padding: 20px;
-    background-color: rgb(255, 255, 255); /* Transparansi background */
+    background-color: rgb(255, 255, 255);
     border-radius: 0px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    border-bottom: 1px solid rgb(0, 0, 0); /* Border bawah */
+    border-bottom: 1px solid rgb(0, 0, 0);
 }
 
-/* Styling untuk ikon dalam search bar */
 .search-bar .icons {
     display: flex;
     align-items: center;
-    gap: 10px; /* Jarak antar ikon */
-    position: relative; /* Posisi relatif untuk dropdown atau elemen yang melayang */
+    gap: 10px;
+    position: relative;
     margin-left: 10px;
 }
 
-/* Styling untuk svg dalam search bar */
 .search-bar .icons svg {
-    width: 27px; /* Ukuran default ikon */
-    height: 27px; /* Ukuran default ikon */
-    cursor: pointer; /* Ubah cursor menjadi pointer untuk ikon yang bisa diklik */
-    transition: transform 0.2s ease-in-out; /* Efek animasi saat ikon diklik */
+    width: 27px;
+    height: 27px;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
     margin-top: 1px;
     gap: 4px;
     padding: px;
 }
 
 .search-bar .icons svg:hover {
-    transform: scale(1.1); /* Memperbesar ikon saat hover */
+    transform: scale(1.1);
 }
 
-/* Styling untuk div dengan svg di dalam .icons */
 .search-bar .icons div {
     display: flex;
     align-items: center;
-    gap: 10px; /* Mengatur jarak antar ikon */
+    gap: 10px;
     position: relative;
 }
 
-/* Styling untuk dropdown (jika ada) */
-.profile-dropdown {
-    position: absolute;
-    top: 0px; /* Posisi dropdown di bawah ikon */
-    right: 0;
-    background-color: rgba(255, 255, 255, 0);
-    border-radius: 5px;
-    display: none; /* Sembunyikan dropdown secara default */
-    z-index: 1000;
+h1 {
+    font-size: 50px;
+    margin-left: 300px;
+    margin-top: 30px;
+}   
+
+/* profile.css */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
 }
 
-.profile-dropdown a {
+.container {
+    max-width: 600px;
+    margin-left: 290px  ;
+    background: #ffffff;
+    padding: 20px 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
     display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
     padding: 10px;
-    text-decoration: none;
-    color: black;
+    border: 1px solid #ccc;
+    border-radius: 4px;
     font-size: 14px;
 }
 
-.profile-dropdown a:hover {
-    background-color: #f1f1f1;
+textarea {
+    height: 100px;
+    resize: none;
 }
 
-.profile-dropdown.show {
-    display: block; /* Menampilkan dropdown ketika class 'show' ditambahkan */
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 4px rgba(0, 123, 255, 0.2);
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
 }

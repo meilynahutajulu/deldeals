@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+{{-- <!DOCTYPE html>
 <html lang="id">
 <head>
     <meta charset="UTF-8">
@@ -42,4 +42,4 @@
         <a href="{{ route('register') }}" class="btn btn-primary">Tambah Pengguna Baru</a>
     </div>
 </body>
-</html>
+</html> --}}

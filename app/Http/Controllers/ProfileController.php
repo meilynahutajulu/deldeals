@@ -2,24 +2,31 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Http\Request;
+namespace App\Http\Controllers;
+
 use App\Models\Pengguna;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class ProfileController extends Controller
 {
-    public function show()
+    public function profile()
     {
-        // $user = auth()->user(); 
         $user = Auth::user();
-        return view('profile', compact('user'));
+        return view('profile', [
+            'user' => $user,
+            'showSearchBar' => false,
+        ]);
     }
 
-    public function editProfile()
+    public function showEditProfile()
     {
-        // $user = auth()->user();
         $user = Auth::user();
-        return view('editprofile', compact('user'));
+        return view('editProfile',[
+            'user' => $user,
+            'showSearchBar' => false,
+        ]);
     }
 
     public function update(Request $request)

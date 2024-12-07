@@ -36,8 +36,8 @@ body {
 
 /* Product grid and product card styling */
 .product-grid {
-    margin-top: 90px;
-    margin-left: 260px; /* Jarak kiri untuk grid produk */
+    margin-top: 30px;
+    /* margin-left: 260px; Jarak kiri untuk grid produk */
     display: flex;
     flex-wrap: wrap; /* Membungkus produk */
     gap: 20px; /* Jarak antar produk */
@@ -97,6 +97,8 @@ body {
 /* Product description styling */
 .product p {
     color: #ffffff; /* Warna teks putih */
+    text-align: center;
+    /* margin-left: 300px; */
 }
 
 /* Add new items button styling */

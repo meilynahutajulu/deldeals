@@ -1,69 +1,38 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profile Page</title>
-    <link rel="stylesheet" href="css/editprofile.css">  
-    <script>
-        function toggleEdit() {
-            document.getElementById('edit-section').style.display = 'block';
-            document.getElementById('view-section').style.display = 'none';
-        }
+@extends('layouts.app')
+@section('content')
 
-        function cancelEdit() {
-            document.getElementById('edit-section').style.display = 'none';
-            document.getElementById('view-section').style.display = 'block';
-        }
-    </script>
-</head>
-<body>
-    <!-- Wallpaper -->
-    @include('layout.wallpaper')
-    <div class="container">
-        <!-- Sidebar -->
-        @include('layout.sidebar')
+<h1>Edit Profil</h1>
+<div class="container">
+    <form action="{{ route('profile.update') }}" method="POST">
+        @csrf
 
-        <main class="profile-content">
-            <h1>Profil Pengguna</h1>
-            <!-- View Profile Section -->
-            <div id="view-section">
-                <div class="profile-card">
-                    <div class="profile-picture">
-                        <img src="{{ asset('img/profile.jpg') }}" alt="Profile Picture">
-                    </div>
-                    <div class="profile-details">
-                        <p><strong>Username:</strong> {{ $user->username }}</p>
-                        <p><strong>Nama Lengkap:</strong> {{ $user->full_name }}</p>
-                        <p><strong>NIM:</strong> {{ $user->nim }}</p>
-                        <p><strong>Email:</strong> {{ $user->email }}</p>
-                    </div>
-                </div>
-                <button onclick="toggleEdit()">Edit Profil</button>
-            </div>
+        <div class="form-group">
+            <label for="full_name">Nama Lengkap</label>
+            <input type="text" id="full_name" name="full_name" class="form-control" value="{{ old('full_name', $user->full_name) }}" required>
+        </div>
 
-            <!-- Edit Profile Section -->
-            <div id="edit-section" style="display: none;">
-                <form action="{{ route('pengguna.update') }}" method="POST">
-                    @csrf
-                    @method('PUT')
-                    <label>Username:</label>
-                    <input type="text" name="username" value="{{ $user->username }}" required>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" class="form-control" value="{{ old('email', $user->email) }}" required>
+        </div>
 
-                    <label>Nama Lengkap:</label>
-                    <input type="text" name="full_name" value="{{ $user->full_name }}" required>
+        <div class="form-group">
+            <label for="nim">NIM</label>
+            <input type="text" id="nim" name="nim" class="form-control" value="{{ old('nim', $user->nim) }}" required>
+        </div>
 
-                    <label>NIM:</label>
-                    <input type="text" name="nim" value="{{ $user->nim }}" required>
+        <div class="form-group">
+            <label for="telepon">No. Telp</label>
+            <input type="text" id="telepon" name="telepon" class="form-control" value="{{ old('telepon', $user->telepon) }}">
+        </div>
 
-                    <label>Email:</label>
-                    <input type="email" name="email" value="{{ $user->email }}" required>
+        <div class="form-group">
+            <label for="alamat">Alamat</label>
+            <textarea id="alamat" name="alamat" class="form-control" >{{ old('alamat', $user->alamat) }}</textarea>
+        </div>
 
-                    <button type="submit">Simpan</button>
-                    <button type="button" onclick="cancelEdit()">Batal</button>
-                </form>
-            </div>
-        </main>
-    </div>
-</body>
-</html>
+        <button type="submit" class="btn btn-primary">Simpan Perubahan</button>
+    </form>
+</div>
+
+@endsection

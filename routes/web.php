@@ -13,20 +13,27 @@ use App\Http\Controllers\ProfileController;
 // Route for main item page
 Route::get('/main', [ItemController::class, 'main'])->name('main');
 
+
 // Toko Saya routes
 Route::get('/tokosaya', [TokoSayaController::class, 'index']);
 
+
+Route::get('/profile', [ProfileController::class, 'profile'])->name('profile');
+Route::get('/profile/edit', [ProfileController::class, 'showEditProfile'])->name('profile.edit');
+Route::post('/profile/update', [ProfileController::class, 'update'])->name('profile.update');
+
+
 // Profile routes with authentication middleware
-Route::get('/profile', [ProfileController::class, 'show'])->middleware('auth');
-Route::get('/editprofile', [ProfileController::class, 'editProfile'])->middleware('auth');
-Route::put('/profile', [ProfileController::class, 'update'])->name('pengguna.update');
+// Route::get('/profile', [ProfileController::class, 'profile'])->middleware('auth')->name('pengguna.edit');
+// Route::put('/prof    ile', [ProfileController::class, 'update'])->name('pengguna.update');
 
 // Authentication routes
-Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
+Route::get('/login', [AuthController::class, 'login'])->middleware('guest')->name('login');
 Route::post('/login', [AuthController::class, 'authenticate']);
+Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 Route::get('/dashboard', function () {
     return view('dashboard');
-})->middleware('auth');
+});
 
 // Static pages
 Route::get('/', function () {
@@ -49,8 +56,8 @@ Route::get('/keranjang', function () {
 });
 
 // Registration routes
-Route::get('/registrasi', [UserController::class, 'create'])->name('register');
-Route::post('/registrasi', [UserController::class, 'store'])->name('pengguna.store');
+Route::get('/registrasi', [UserController::class, 'create'])->name('register')->middleware('guest');
+Route::post('/registrasi', [UserController::class, 'store'])->name('pengguna.store')->middleware('guest');
 
 // Password recovery routes
 Route::get('/forgot_password', function () {

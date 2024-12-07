@@ -34,7 +34,4 @@ class ItemController extends Controller
         $items = Item::all(); // Fetch data from the database
         return view('utama', compact('items'));
     }
-
-    
-    
 }

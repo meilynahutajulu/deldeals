@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DelDeals Dashboard</title>
-    <link rel="stylesheet" href="{{ asset('css/utama.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/layout/utama.css') }}">
 </head>
 <body>
     @include('layout.wallpaper')
