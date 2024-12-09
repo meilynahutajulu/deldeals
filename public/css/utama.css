@@ -1,4 +1,4 @@
-    /* Untuk layout container */
+  /* Untuk layout container */
     .container {
         display: flex;
     }
@@ -96,4 +96,4 @@
         margin-inline-start: 0px;
         margin-inline-end: 0px;
         color: #ffffff;
-    }
+    } 

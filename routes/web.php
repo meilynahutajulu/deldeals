@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ItemController;
+use App\Http\Controllers\penggunacontroller;
+
 use App\Http\Controllers\Auth\SocialiteController as DelDealsSocialiteController; 
 use App\Http\Controllers\TokoSayaController;
 use App\Http\Controllers\AuthController;
@@ -76,16 +78,3 @@ Route::get('/succPass', function () {
 // User management routes
 Route::get('/pengguna', [UserController::class, 'index'])->name('pengguna.index');
 
-// Item management routes
-Route::get('/shop', [ItemController::class, 'index'])->name('shop');
-Route::post('/add-item', [ItemController::class, 'store']);
-Route::get('/add-items', function () {
-    return view('add-items');
-});
-
-// Google Socialite login routes
-Route::get('/deldeals/redirect', [DelDealsSocialiteController::class, 'redirect']);
-Route::get('/deldeals/google/callback', [DelDealsSocialiteController::class, 'callback']);
-
-// Image upload route
-Route::get('/upload', [ImageUploadController::class, 'store']);

@@ -24,8 +24,8 @@
                     <img src="img/Tuperware.jpeg" alt="Tumbler Tupperware">
                     <h2>Tumbler Tupperware</h2>
                     <p>Rp 100.000</p>
+                    <a href="itemdetails.php?item=tumbler">
                     <button class="add-to-cart">@include('layout.button_add')</button>
-                          
                 </div>
                 <div class="product">
                     <img src="img/FlashDisk.jpeg" alt="FlashDisk">
