@@ -56,6 +56,9 @@ Route::get('/forgot-pass', function () {
 Route::get('/keranjang', function () {
     return view('keranjang');
 });
+Route::get('/add-items', function () {
+    return view('add-items');
+});
 
 // Registration routes
 Route::get('/registrasi', [UserController::class, 'create'])->name('register')->middleware('guest');
