@@ -39,9 +39,6 @@
 
                 <!-- Ikon Keranjang -->
                 @include('layout.carticon')
-
-                <!-- Ikon Informasi -->
-                @include('layout.infoicon')
             </div>
         </div>
     </main>

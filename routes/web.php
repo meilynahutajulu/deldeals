@@ -36,6 +36,9 @@ Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 Route::get('/dashboard', function () {
     return view('dashboard');
 });
+Route::get('/deldeals/redirect', function () {
+    return view('deldeals/redirect');
+});
 
 // Static pages
 Route::get('/', function () {

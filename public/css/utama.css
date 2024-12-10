@@ -3,11 +3,6 @@
         display: flex;
     }
 
-    /* Styling sidebar */
-    .sidebar {
-        width: 20%;
-    }
-
     /* Main content styling */
     .content {
         margin-left: 250px; /* Memberi ruang untuk sidebar */

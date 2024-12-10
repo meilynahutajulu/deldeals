@@ -4,9 +4,9 @@
     position: fixed;
     margin-left: 0; /* Atur margin kiri dengan angka atau hilangkan jika tidak diperlukan */
     top: 0px;
-    left: 250px; /* Atur posisi kiri agar sesuai dengan layout */
+    left: 270px; /* Atur posisi kiri agar sesuai dengan layout */
     justify-content: space-between;
-    width: calc(100% - 260px); /* Lebar search bar dikurangi dengan 300px */
+    width: calc(100% - 280px); /* Lebar search bar dikurangi dengan 300px */
     align-items: center;
     padding: 5px;
     background-color: rgba(255, 255, 255, 0); /* Transparansi background */
@@ -19,7 +19,7 @@
 /* Styling untuk input pada search bar */
 .search-bar input {
     width: 80%; /* Lebar input 80% dari container */
-    padding: 8px;
+    padding: 80px;
     border: 1px solid #ccc;
     border-radius: 20px; /* Membulatkan border */
     outline: none; /* Hilangkan outline pada fokus input */
@@ -27,15 +27,10 @@
     transition: border-color 0.3s ease; /* Efek transisi saat fokus pada input */
 }
 
-.search-bar input:focus {
-    border-color: #000000; /* Ubah warna border saat input mendapatkan fokus */
-}
+
 
 /* Styling untuk ikon dalam search bar */
 .search-bar .icons {
-    display: flex;
-    align-items: center;
-    gap: 10px; /* Jarak antar ikon */
     position: relative; /* Posisi relatif untuk dropdown atau elemen yang melayang */
     margin-left: 10px;
 }
@@ -62,57 +57,3 @@
     gap: 10px; /* Mengatur jarak antar ikon */
     /* position: relative; */
 }
-
-/* Styling untuk dropdown (jika ada) */
-.profile-dropdown {
-    position: absolute;
-    top: 0px; /* Posisi dropdown di bawah ikon */
-    right: 0;
-    background-color: rgba(255, 255, 255, 0);
-    border-radius: 5px;
-    display: none; /* Sembunyikan dropdown secara default */
-    z-index: 1000;
-}
-
-.profile-dropdown a {
-    display: block;
-    padding: 10px;
-    text-decoration: none;
-    color: black;
-    font-size: 14px;
-}
-
-.profile-dropdown a:hover {
-    background-color: #f1f1f1;
-}
-
-.profile-dropdown.show {
-    display: block; /* Menampilkan dropdown ketika class 'show' ditambahkan */
-}
-
-/* resources/css/tokosaya.css
-.search-container {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 20px;
-}
-
-.search-container input[type="text"] {
-    width: 70%;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-}
-
-.search-container button {
-    padding: 10px;
-    background-color: #000;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.search-container button:hover {
-    background-color: #444;
-} */
