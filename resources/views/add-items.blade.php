@@ -20,17 +20,20 @@
             </div>
 
             <!-- Form untuk input -->
+            <form action="{{ route('item.store')}}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="input-fields">
-                    <input type="file" id="image" name="image" accept="image/*" onchange="previewImage(event)">
-                    <input type="text" id="item-name" placeholder="Nama Barang">
-                    <input type="text" id="item-price" placeholder="Harga Barang">
-                    <textarea id="item-description" placeholder="Deskripsi Barang"></textarea>
+                    <input type="file" id="image" name="image" accept="image/*" onchange="previewImage(event)" required>
+                    <input type="text" id="item-name" name="name" placeholder="Nama Barang" required>
+                    <input type="text" id="item-price" name="price" placeholder="Harga Barang" required>
+                    <textarea id="item-description" name="description" placeholder="Deskripsi Barang" required></textarea>
                 </div>
                 <div class="button-group">
-                    <button type="submit" class="upload-button" onclick="location.href=''">Upload</button>
+                    <button type="submit" class="upload-button">Upload</button>
                     <button type="button" class="cancel-button" onclick="window.location.reload()">Batal</button>
                 </div>
+            </form>
+            
         </div>
     </div>
 

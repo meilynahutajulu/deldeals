@@ -11,23 +11,19 @@ use App\Http\Controllers\TokoSayaController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ImageUploadController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\MainController;
 
 // Route for main item page
-Route::get('/main', [ItemController::class, 'main'])->name('main');
+Route::get('/main', [MainController::class, 'index'])->name('main');
 
 
 // Toko Saya routes
-Route::get('/tokosaya', [TokoSayaController::class, 'index']);
+Route::get('/tokosaya', [TokoSayaController::class, 'index'])->name('tokosaya');
 
 
 Route::get('/profile', [ProfileController::class, 'profile'])->name('profile');
 Route::get('/profile/edit', [ProfileController::class, 'showEditProfile'])->name('profile.edit');
 Route::post('/profile/update', [ProfileController::class, 'update'])->name('profile.update');
-
-
-// Profile routes with authentication middleware
-// Route::get('/profile', [ProfileController::class, 'profile'])->middleware('auth')->name('pengguna.edit');
-// Route::put('/prof    ile', [ProfileController::class, 'update'])->name('pengguna.update');
 
 // Authentication routes
 Route::get('/login', [AuthController::class, 'login'])->middleware('guest')->name('login');
@@ -36,10 +32,7 @@ Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 Route::get('/dashboard', function () {
     return view('dashboard');
 });
-Route::get('/deldeals/redirect', function () {
-    return view('deldeals/redirect');
-});
-
+    
 // Static pages
 Route::get('/', function () {
     return view('dashboard');
@@ -84,3 +77,16 @@ Route::get('/succPass', function () {
 // User management routes
 Route::get('/pengguna', [UserController::class, 'index'])->name('pengguna.index');
 
+// Item management routes
+Route::get('/shop', [ItemController::class, 'index'])->name('shop');
+Route::post('/add-item', [ItemController::class, 'store'])->name('item.store');
+Route::get('/add-items', function () {
+    return view('add-items');
+});
+
+// Google Socialite login routes
+Route::get('/deldeals/redirect', [DelDealsSocialiteController::class, 'redirect']);
+Route::get('/deldeals/google/callback', [DelDealsSocialiteController::class, 'callback']);
+
+// Image upload route
+Route::get('/upload', [ImageUploadController::class, 'store']);

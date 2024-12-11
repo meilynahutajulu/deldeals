@@ -9,6 +9,7 @@ class Item extends Model
 {
     use HasFactory;
 
+    protected $table = 'items';
     // Tentukan kolom yang dapat diisi
-    protected $fillable = ['name', 'price', 'description', 'image_path'];
+    protected $fillable = ['name', 'price', 'description', 'image', 'user_id'];
 }

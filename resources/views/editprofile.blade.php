@@ -25,11 +25,12 @@
             <label for="telepon">No. Telp</label>
             <input type="text" id="telepon" name="telepon" class="form-control" value="{{ old('telepon', $user->telepon) }}">
         </div>
-
+        
         <div class="form-group">
             <label for="alamat">Alamat</label>
-            <textarea id="alamat" name="alamat" class="form-control" >{{ old('alamat', $user->alamat) }}</textarea>
+            <textarea id="alamat" name="alamat" class="form-control">{{ old('alamat', $user->alamat) }}</textarea>
         </div>
+        
 
         <button type="submit" class="btn btn-primary">Simpan Perubahan</button>
     </form>

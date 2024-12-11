@@ -20,19 +20,20 @@
             <!-- Search bar -->
 
             <div class="product-grid">
-                @if($items->isEmpty())
-                <p>Tidak ada produk yang tersedia.</p>
+                @if($item->isEmpty())
+                    <p>Tidak ada produk yang tersedia.</p>
                 @else
-                    @foreach ($items as $item)
+                    @foreach ($item as $items)
                         <div class="image-container">
-                            <img src="{{ asset($item->image_path) }}" alt="{{ $item->name }}">
+                            <img src="{{ asset('storage/' . $items->image) }}" alt="{{ $items->name }}">
                         </div>
-                        <h3>{{ $item->name }}</h3>
-                        <p>Rp {{ number_format($item->price, 2, ',', '.') }}</p>
+                        <h3>{{ $items->name }}</h3>
+                        <p>Rp {{ number_format($items->price, 2, ',', '.') }}</p>
                         <button class="add-to-cart">+</button>
                     @endforeach
                 @endif
             </div>
+            
             <button class="add-btn" onclick="location.href='/add-items'">Add New Items</button>
         </main>
     </div>

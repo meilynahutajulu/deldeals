@@ -14,22 +14,26 @@
 
         <!-- Main Content -->
         <main class="content">
-            <section class="product-list">
-                @if(isset($items) && !$items->isEmpty())
-                    @foreach ($items as $item)
-                        <div class="product-card">
+            
+                <div class="product-grid">
+                    @if($item->isEmpty())
+                        @if(request('search'))
+                            <p>Produk dengan nama "{{ request('search') }}" tidak ditemukan.</p>
+                        @else
+                            <p>Tidak ada produk yang tersedia.</p>
+                        @endif
+                    @else
+                        @foreach ($item as $items)
                             <div class="image-container">
-                                <img src="{{ asset($item->image_path) }}" alt="{{ $item->name }}">
+                                <img src="{{ asset('storage/' . $items->image) }}" alt="{{ $items->name }}">
                             </div>
-                            <h3>{{ $item->name }}</h3>
-                            <p>Rp {{ number_format($item->price, 2, ',', '.') }}</p>
+                            <h3>{{ $items->name }}</h3>
+                            <p>Rp {{ number_format($items->price, 2, ',', '.') }}</p>
                             <button class="add-to-cart">+</button>
-                        </div>
-                    @endforeach
-                @else
-                    <p>Tidak ada produk yang tersedia.</p>
-                @endif
-            </section>
+                        @endforeach
+                    @endif
+                </div>
+           
         </main>
     </div>
 
