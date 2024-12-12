@@ -45,4 +45,20 @@ class ItemController extends Controller
         $items = Item::all(); // Fetch data from the database
         return view('utama', compact('items'));
     }
+
+    public function remove($id)
+{
+    try {
+        // Cari item berdasarkan ID di tabel items
+        $item = Item::findOrFail($id);
+
+        // Hapus item dari tabel items
+        $item->delete();
+
+        return redirect()->back()->with('success', 'Barang berhasil dihapus.');
+    } catch (\Exception $e) {
+        return redirect()->back()->with('error', 'Terjadi kesalahan saat menghapus barang.');
+    }
+}
+
 }

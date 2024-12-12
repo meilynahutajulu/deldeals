@@ -91,3 +91,5 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::get('/item/{id}', [PenggunaController::class, 'show'])->name('item.details');
+
+Route::delete('/toko/{id}', [ItemController::class, 'remove'])->name('item.remove');

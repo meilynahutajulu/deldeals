@@ -28,9 +28,11 @@
                         </div>
                         <div class="card-footer">
                             <span class="text-title">Rp {{ number_format($items->price, 2, ',', '.') }}</span>
-                            <div class="card-button">
-                                <button class="btn-min" data-id="{{ $items->id }}">-</button>
-                            </div>
+                            <form action="{{ route('item.remove', $items->id) }}" method="POST" class="card-button">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn-min" onclick="return confirm('Yakin ingin menghapus barang ini?')">-</button>
+                            </form>
                         </div>
                     </div>
                 @endforeach
