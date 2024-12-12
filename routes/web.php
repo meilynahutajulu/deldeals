@@ -12,6 +12,7 @@ use App\Http\Controllers\ImageUploadController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\MainController;
 use Illuminate\Container\Attributes\Auth;
+use App\Http\Controllers\KeranjangController;
 
 // Route for main item page
 Route::get('/main', [MainController::class, 'index'])->name('main')->middleware('auth');
@@ -44,21 +45,7 @@ Route::post('/validasi-forgot-pass-act', [AuthController::class, 'validasiForgot
 Route::get('/', function () {
     return view('dashboard');
 });
-Route::get('/home', function () {
-    return view('home');
-});
-Route::get('/about', function () {
-    return view('about');
-});
-Route::get('/pengaturan', function () {
-    return view('pengaturan');
-});
-Route::get('/keranjang', function () {
-    return view('keranjang');
-});
-Route::get('/add-items', function () {
-    return view('add-items');
-});
+
 
 // Registration routes
 Route::get('/registrasi', [UserController::class, 'create'])->name('register')->middleware('guest');
@@ -95,10 +82,12 @@ Route::get('/deldeals/google/callback', [DelDealsSocialiteController::class, 'ca
 // Image upload route
 Route::get('/upload', [ImageUploadController::class, 'store']);
 
-use App\Http\Controllers\KeranjangController;
+
 
 Route::middleware('auth')->group(function () {
     Route::post('/keranjang/add/{id}', [KeranjangController::class, 'addToKeranjang'])->name('keranjang.add');
     Route::get('/keranjang', [KeranjangController::class, 'showKeranjang'])->name('keranjang');
     Route::delete('/keranjang/remove/{id}', [KeranjangController::class, 'removeFromKeranjang'])->name('keranjang.remove');
 });
+
+Route::get('/item/{id}', [PenggunaController::class, 'show'])->name('item.details');

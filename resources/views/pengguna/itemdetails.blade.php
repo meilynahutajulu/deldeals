@@ -37,18 +37,22 @@
                                     <img src="{{ asset($selectedItem['image']) }}" alt="{{ $selectedItem['name'] }}" class="img-fluid rounded" style="max-height: 300px;">
                                 </div>
                                 <!-- Product Information -->
-                                <div class="col-md-8">
-                                    <p><strong>Nama Barang:</strong> {{ $selectedItem['name'] }}</p>
-                                    <p><strong>Nama Penjual:</strong> {{ $selectedItem['seller'] }}</p>
-                                    <p class="fw-bold text-danger"><strong>Harga:</strong> Rp {{ number_format($selectedItem['price'], 0, ',', '.') }}</p>
-                                    <p><strong>Deskripsi:</strong> {{ $selectedItem['description'] }}</p>
-                                </div>
+                                @if(!empty($selectedItem))
+                            <div class="col-md-8">
+                             <p><strong>Nama Barang:</strong> {{ $selectedItem['name'] }}</p>
+                                 <p><strong>Nama Penjual:</strong> {{ $selectedItem['seller'] }}</p>
+                             <p class="fw-bold text-danger"><strong>Harga:</strong> Rp {{ number_format($selectedItem['price'], 0, ',', '.') }}</p>
+                                     <p><strong>Deskripsi:</strong> {{ $selectedItem['description'] }}</p>
+                                     </div>
+                                    <!-- @endif -->
                             </div>
                             <!-- Footer -->
                             <div class="card-footer text-center">
+                            @if(!empty($selectedItem['contact']))
                                 <a href="https://wa.me/{{ $selectedItem['contact'] }}" class="btn btn-success">
                                     <i class="bi bi-whatsapp"></i> Hubungi Penjual
-                                </a>
+                                     </a>
+                                @endif
                             </div>
                         </div>
                     </div>

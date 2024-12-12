@@ -11,5 +11,5 @@ class Item extends Model
 
     protected $table = 'items';
     // Tentukan kolom yang dapat diisi
-    protected $fillable = ['name', 'price', 'description', 'image', 'user_id'];
+    protected $fillable = ['name', 'price', 'description', 'image', 'user_id', 'contact'];
 }
