@@ -28,7 +28,7 @@
         
         <div class="form-group">
             <label for="alamat">Alamat</label>
-            <textarea id="alamat" name="alamat" class="form-control">{{ old('alamat', $user->alamat) }}</textarea>
+            <textarea id="alamat" name="alamat" class="form-control"  value="{{ old('alamat', $user->alamat) }}"></textarea>
         </div>
         
 

@@ -17,7 +17,9 @@ class Pengguna extends Authenticatable
         'full_name', 
         'email', 
         'nim', 
-        'password', 
+        'password',
+        'telepon', // Tambahkan kolom telepon
+        'alamat', // Tambahkan kolom alamat
         'created_at', 
         'updated_at'
     ];
