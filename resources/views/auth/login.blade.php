@@ -3,8 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>DelDeals Login</title>
     <link rel="stylesheet" href="css/login.css">
 </head>
@@ -12,34 +10,62 @@
 
     <!-- wallpaper -->
     @include('layout.wallpaper')
-    <form onsubmit="return signup()">
-        <div class = "sign-in-btn-box">
-        <button type="button" class="sign-in-btn" onclick="location.href='{{ url('/registrasi') }}';">SIGN UP</button>
+
+    <!-- Tombol SIGN UP -->
+    <form>
+        <div class="sign-in-btn-box">
+            <button type="button" class="sign-in-btn" onclick="location.href='{{ url('/registrasi') }}';">SIGN UP</button>
         </div>
     </form>
     
+    <!-- Container Utama -->
     <div class="container">
         <div class="login-box">
+            <!-- Logo -->
             <div class="logo">
                 <img src="img/logo.jpg" alt="DelDeals Logo">
             </div>
-            <form onsubmit="return login()"> <!-- Fungsi login dipanggil dari file eksternal -->
+
+            <!-- Form Login -->
+            <form action="{{ url('/login') }}" method="POST">
+                @csrf
+                <!-- Tampilkan Pesan Error -->
+                @if($errors->any())
+                    <div style="color: rgb(195, 49, 49);">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
+                
+                <!-- Input Username -->
                 <div class="input-box">
-                    <input type="text" id="username" placeholder="Username" required>
+                    <input type="text" name ="username" id="username" placeholder="Username" autofocus required>
                 </div>
+
+                <!-- Input Password -->
                 <div class="input-box">
-                    <input type="password" id="password" placeholder="Password" required>
+                    <input type="password" name="password" id="password" name="password" placeholder="Password" required>
                 </div>
-                <div class="forgot-password">
-                    <a href="/forgot-pass">*Forgot Password</a>
-                </div>
+
+                <!-- Lupa Password -->
+                <form action="{{route('forgot-password')}}">
+                    <div class="forgot-password">
+                        <a href="/forgot-pass">*Forgot Password</a>
+                    </div>
+                </form>
                 <button type="submit" class="login-btn">LOG IN</button>
+                <div class="login-wgoogle">
+                    <a href="/deldeals/redirect" class="social-login-button">
+                        <u>Lanjutkan dengan Google</u>
+                    </a>
+                </div>
             </form>
         </div>
     </div>
 
-    <!-- Link ke file JavaScript eksternal -->
-    <!-- <script src="js/login.js"></script> -->
 </body>
 </html>
 

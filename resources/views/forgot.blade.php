@@ -20,21 +20,26 @@
             </div>
 
             
-            <form onsubmit="return sendOtp()"> <!-- Fungsi otp dipanggil dari file eksternal -->
+            <form action="{{route('forgot-password-act')}}" method="POST"> <!-- Fungsi otp dipanggil dari file eksternal -->
+                @csrf
+                
                 <div class="text-box">
                     <h1>Forgot Password</h1>
                     <p>Enter your register email address</p>
                 </div>
                 <div class="input-box">
-                    <input type="email" id="email" placeholder="Email" required>
+                    <input type="email" id="email" name="email" placeholder="Email" required>
                 </div>
                 <p id = "result"></p>
-                <button type="submit" class="send-otp-btn">SEND OTP</button>
+                <button type="submit" class="send-otp-btn">SUBMIT</button>
+                
+                @if ($errors->has('email'))
+                    <div class="alert alert-danger">
+                        {{ $errors->first('email') }}
+                    </div>
+                @endif
             </form>
         </div>
     </div>
-
-    <!-- Link ke file JavaScript eksternal -->
-    <script src="js/changePassword.js"></script>
 </body>
 </html>
