@@ -20,17 +20,25 @@
             </div>
 
             
-            <form onsubmit="return changePass()"> <!-- Fungsi otp dipanggil dari file eksternal -->
+            <form action="{{ route('validasi-forgot-pass-act')}}" method="POST"> <!-- Fungsi otp dipanggil dari file eksternal -->
+                @csrf
+                <input type="hidden" name="token" value="{{$token}}">
                 <div class="text-box">
                     <h1>CHANGE YOUR PASSWORD</h1>
                 </div>
                 <div class="input-box">
-                    <input type="password" id="new" placeholder="New Password" required>
+                    <input type="password" name="password" placeholder="New Password" required>
                 </div>
-                <div class="input-box">
+                {{-- <div class="input-box">
                     <input type="password" id="confirm" placeholder="Confirm Password" required>
                 </div>
+                 --}}
+                @error('password')
+                    <small>{{ $message }}</small>  
+                @enderror
+
                 <p id="result"></p>
+                
                 <button type="submit" class="change-button">LOGIN</button>
             </form>
         </div>

@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ItemController;
 use App\Http\Controllers\penggunacontroller;
@@ -12,9 +11,10 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ImageUploadController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\MainController;
+use Illuminate\Container\Attributes\Auth;
 
 // Route for main item page
-Route::get('/main', [MainController::class, 'index'])->name('main');
+Route::get('/main', [MainController::class, 'index'])->name('main')->middleware('auth');
 
 
 // Toko Saya routes
@@ -33,6 +33,13 @@ Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 //     return view('dashboard');
 // });
     
+
+Route::get('/forgot-pass', [AuthController::class, 'forgotPass'])->name('forgot-password');
+Route::post('/forgot-pass-act', [AuthController::class, 'forgotPassAct'])->name('forgot-password-act');
+Route::get('/validasi-forgot-pass/{token}', [AuthController::class, 'validasiForgotPass'])->name('validasi-forgot-pass');
+Route::post('/validasi-forgot-pass-act', [AuthController::class, 'validasiForgotPassAct'])->name('validasi-forgot-pass-act');
+
+
 // Static pages
 Route::get('/', function () {
     return view('dashboard');
@@ -45,9 +52,6 @@ Route::get('/about', function () {
 });
 Route::get('/pengaturan', function () {
     return view('pengaturan');
-});
-Route::get('/forgot-pass', function () {
-    return view('forgot');
 });
 Route::get('/keranjang', function () {
     return view('keranjang');
@@ -66,13 +70,13 @@ Route::get('/forgot_password', function () {
 });
 Route::get('/otp', function () {
     return view('otp');
-});
+})->name('otp');
 Route::get('/change-password', function () {
     return view('changePassword');
 });
 Route::get('/succPass', function () {
     return view('passChangeSuccess');
-});
+})->name('succPass');
 
 // User management routes
 Route::get('/pengguna', [UserController::class, 'index'])->name('pengguna.index');

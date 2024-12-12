@@ -52,7 +52,7 @@
 
                 <!-- Lupa Password -->
                 <div class="forgot-password">
-                    <a href="/forgot-pass">*Forgot Password</a>
+                    <a href="{{route('forgot-password')}}">*Forgot Password</a>
                 </div>
                 <button type="submit" class="login-btn">LOG IN</button>
                 <div class="login-wgoogle">

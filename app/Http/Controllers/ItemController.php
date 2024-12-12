@@ -37,9 +37,8 @@ class ItemController extends Controller
             'user_id' => $user->id,
         ]);
 
-        $item = Item::all();
+        return redirect()->route('tokosaya');
 
-        return redirect()->route('tokosaya')->with('success', 'Item berhasil ditambahkan!');
     }
     
     public function main() {
