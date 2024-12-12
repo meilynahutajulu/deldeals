@@ -39,8 +39,7 @@ class ItemController extends Controller
 
         $item = Item::all();
 
-        return view('tokosaya', compact('item'))->with('success', 'Item berhasil ditambahkan!');
-
+        return redirect()->route('tokosaya')->with('success', 'Item berhasil ditambahkan!');
     }
     
     public function main() {

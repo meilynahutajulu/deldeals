@@ -5,9 +5,11 @@ body {
     background-size: cover; /* Menutupi seluruh halaman */
     background-repeat: no-repeat; /* Tidak mengulang gambar */
     background-position: center; /* Pusatkan gambar */
+    background-attachment: fixed; /* Gambar latar belakang tidak bergerak saat di-scroll */
     height: 100vh; /* Tinggi body memenuhi layar */
     margin: 0; /* Hapus margin default */
 }
+
 
 /* Container for the entire layout */
 .container {
@@ -15,102 +17,122 @@ body {
     height: 100vh; /* Full height of the viewport */
 }
 
-/* Paragraph styling within the container */
-.container p {
-    margin-left: 200px; /* Jarak kiri untuk paragraf */
-}
-
-/* Logo styling */
-.logo {
-    width: 200px;
-    margin-bottom: 20px;
-    margin-left: 20px;
-}
-
 /* Main content styling */
 .content {
     flex-grow: 1;
-    background-color: rgba(255, 255, 255, 0); /* Slightly transparent background */
+    background-color: rgba(255, 255, 255, 0); /* Transparan */
     padding: 20px;
 }
 
-/* Product grid and product card styling */
+/* Updated Card Container */
 .product-grid {
-    margin-top: 30px;
-    /* margin-left: 260px; Jarak kiri untuk grid produk */
-    display: flex;
-    flex-wrap: wrap; /* Membungkus produk */
-    gap: 20px; /* Jarak antar produk */
-    overflow-y: auto; /* Scroll jika konten melebihi tinggi */
-    height: 80vh; /* Tinggi grid produk */
+    display: flex; /* Use flexbox for layout */
+    flex-wrap: wrap; /* Allow cards to wrap to the next line */
+    justify-content: flex-start; /* Align cards to the start */
 }
 
-/* Individual product card styling */
-.product {
-    background-color: rgb(37, 37, 37); /* Warna latar belakang produk */
-    padding: 15px; /* Padding di dalam produk */
-    border-radius: 8px; /* Sudut membulat */
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Bayangan produk */
-    text-align: center; /* Teks di tengah */
-    max-width: 200px; /* Lebar maksimum produk */
-    flex: 1 1 200px; /* Skala fleksibel untuk produk */
-    display: flex;
-    flex-direction: column; /* Susunan vertikal */
-    justify-content: space-between; /* Ruang antara elemen */
-    height: 200px; /* Tinggi tetap untuk produk */
+/* Updated Card Styling */
+.card {
+    width: 190px; /* Width of each card */
+    height: 254px; /* Height of each card */
+    padding: 0.8em;
+    background: #f5f5f5;
+    position: relative;
+    overflow: visible;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-left: 200px;
+    margin-top: 50px;
 }
 
-/* Image styling within product */
-.product img {
-    max-width: 100%; /* Lebar maksimum gambar */
-    height: auto; /* Tinggi otomatis untuk menjaga rasio */
-    margin-bottom: 10px; /* Jarak bawah gambar */
+/* Card hover effect */
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* Add to cart button styling */
-.add-to-cart {
-    padding: 10px; /* Padding untuk tombol */
-    background-color: transparent; /* Latar belakang transparan */
-    color: rgb(255, 255, 255); /* Warna teks */
-    border: none; /* Tanpa border */
-    border-radius: 4px; /* Sudut membulat */
-    cursor: pointer; /* Pointer saat hover */
+/* Card image styling */
+.card-img {
+    background-color: #ffcaa6;
+    height: 40%;
+    width: 100%;
+    border-radius: 0.5rem;
+    transition: 0.3s ease;
+    overflow: hidden;
 }
 
-.add-to-cart:hover {
-    background-color: #ffffff; /* Latar belakang putih saat hover */
-    color: rgb(0, 0, 0); /* Warna teks hitam saat hover */
+.card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0.5rem;
 }
 
-/* Product title styling */
-.product h2 {
-    font-size: 16px; /* Ukuran font judul */
-    margin: 10px 0; /* Margin atas dan bawah */
-    flex-grow: 1; /* Memastikan judul produk tidak memperluas kontainer */
-    display: flex;
-    justify-content: center; /* Pusatkan teks */
-    align-items: center; /* Pusatkan vertikal */
-    text-align: center; /* Teks di tengah */
-    color: #ffffff; /* Warna teks putih */
-}
-
-/* Product description styling */
-.product p {
-    color: #ffffff; /* Warna teks putih */
+/* Card info styling */
+.card-info {
+    padding-top: 10%;
     text-align: center;
-    /* margin-left: 300px; */
 }
 
-/* Add new items button styling */
-.add-btn {
-    background-color: #000000; /* Latar belakang hitam */
-    color: #fff; /* Warna teks putih */
-    border: none; /* Tanpa border */
-    border-radius: 20px; /* Sudut membulat */
-    padding: 10px 20px; /* Padding atas-bawah dan kiri-kanan */
-    cursor: pointer; /* Pointer saat hover */
-    margin-bottom: 10px; /* Jarak bawah */
-    position: fixed; /* Tombol tetap di posisi layar */
-    bottom: 20px; /* Jarak dari bawah */
-    right: 20px; /* Jarak dari kanan */
+.text-title {
+    font-weight: 900;
+    font-size: 1.2em;
+    line-height: 1.5;
+    margin: 5px 0;
+}
+
+.text-body {
+    font-size: 0.9em;
+    padding-bottom: 10px;
+    color: #555;
+}
+
+/* Card footer */
+.card-footer {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 10px;
+    border-top: 1px solid #ddd;
+}
+
+/* Button */
+.card-button {
+    border: 1px solid #252525;
+    display: flex;
+    padding: 0.3em;
+    cursor: pointer;
+    border-radius: 50px;
+    transition: 0.3s ease-in-out;
+}
+
+.card-button:hover {
+    border: 1px solid #131312;
+    background-color: #292929;
+}
+
+/* Add visual feedback for buttons */
+.card-button:active {
+    transform: scale(0.95);
+    transition: transform 0.1s ease;
+}
+
+/* Responsive design for smaller screens */
+@media screen and (max-width: 768px) {
+    .card {
+        width: calc(50% - 20px); /* Adjust for 2 cards in a row on smaller screens */
+    }
+
+    .card-footer {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .card {
+        width: 100%; /* Full width for single column on very small screens */
+    }
 }
