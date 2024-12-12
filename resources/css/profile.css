@@ -1,32 +1,35 @@
+/* Reset dan font dasar */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, sans-serif;
 }
 
 body {
+    font-family: Arial, sans-serif;
+    background-color: #F4F4F4;
+    color: #333;
+}
+
+/* Container utama */
+.profile-container {
     display: flex;
     height: 100vh;
 }
 
-.container {
-    display: flex;
-    width: 100%;
-}
-
-.sidebar {
+/* Sidebar */
+.profile-sidebar {
     width: 250px;
-    background-color: #F4F4F9;
-    padding: 20px;
+    background-color: #FFF;
+    border-right: 1px solid #DDD;
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 20px;
 }
 
 .logo img {
-    width: 100px;
-    height: auto;
+    width: 80px;
     margin-bottom: 30px;
 }
 
@@ -42,22 +45,20 @@ nav ul li {
 nav ul li a {
     text-decoration: none;
     color: #333;
-    font-size: 18px;
-    display: block;
-    text-align: center;
-    padding: 10px;
+    font-size: 16px;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
     border-radius: 8px;
-    transition: background 0.3s;
 }
 
-nav ul li a.active,
 nav ul li a:hover {
-    background-color: #E0E0E0;
+    background-color: #F0F0F0;
 }
 
 .notification-dot {
-    width: 8px;
-    height: 8px;
+    width: 10px;
+    height: 10px;
     background-color: red;
     border-radius: 50%;
     display: inline-block;
@@ -66,22 +67,24 @@ nav ul li a:hover {
 
 .logout {
     margin-top: auto;
-    background-color: #FF6B6B;
-    color: white;
     padding: 10px 20px;
+    background-color: #FF6B6B;
+    color: #FFF;
     border: none;
     border-radius: 8px;
     cursor: pointer;
     font-size: 16px;
+    text-align: center;
 }
 
 .logout:hover {
-    background-color: #FF5252;
+    background-color: #E55959;
 }
 
+/* Konten Profil */
 .profile-content {
     flex: 1;
-    padding: 20px;
+    padding: 40px;
 }
 
 h1 {
@@ -90,19 +93,40 @@ h1 {
 }
 
 .profile-card {
-    display: flex;
-    background-color: #fff;
-    border: 1px solid #ddd;
+    background-color: #FFF;
+    border: 1px solid #DDD;
     border-radius: 10px;
-    padding: 20px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     width: 500px;
-} 
+    margin: 0 auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.profile-picture {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: #FFF; /* Latar belakang putih polos */
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border: 2px solid #DDD; /* Border abu-abu lembut */
+}
 
 .profile-picture img {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    margin-right: 20px;
+    width: 80%; /* Ukuran gambar tetap proporsional */
+    height: auto;
+    object-fit: cover; /* Jika gambar ada, tetap rapi */
+}
+
+.profile-details {
+    text-align: left;
+    width: 100%;
 }
 
 .profile-details p {
@@ -112,15 +136,15 @@ h1 {
 
 .edit-btn {
     background-color: #4CAF50;
-    color: white;
+    color: #FFF;
     padding: 10px 15px;
     border: none;
     border-radius: 8px;
     cursor: pointer;
     font-size: 16px;
-    margin-top: 10px;
+    margin-top: 20px;
 }
 
 .edit-btn:hover {
-    background-color: #45a049;
+    background-color: #45A049;
 }

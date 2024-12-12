@@ -29,9 +29,9 @@ Route::post('/profile/update', [ProfileController::class, 'update'])->name('prof
 Route::get('/login', [AuthController::class, 'login'])->middleware('guest')->name('login');
 Route::post('/login', [AuthController::class, 'authenticate']);
 Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
-Route::get('/dashboard', function () {
-    return view('dashboard');
-});
+// Route::get('/dashboard', function () {
+//     return view('dashboard');
+// });
     
 // Static pages
 Route::get('/', function () {

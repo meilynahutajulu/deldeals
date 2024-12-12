@@ -1,6 +1,6 @@
 /* Styling for the body with a background image */
 body {
-    font-family: Arial, sans-serif;
+    font-family: Georgia, ;
     background-image: url('img/wa.jpg'); /* Gambar wallpaper */
     background-size: cover; /* Menutupi seluruh halaman */
     background-repeat: no-repeat; /* Tidak mengulang gambar */
@@ -22,21 +22,21 @@ body {
     flex-grow: 1;
     background-color: rgba(255, 255, 255, 0); /* Transparan */
     padding: 20px;
+    position: center;
 }
 
 /* Updated Card Container */
 .product-grid {
-    display: flex; /* Use flexbox for layout */
     flex-wrap: wrap; /* Allow cards to wrap to the next line */
     justify-content: flex-start; /* Align cards to the start */
 }
 
 /* Updated Card Styling */
 .card {
-    width: 190px; /* Width of each card */
+    width: 250px; /* Width of each card */
     height: 254px; /* Height of each card */
     padding: 0.8em;
-    background: #f5f5f5;
+    background: #000000;
     position: relative;
     overflow: visible;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
@@ -80,12 +80,13 @@ body {
     font-size: 1.2em;
     line-height: 1.5;
     margin: 5px 0;
+    color: #ffffff;
 }
 
 .text-body {
     font-size: 0.9em;
     padding-bottom: 10px;
-    color: #555;
+    color: #ffffff;
 }
 
 /* Card footer */
@@ -94,29 +95,17 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-top: 10px;
     border-top: 1px solid #ddd;
 }
 
-/* Button */
-.card-button {
-    border: 1px solid #252525;
-    display: flex;
-    padding: 0.3em;
+.card-footer button {
+    background-color: #ff0000;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
     cursor: pointer;
-    border-radius: 50px;
-    transition: 0.3s ease-in-out;
-}
-
-.card-button:hover {
-    border: 1px solid #131312;
-    background-color: #292929;
-}
-
-/* Add visual feedback for buttons */
-.card-button:active {
-    transform: scale(0.95);
-    transition: transform 0.1s ease;
+    position: relative;
 }
 
 /* Responsive design for smaller screens */
