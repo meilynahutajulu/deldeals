@@ -136,3 +136,16 @@ body {
         width: 100%; /* Full width for single column on very small screens */
     }
 }
+
+.add-btn {
+    background-color: #000000; /* Latar belakang hitam */
+    color: #fff; /* Warna teks putih */
+    border: none; /* Tanpa border */
+    border-radius: 20px; /* Sudut membulat */
+    padding: 10px 20px; /* Padding atas-bawah dan kiri-kanan */
+    cursor: pointer; /* Pointer saat hover */
+    margin-bottom: 10px; /* Jarak bawah */
+    position: fixed; /* Tombol tetap di posisi layar */
+    bottom: 20px; /* Jarak dari bawah */
+    right: 20px; /* Jarak dari kanan */
+}
