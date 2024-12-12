@@ -90,3 +90,11 @@ Route::get('/deldeals/google/callback', [DelDealsSocialiteController::class, 'ca
 
 // Image upload route
 Route::get('/upload', [ImageUploadController::class, 'store']);
+
+use App\Http\Controllers\KeranjangController;
+
+Route::middleware('auth')->group(function () {
+    Route::post('/keranjang/add/{id}', [KeranjangController::class, 'addToKeranjang'])->name('keranjang.add');
+    Route::get('/keranjang', [KeranjangController::class, 'showKeranjang'])->name('keranjang');
+    Route::delete('/keranjang/remove/{id}', [KeranjangController::class, 'removeFromKeranjang'])->name('keranjang.remove');
+});

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DELDEALS - Keranjang</title>
-    <link rel="stylesheet" href="css/keranjang.css">
+    <link rel="stylesheet" href="{{ asset('css/keranjang.css') }}">
 </head>
 <body>
     <!-- wallpaper -->
@@ -20,29 +20,28 @@
 
             <!-- Cart items list -->
             <div class="cart-items">
+                @forelse ($keranjang as $item)
                 <div class="cart-item">
-                    <img src="img/Tuperware.jpeg" alt="Tumbler Tupperware">
+                    <img src="{{ asset('storage/' . $item->item->image) }}" alt="{{ $item->item->name }}">
                     <div class="cart-item-details">
-                        <h2>Tumbler Tupperware</h2>
-                        <p>Rp 100.000</p>
+                        <h2>{{ $item->item->name }}</h2>
+                        <p>Rp {{ number_format($item->item->price, 2, ',', '.') }}</p>
                     </div>
-                    <button class="remove-item">Hapus</button>
+                    <form action="{{ route('keranjang.remove', $item->item->id) }}" method="POST">
+                        @csrf
+                        @method('DELETE')
+                        <button class="remove-item">Hapus</button>
+                    </form>
                 </div>
+                @empty
+                <p>Keranjang Anda kosong.</p>
+                @endforelse
 
-                <div class="cart-item">
-                    <img src="img/Headset.jpeg" alt="Headset Gaming">
-                    <div class="cart-item-details">
-                        <h2>Headset Gaming</h2>
-                        <p>Rp 230.000</p>
-                    </div>
-                    <button class="remove-item">Hapus</button>
-                </div>
-
-                <!-- Tambahkan item keranjang lainnya di sini -->
-
+                @if($keranjang->isNotEmpty())
                 <div class="cart-total">
-                    <p>Total item: 2</p>
+                    <p>Total item: {{ $keranjang->count() }}</p>
                 </div>
+                @endif
             </div>
         </main>
     </div>
