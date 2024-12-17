@@ -15,11 +15,12 @@ use Illuminate\Container\Attributes\Auth;
 use App\Http\Controllers\KeranjangController;
 
 // Route for main item page
-Route::get('/main', [MainController::class, 'index'])->name('main')->middleware('auth');
+Route::get('/main', [MainController::class, 'index'])->name('main')->middleware('auth'); //menampilkan beranda
 
 
 // Toko Saya routes
 Route::get('/tokosaya', [TokoSayaController::class, 'index'])->name('tokosaya');
+
 
 
 Route::get('/profile', [ProfileController::class, 'profile'])->name('profile');
@@ -27,7 +28,7 @@ Route::get('/profile/edit', [ProfileController::class, 'showEditProfile'])->name
 Route::post('/profile/update', [ProfileController::class, 'update'])->name('profile.update');
 
 // Authentication routes
-Route::get('/login', [AuthController::class, 'login'])->middleware('guest')->name('login');
+Route::get('/login', [AuthController::class, 'login'])->name('login');
 Route::post('/login', [AuthController::class, 'authenticate']);
 Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 // Route::get('/dashboard', function () {
@@ -48,8 +49,8 @@ Route::get('/', function () {
 
 
 // Registration routes
-Route::get('/registrasi', [UserController::class, 'create'])->name('register')->middleware('guest');
-Route::post('/registrasi', [UserController::class, 'store'])->name('pengguna.store')->middleware('guest');
+Route::get('/registrasi', [UserController::class, 'create'])->name('register');
+Route::post('/registrasi', [UserController::class, 'store'])->name('pengguna.store');
 
 // Password recovery routes
 Route::get('/forgot_password', function () {

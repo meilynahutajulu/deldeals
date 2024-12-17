@@ -71,29 +71,18 @@ body {
     z-index: -1; /* Gambar background ada di bawah elemen lainnya */
 }
 
-.sign-in-btn-box{
-     border-radius: 5px;
-    padding: 15px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    width: 80px;
-    position: absolute;
-    top: 5%;
-    right: 5%;
-}
 
-.sign-in-btn {
+.sign-up-btn {
     background-color: #000000; /* Hijau untuk tombol Sign In */
     color: white;
-    position: absolute;
     border: none;
-    border-radius: 5px;     
-    top: 5%;
-    right: 5%;
-    width: 75px;
-    height: 30px;
+    border-radius: 20px;     
+    width: 100px;
+    height: 35px;
+    cursor: pointer;
+    margin-top: 10px;
 }
 
 .sign-up-btn:hover {
-    background-color: #8a8a8a; /* Warna latar belakang saat hover */
+    background-color: #3c3c3c; /* Warna latar belakang saat hover */
 }

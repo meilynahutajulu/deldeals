@@ -5,25 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="{{asset('css/dashboard.css')}}">
     
 </head>
 <body>
     <!-- wallpaper -->
     @include('layout.wallpaper')
     <div class="container">
-        <div class="login-box">
-            <h1>Welcome to</h1>
-            <div class="logo">
-                <img src="img/logo.jpg" alt="DelDeals Logo">
+        <form action="{{ route ('login')}}">
+            <div class="login-box">
+                <h1>Welcome to</h1>
+                <div class="logo">
+                    <img src="img/logo.jpg" alt="DelDeals Logo">
+                </div>
+                <h1>Temukan, Tawar, Transaksi..</h1>
+                <form >
+                    <button type="submit" class="sign-up-btn">
+                        ENTER
+                    </button>
+                </form>
             </div>
-            <h1>Temukan, Tawar, Transaksi..</h1>
-            <form >
-                <button type="submit" class="sign-up-btn">
-                    <a href="{{ route ('login')}}" onclick="login()">ENTER</a>
-                </button>
-            </form>
-        </div>
+        </form>
     </div>
 </body>
 </html>

@@ -22,22 +22,14 @@
             
             <form onsubmit="return verifyOTP()"> <!-- Fungsi otp dipanggil dari file eksternal -->
                 <div class="text-box">
-                    <h1>ENTER OTP</h1>
-                    <p>Check your email address</p>
+                    <h1>Check your email address </h1>
+                    {{-- <p>Check your email address</p> --}}
                 </div>
-                <div class="otp-inputs">
-                    <input type="text" maxlength="1" class="otp-box" autofocus>
-                    <input type="text" maxlength="1" class="otp-box">
-                    <input type="text" maxlength="1" class="otp-box">
-                    <input type="text" maxlength="1" class="otp-box">
-                </div>
-                <p id = "result"></p>
                 <button type="submit" class="verify-button">VERIFY</button>
             </form>
         </div>
     </div>
 
     <!-- Link ke file JavaScript eksternal -->
-    <script src="js/otp.js"></script>
 </body>
 </html>
