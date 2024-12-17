@@ -27,7 +27,12 @@
                         <div class="image-container">
                             <img src="{{ asset('storage/' . $items->image) }}" alt="{{ $items->name }}">
                         </div>
-                        <h3>{{ $items->name }}</h3>
+                        
+                        <h3>
+                             <a href="{{ route('item.details', $items->id) }}" style="text-decoration: none; color: inherit;">
+                                  {{ $items->name }}
+                             </a>
+                        </h3>
                         <p>Rp {{ number_format($items->price, 2, ',', '.') }}</p>
                         <form action="{{ route('keranjang.add', $items->id) }}" method="POST">
                             @csrf
