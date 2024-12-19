@@ -3,17 +3,33 @@
 namespace App\Http\Controllers;
 
 use App\Models\Item;
+use Illuminate\Routing\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Log;
 
+use App\Http\Resources\PostResource;
+use PhpParser\Node\Stmt\Return_;
+
 class ItemController extends Controller
 {
+    // Menampilkan daftar item
+    public function index()
+    {
+        // Menampilkan semua item milik pengguna
+        $items = Item::where('user_id', Auth::id())->get();
+
+        // return new PostResource(true, 'List Data Posts', $items);
+        return view('items.index', compact('items'));
+    }
+
+    // Menampilkan form untuk menambah item
     public function create()
     {
         return view('add-items');
     }
 
+    // Menyimpan item baru
     public function store(Request $request)
     {
         $validate = $request->validate([
@@ -38,27 +54,21 @@ class ItemController extends Controller
         ]);
 
         return redirect()->route('tokosaya');
-
-    }
-    
-    public function main() {
-        $items = Item::all(); // Fetch data from the database
-        return view('utama', compact('items'));
     }
 
+    // Menghapus item
     public function remove($id)
-{
-    try {
-        // Cari item berdasarkan ID di tabel items
-        $item = Item::findOrFail($id);
+    {
+        try {
+            // Cari item berdasarkan ID di tabel items
+            $item = Item::findOrFail($id);
 
-        // Hapus item dari tabel items
-        $item->delete();
+            // Hapus item dari tabel items
+            $item->delete();
 
-        return redirect()->back()->with('success', 'Barang berhasil dihapus.');
-    } catch (\Exception $e) {
-        return redirect()->back()->with('error', 'Terjadi kesalahan saat menghapus barang.');
+            return redirect()->back()->with('success', 'Barang berhasil dihapus.');
+        } catch (\Exception $e) {
+            return redirect()->back()->with('error', 'Terjadi kesalahan saat menghapus barang.');
+        }
     }
-}
-
 }

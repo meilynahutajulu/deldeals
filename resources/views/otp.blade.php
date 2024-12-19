@@ -25,7 +25,11 @@
                     <h1>Check your email address </h1>
                     {{-- <p>Check your email address</p> --}}
                 </div>
-                <button type="submit" class="verify-button">VERIFY</button>
+                <button type="submit" class="verify-button">
+                    <a href="https://mailtrap.io/inboxes/3337786/messages">
+                        VERIFY
+                    </a>
+                </button>
             </form>
         </div>
     </div>

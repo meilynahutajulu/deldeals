@@ -12,7 +12,7 @@
     <!-- wallpaper -->
     @include('layout.wallpaper')
     <div class="container">
-        <form action="{{ route ('login')}}">
+        <form action="{{ route ('login')}}" method="get">
             <div class="login-box">
                 <h1>Welcome to</h1>
                 <div class="logo">
@@ -27,5 +27,10 @@
             </div>
         </form>
     </div>
+    <script>
+        document.querySelector('.sign-up-btn').addEventListener('click', function() {
+            console.log('Tombol ENTER ditekan');
+        });
+    </script>    
 </body>
 </html>

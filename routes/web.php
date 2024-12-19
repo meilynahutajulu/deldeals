@@ -11,16 +11,24 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ImageUploadController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\MainController;
-use Illuminate\Container\Attributes\Auth;
 use App\Http\Controllers\KeranjangController;
 
+// Static pages
+Route::get('/', function () {
+    return view('dashboard');
+});
+
+Route::get('/login', [AuthController::class, 'login'])->name('login');
+
+Route::post('/login', [AuthController::class, 'authenticate']);
+Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
+
 // Route for main item page
-Route::get('/main', [MainController::class, 'index'])->name('main')->middleware('auth'); //menampilkan beranda
+Route::get('/main', [MainController::class, 'index'])->name('main'); //menampilkan beranda
 
 
 // Toko Saya routes
 Route::get('/tokosaya', [TokoSayaController::class, 'index'])->name('tokosaya');
-
 
 
 Route::get('/profile', [ProfileController::class, 'profile'])->name('profile');
@@ -28,13 +36,7 @@ Route::get('/profile/edit', [ProfileController::class, 'showEditProfile'])->name
 Route::post('/profile/update', [ProfileController::class, 'update'])->name('profile.update');
 
 // Authentication routes
-Route::get('/login', [AuthController::class, 'login'])->name('login');
-Route::post('/login', [AuthController::class, 'authenticate']);
-Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
-// Route::get('/dashboard', function () {
-//     return view('dashboard');
-// });
-    
+
 
 Route::get('/forgot-pass', [AuthController::class, 'forgotPass'])->name('forgot-password');
 Route::post('/forgot-pass-act', [AuthController::class, 'forgotPassAct'])->name('forgot-password-act');
@@ -42,10 +44,6 @@ Route::get('/validasi-forgot-pass/{token}', [AuthController::class, 'validasiFor
 Route::post('/validasi-forgot-pass-act', [AuthController::class, 'validasiForgotPassAct'])->name('validasi-forgot-pass-act');
 
 
-// Static pages
-Route::get('/', function () {
-    return view('dashboard');
-});
 
 
 // Registration routes
@@ -83,13 +81,10 @@ Route::get('/deldeals/google/callback', [DelDealsSocialiteController::class, 'ca
 // Image upload route
 Route::get('/upload', [ImageUploadController::class, 'store']);
 
+Route::post('/keranjang/add/{id}', [KeranjangController::class, 'addToKeranjang'])->name('keranjang.add');
+Route::get('/keranjang', [KeranjangController::class, 'showKeranjang'])->name('keranjang');
+Route::delete('/keranjang/remove/{id}', [KeranjangController::class, 'removeFromKeranjang'])->name('keranjang.remove');
 
-
-Route::middleware('auth')->group(function () {
-    Route::post('/keranjang/add/{id}', [KeranjangController::class, 'addToKeranjang'])->name('keranjang.add');
-    Route::get('/keranjang', [KeranjangController::class, 'showKeranjang'])->name('keranjang');
-    Route::delete('/keranjang/remove/{id}', [KeranjangController::class, 'removeFromKeranjang'])->name('keranjang.remove');
-});
 
 Route::get('/item/{id}', [PenggunaController::class, 'show'])->name('item.details');
 

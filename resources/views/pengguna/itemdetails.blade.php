@@ -43,6 +43,7 @@
                                  <p><strong>Nama Penjual:</strong> {{ $selectedItem['seller'] }}</p>
                              <p class="fw-bold text-danger"><strong>Harga:</strong> Rp {{ number_format($selectedItem['price'], 0, ',', '.') }}</p>
                                      <p><strong>Deskripsi:</strong> {{ $selectedItem['description'] }}</p>
+                                     <p><strong>Nomor Telepon: </strong> {{$selectedItem['contact']}} </p>
                                      </div>
                                     <!-- @endif -->
                             </div>

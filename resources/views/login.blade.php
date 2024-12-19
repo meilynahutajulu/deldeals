@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DelDeals Login</title>
-    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="{{asset('css/login.css')}}">
 </head>
 <body>
 
@@ -23,14 +23,14 @@
         <div class="login-box">
             <!-- Logo -->
             <div class="logo">
-                <img src="img/logo.jpg" alt="DelDeals Logo">
+                <img src="{{asset('img/logo.jpg')}}" alt="DelDeals Logo">
             </div>
 
             <!-- Form Login -->
             <form action="{{ url('/login') }}" method="POST">
                 @csrf
                 <!-- Tampilkan Pesan Error -->
-                @if($errors->any())
+                @if (isset($errors) && $errors->any())
                     <div style="color: rgb(195, 49, 49);">
                         <ul>
                             @foreach ($errors->all() as $error)
@@ -39,6 +39,7 @@
                         </ul>
                     </div>
                 @endif
+
                 
                 <!-- Input Username -->
                 <div class="input-box">
