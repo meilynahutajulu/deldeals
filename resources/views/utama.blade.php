@@ -19,7 +19,7 @@
                     @if(request('search'))
                         <p>Produk dengan nama "{{ request('search') }}" tidak ditemukan.</p>
                     @else
-                        <p>Tidak ada produk yang tersedia.</p>
+                        <h3>Tidak ada produk yangtersedia</h3>
                     @endif
                 @else
                     @foreach ($item as $items)
