@@ -76,7 +76,7 @@ Route::get('/add-items', function () {
 
 // Google Socialite login routes
 Route::get('/deldeals/redirect', [DelDealsSocialiteController::class, 'redirect']);
-Route::get('/deldeals/google/callback', [DelDealsSocialiteController::class, 'callback']);
+Route::get('/deldeals/google/callback', [DelDealsSocialiteController::class, 'callback'])->middleware('web');
 
 // Image upload route
 Route::get('/upload', [ImageUploadController::class, 'store']);

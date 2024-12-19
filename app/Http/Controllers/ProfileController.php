@@ -12,6 +12,7 @@ class ProfileController extends Controller
 {
     public function profile(Request $request)
     {
+
         $user = Auth::user();
 
         // Return JSON response for API requests
@@ -63,7 +64,7 @@ class ProfileController extends Controller
             'alamat' => 'required',
         ]);
 
-        $user->update([
+        $update = $user->update([
             'full_name' => $request->input('full_name'),
             'email' => $request->input('email'),
             'nim' => $request->input('nim'),
@@ -80,7 +81,7 @@ class ProfileController extends Controller
             return response()->json([
                 'success' => true,
                 'message' => $message,
-                'data' => $user,
+                'data' => $update,
             ], 200);
         }
 

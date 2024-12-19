@@ -36,13 +36,12 @@ class PostResource extends JsonResource
     public function toArray(Request $request): array
     {
         return [
-            'success'   => $this->status,
-            'message'   => $this->message,
-            'data'      => $this->resource,
-            // 'links' => [
-            //     'self' => route('profile.show', $this->resource['data']->id),
-            //     'edit' => route('profile.edit', $this->resource['data']->id),
-            // ],
+            'id' => $this->id,
+            'name' => $this->name,
+            'price' => $this->price,
+            'description' => $this->description,
+            'image' => $this->image ? asset('storage/' . $this->image) : null,
         ];
+
     }
 }

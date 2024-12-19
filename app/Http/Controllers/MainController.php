@@ -19,15 +19,36 @@ class MainController extends Controller
         $item = Item::when($search, function ($query, $search) {
             return $query->where('name', 'like', '%' . $search . '%');
         })->get();
+
+        if ($request->expectsJson()) {
+            return response()->json([
+                'success' => true,
+                'data' => [
+                    'items' => $item,
+                    'search' => $search,
+                ],
+            ]);
+        }
     
         // Mengirimkan data ke view utama
         return view('utama', compact('item', 'search'));
-        return new PostResource(true, 'List Data Posts', $item);
+        
+
     }
 
-    public function main() {
-        $items = Item::all(); // Fetch data from the database
-        return view('utama', compact('items'));
-        return new PostResource(true, 'List Data Posts', $items);
+    public function main(Request $request)
+{
+    $items = Item::all(); // Ambil data dari database
+
+    // Periksa apakah permintaan mengharapkan JSON
+    if ($request->expectsJson()) {
+        return response()->json([
+            'success' => true,
+            'data' => $items,
+        ]);
     }
+
+    // Jika bukan permintaan JSON, tampilkan halaman view
+    return view('utama', compact('items'));
+}
 }   

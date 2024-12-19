@@ -64,9 +64,18 @@ class AuthController extends Controller
 
     public function logout(Request $request)
     {
-        Auth::logout();
-        $request->session()->invalidate();
-        $request->session()->regenerateToken();
+        $user = Auth::user();
+        if ($user && $user->currentAccessToken()) {
+            $user->currentAccessToken()->delete();
+        } else {
+            if (request()->wantsJson()) {
+                return response()->json([
+                    'message' => 'Token tidak ditemukan atau pengguna tidak login.',
+                ], 400);
+            } else{
+                return redirect()->route('login');
+            }
+        }
 
         if ($request->wantsJson()) {
             return response()->json([
@@ -76,6 +85,8 @@ class AuthController extends Controller
 
         return redirect()->route('login')->with('Success', 'Berhasil Logout');
     }
+
+
 
     public function forgotPass(Request $request)
     {

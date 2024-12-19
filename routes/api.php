@@ -18,6 +18,22 @@ Route::post('/reset-password', [AuthController::class, 'resetPassword'])->middle
 
 // Main Routes
 Route::middleware('auth:sanctum')->get('/main', [MainController::class, 'index']);
+
 Route::middleware('auth:sanctum')->get('/profile', [ProfileController::class, 'profile']);
+Route::middleware('auth:sanctum')->post('/profile/update', [ProfileController::class, 'update'])->name('profile.update');
+
 Route::middleware('auth:sanctum')->get('/tokosaya', [TokoSayaController::class, 'index']);
 Route::middleware('auth:sanctum')->get('/keranjang', [KeranjangController::class, 'showKeranjang']);
+
+Route::middleware('auth:sanctum')->get('/tokosaya', [TokoSayaController::class, 'index'])->name('tokosaya');
+
+
+Route::middleware('auth:sanctum')->post('/add-item', [ItemController::class, 'store'])->name('item.store');
+
+Route::get('/add-items', function () {
+    return response()->json([
+        'success' => true,
+        'message' => 'Berhasil menampilkan halaman item',
+        'data' => null
+    ]);
+});

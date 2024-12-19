@@ -7,25 +7,36 @@ use Illuminate\Routing\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Log;
-
 use App\Http\Resources\PostResource;
-use PhpParser\Node\Stmt\Return_;
 
 class ItemController extends Controller
 {
     // Menampilkan daftar item
-    public function index()
+    public function index(Request $request)
     {
         // Menampilkan semua item milik pengguna
         $items = Item::where('user_id', Auth::id())->get();
 
-        // return new PostResource(true, 'List Data Posts', $items);
+        // Periksa apakah request dari API atau web
+        if ($request->expectsJson()) {
+            return new PostResource(true, 'List Data Items', $items);
+        }
+
         return view('items.index', compact('items'));
     }
 
     // Menampilkan form untuk menambah item
-    public function create()
+    public function create(Request $request)
     {
+        // Periksa apakah request dari API atau web
+        if ($request->expectsJson()) {
+            return response()->json([
+                'success' => true,
+                'message' => 'Form tambah item tersedia.',
+                'data' => null
+            ]);
+        }
+
         return view('add-items');
     }
 
@@ -45,7 +56,7 @@ class ItemController extends Controller
         $imagePath = $request->file('image')->store('images', 'public');
 
         $user = Auth::user();
-        Item::create([
+        $item = Item::create([
             'name' => $validate['name'],
             'price' => $validate['price'],
             'description' => $validate['description'],
@@ -53,11 +64,16 @@ class ItemController extends Controller
             'user_id' => $user->id,
         ]);
 
-        return redirect()->route('tokosaya');
+        // Periksa apakah request dari API atau web
+        if ($request->expectsJson()) {
+            return new PostResource(true, 'Item berhasil disimpan.', $item);
+        }
+
+        return redirect()->route('tokosaya')->with('success', 'Item berhasil ditambahkan.');
     }
 
     // Menghapus item
-    public function remove($id)
+    public function remove(Request $request, $id)
     {
         try {
             // Cari item berdasarkan ID di tabel items
@@ -66,8 +82,25 @@ class ItemController extends Controller
             // Hapus item dari tabel items
             $item->delete();
 
+            // Periksa apakah request dari API atau web
+            if ($request->expectsJson()) {
+                return response()->json([
+                    'success' => true,
+                    'message' => 'Item berhasil dihapus.'
+                ]);
+            }
+
             return redirect()->back()->with('success', 'Barang berhasil dihapus.');
         } catch (\Exception $e) {
+            // Periksa apakah request dari API atau web
+            if ($request->expectsJson()) {
+                return response()->json([
+                    'success' => false,
+                    'message' => 'Terjadi kesalahan saat menghapus barang.',
+                    'error' => $e->getMessage()
+                ]);
+            }
+
             return redirect()->back()->with('error', 'Terjadi kesalahan saat menghapus barang.');
         }
     }
