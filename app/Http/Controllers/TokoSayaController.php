@@ -13,18 +13,18 @@ class TokoSayaController extends Controller
     public function index(Request $request)
     {
         $user = Auth::user(); // Mendapatkan user yang sedang login
-        $items = DB::table('items')->where('user_id', $user->id)->get();
+        $item = DB::table('items')->where('user_id', $user->id)->get();
 
         // Return JSON response for API requests
         if ($request->wantsJson()) {
             return response()->json([
                 'success' => true,
                 'message' => 'List Data Item',
-                'data' => $items,
+                'data' => $item,
             ], 200);
         }
 
         // Return view response for web requests
-        return view('tokosaya', compact('items')); // Mengirimkan $items ke view
+        return view('tokosaya', compact('item')); // Mengirimkan $items ke view
     }
 }
