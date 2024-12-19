@@ -21,6 +21,11 @@ class ProfileController extends Controller
                 'success' => true,
                 'message' => 'List Data Pengguna',
                 'data' => $user,
+                'links' => [
+                'update-profile' => route('profile.edit'),
+                'view-items' => route('shop'),
+                'add-item' => route('item.store')
+            ]
             ], 200);
         }
 
@@ -41,6 +46,10 @@ class ProfileController extends Controller
                 'success' => true,
                 'message' => 'Form Edit Profile',
                 'data' => $user,
+                'links' => [
+                'view-profile' => route('profile'),
+                'tokosaya' => route('tokosaya')
+                ]
             ], 200);
         }
 

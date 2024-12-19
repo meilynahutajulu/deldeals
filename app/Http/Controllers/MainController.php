@@ -27,6 +27,11 @@ class MainController extends Controller
                     'items' => $item,
                     'search' => $search,
                 ],
+                'links' => [
+                'profile' => route('profile'),
+                'tokosaya' => route('tokosaya'),
+                'keranjang' => route('keranjang')
+            ]
             ]);
         }
     

@@ -19,7 +19,13 @@ class ItemController extends Controller
 
         // Periksa apakah request dari API atau web
         if ($request->expectsJson()) {
-            return new PostResource(true, 'List Data Items', $items);
+            return response()->json([
+                'message' => 'Items listing page',
+                'links' => [
+                    'add-item' => route('item.store'),
+                    'keranjang' => route('keranjang')
+                ]
+            ]);
         }
 
         return view('items.index', compact('items'));
@@ -66,7 +72,13 @@ class ItemController extends Controller
 
         // Periksa apakah request dari API atau web
         if ($request->expectsJson()) {
-            return new PostResource(true, 'Item berhasil disimpan.', $item);
+            return response()->json([
+                'message' => 'Item successfully added.',
+                'links' => [
+                    'view-items' => route('shop'),
+                    'keranjang' => route('keranjang')
+                ]
+            ]);
         }
 
         return redirect()->route('tokosaya')->with('success', 'Item berhasil ditambahkan.');

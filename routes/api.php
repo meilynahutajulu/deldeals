@@ -18,22 +18,17 @@ Route::post('/reset-password', [AuthController::class, 'resetPassword'])->middle
 
 // Main Routes
 Route::middleware('auth:sanctum')->get('/main', [MainController::class, 'index']);
+Route::middleware('auth:sanctum')->get('/shop', [TokoSayaController::class, 'index']);
 
+// Profile Routes
 Route::middleware('auth:sanctum')->get('/profile', [ProfileController::class, 'profile']);
 Route::middleware('auth:sanctum')->post('/profile/update', [ProfileController::class, 'update'])->name('profile.update');
 
+// Toko Saya Routes
 Route::middleware('auth:sanctum')->get('/tokosaya', [TokoSayaController::class, 'index']);
-Route::middleware('auth:sanctum')->get('/keranjang', [KeranjangController::class, 'showKeranjang']);
-
-Route::middleware('auth:sanctum')->get('/tokosaya', [TokoSayaController::class, 'index'])->name('tokosaya');
-
-
 Route::middleware('auth:sanctum')->post('/add-item', [ItemController::class, 'store'])->name('item.store');
 
-Route::get('/add-items', function () {
-    return response()->json([
-        'success' => true,
-        'message' => 'Berhasil menampilkan halaman item',
-        'data' => null
-    ]);
-});
+// Keranjang Routes
+Route::middleware('auth:sanctum')->get('/keranjang', [KeranjangController::class, 'showKeranjang']);
+Route::middleware('auth:sanctum')->post('/keranjang/add/{id}', [KeranjangController::class, 'addToKeranjang'])->name('keranjang.add');
+Route::middleware('auth:sanctum')->delete('/keranjang/remove/{id}', [KeranjangController::class, 'removeFromKeranjang'])->name('keranjang.remove');
