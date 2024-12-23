@@ -38,9 +38,10 @@ class AuthController extends Controller
         if (Auth::attempt($credentials)) {
             // $request->session()->regenerate();
             $user = Auth::user();
-            $token = $user->createToken('API Token')->plainTextToken;
+            $token = session()->regenerateToken();
 
             if ($request->wantsJson()) {
+                $token = $user->createToken('token-name')->plainTextToken;
                 return response()->json([
                     'message' => 'Login berhasil',
                     'user' => $user,
@@ -65,26 +66,26 @@ class AuthController extends Controller
     public function logout(Request $request)
     {
         $user = Auth::user();
-        if ($user && $user->currentAccessToken()) {
-            $user->currentAccessToken()->delete();
-        } else {
-            if (request()->wantsJson()) {
-                return response()->json([
-                    'message' => 'Token tidak ditemukan atau pengguna tidak login.',
-                ], 400);
-            } else{
-                return redirect()->route('login');
-            }
-        }
 
+        // Hapus token jika menggunakan API
+        
+        // Logout session jika menggunakan web
+        Auth::logout();
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+        
         if ($request->wantsJson()) {
+            if ($user && $user->currentAccessToken()) {
+                $user->currentAccessToken()->delete();
+            }
             return response()->json([
                 'message' => 'Berhasil logout',
             ], 200);
         }
 
-        return redirect()->route('login')->with('Success', 'Berhasil Logout');
+        return redirect()->route('login')->with('success', 'Berhasil logout');
     }
+
 
 
 
