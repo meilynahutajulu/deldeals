@@ -76,7 +76,7 @@
     <!-- Modal error -->
     <div id="error-modal" class="modal">
         <div class="modal-content">
-            <p>Hanya file gambar (JPG, JPEG, PNG, GIF) yang diperbolehkan.</p>
+            <p>Format gambar tidak sesuai!!</p>
             <div class="modal-buttons">
                 <button class="btn btn-cancel" onclick="closeModal()">Tutup</button>
             </div>
