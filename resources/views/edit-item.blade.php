@@ -20,17 +20,25 @@
             </div>
 
             <!-- Form untuk input -->
-            <form action="{{ route('item.store')}}" method="POST" enctype="multipart/form-data">
+            <form action="{{ route('item.update', $item->id) }}" method="POST" enctype="multipart/form-data">
                 @csrf
+                @method('PUT')
                 <div class="input-fields">
-                    <input type="file" id="image" name="image" accept="image/*" onchange="previewImage(event)" required>
-                    <input type="text" id="item-name" name="name" placeholder="Nama Barang" required>
-                    <input type="text" id="item-price" name="price" placeholder="Harga Barang" required>
-                    <textarea id="item-description" name="description" placeholder="Deskripsi Barang" required></textarea>
+                    <label for="image">Upload Gambar Baru (Opsional):</label>
+                    <input type="file" id="image" name="image" accept="image/*" onchange="previewImage(event)">
+                    
+                    <label for="name">Nama Barang:</label>
+                    <input type="text" id="name" name="name" value="{{ $item->name }}" required>
+                    
+                    <label for="price">Harga Barang:</label>
+                    <input type="number" id="price" name="price" value="{{ $item->price }}" required>
+                    
+                    <label for="description">Deskripsi Barang:</label>
+                    <textarea id="description" name="description" required>{{ $item->description }}</textarea>
                 </div>
                 <div class="button-group">
-                    <button type="submit" class="upload-button">Upload</button>
-                    <button type="button" class="cancel-button" onclick="window.location.reload()">Batal</button>
+                    <button type="submit" class="update-button">Update</button>
+                    <button type="button" class="cancel-button" onclick="window.location.href='{{ route('tokosaya') }}'">Batal</button>
                 </div>
             </form>
             

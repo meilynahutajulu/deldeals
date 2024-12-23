@@ -24,7 +24,11 @@
                 <div class="cart-item">
                     <img src="{{ asset('storage/' . $item->item->image) }}" alt="{{ $item->item->name }}">
                     <div class="cart-item-details">
-                        <h2>{{ $item->item->name }}</h2>
+                        <h2>
+                            <a href="{{ route('item.details', $item->item_id) }}" style="text-decoration: none; color: inherit;">
+                                {{ $item->item->name }}
+                            </a>
+                        </h2>
                         <p>Rp {{ number_format($item->item->price, 2, ',', '.') }}</p>
                     </div>
                     <form action="{{ route('keranjang.remove', $item->item->id) }}" method="POST">

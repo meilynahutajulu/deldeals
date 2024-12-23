@@ -89,4 +89,5 @@ class KeranjangController extends Controller
         // Return view response for web requests
         return redirect()->route('keranjang')->with('error', $message);
     }
+    
 }

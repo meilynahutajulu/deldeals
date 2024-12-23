@@ -11,40 +11,6 @@ use App\Http\Resources\PostResource;
 
 class ItemController extends Controller
 {
-    // Menampilkan daftar item
-    public function index(Request $request)
-    {
-        // Menampilkan semua item milik pengguna
-        $items = Item::where('user_id', Auth::id())->get();
-
-        // Periksa apakah request dari API atau web
-        if ($request->expectsJson()) {
-            return response()->json([
-                'message' => 'Items listing page',
-                'links' => [
-                    'add-item' => route('item.store'),
-                    'keranjang' => route('keranjang')
-                ]
-            ]);
-        }
-
-        return view('items.index', compact('items'));
-    }
-
-    // Menampilkan form untuk menambah item
-    public function create(Request $request)
-    {
-        // Periksa apakah request dari API atau web
-        if ($request->expectsJson()) {
-            return response()->json([
-                'success' => true,
-                'message' => 'Form tambah item tersedia.',
-                'data' => null
-            ]);
-        }
-
-        return view('add-items');
-    }
 
     // Menyimpan item baru
     public function store(Request $request)
@@ -83,6 +49,40 @@ class ItemController extends Controller
 
         return redirect()->route('tokosaya')->with('success', 'Item berhasil ditambahkan.');
     }
+
+    public function edit($id)
+    {
+        $item = Item::findOrFail($id);
+        return view('edit-item', compact('item'));
+    }
+
+
+    public function update(Request $request, $id)
+    {
+        $item = Item::findOrFail($id);
+
+        $validate = $request->validate([
+            'image' => 'nullable|image|mimes:jpeg,png,jpg|max:2048',
+            'name' => 'required|string|max:255',
+            'price' => 'required|numeric',
+            'description' => 'required|string',
+        ]);
+
+        if ($request->hasFile('image')) {
+            $imagePath = $request->file('image')->store('images', 'public');
+            $item->update(['image' => $imagePath]);
+        }
+
+        $item->update([
+            'name' => $validate['name'],
+            'price' => $validate['price'],
+            'description' => $validate['description'],
+        ]);
+
+        return redirect()->route('tokosaya')->with('success', 'Item berhasil diperbarui.');
+    }
+
+
 
     // Menghapus item
     public function remove(Request $request, $id)

@@ -38,21 +38,21 @@
                                 </div>
                                 <!-- Product Information -->
                                 @if(!empty($selectedItem))
-                            <div class="col-md-8">
-                             <p><strong>Nama Barang:</strong> {{ $selectedItem['name'] }}</p>
-                                 <p><strong>Nama Penjual:</strong> {{ $selectedItem['seller'] }}</p>
-                             <p class="fw-bold text-danger"><strong>Harga:</strong> Rp {{ number_format($selectedItem['price'], 0, ',', '.') }}</p>
-                                     <p><strong>Deskripsi:</strong> {{ $selectedItem['description'] }}</p>
-                                     <p><strong>Nomor Telepon: </strong> {{$selectedItem['contact']}} </p>
-                                     </div>
-                                    <!-- @endif -->
+                                    <div class="col-md-8">
+                                        <p><strong>Nama Barang:</strong> {{ $selectedItem['name'] }}</p>
+                                        <p><strong>Nama Penjual:</strong> {{ $selectedItem['seller'] }}</p>
+                                        <p class="fw-bold text-danger"><strong>Harga:</strong> Rp {{ number_format($selectedItem['price'], 0, ',', '.') }}</p>
+                                        <p><strong>Deskripsi:</strong> {{ $selectedItem['description'] }}</p>
+                                        <p><strong>Nomor Telepon: </strong> {{$selectedItem['contact']}} </p>
+                                    </div>
+                                @endif
                             </div>
                             <!-- Footer -->
                             <div class="card-footer text-center">
-                            @if(!empty($selectedItem['contact']))
-                                <a href="https://wa.me/{{ $selectedItem['contact'] }}" class="btn btn-success">
-                                    <i class="bi bi-whatsapp"></i> Hubungi Penjual
-                                     </a>
+                                @if(!empty($selectedItem['contact']))
+                                    <a href="https://wa.me/{{ $selectedItem['contact'] }}" class="btn btn-success">
+                                        <i class="bi bi-whatsapp"></i> Hubungi Penjual
+                                    </a>
                                 @endif
                             </div>
                         </div>

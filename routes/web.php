@@ -8,7 +8,7 @@ use App\Http\Controllers\penggunacontroller;
 use App\Http\Controllers\Auth\SocialiteController as DelDealsSocialiteController; 
 use App\Http\Controllers\TokoSayaController;
 use App\Http\Controllers\AuthController;
-use App\Http\Controllers\ImageUploadController;
+// use App\Http\Controllers\ImageUploadController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\KeranjangController;
@@ -68,19 +68,14 @@ Route::get('/succPass', function () {
 Route::get('/pengguna', [UserController::class, 'index'])->name('pengguna.index');
 
 // Item management routes
-Route::get('/shop', [ItemController::class, 'index'])->name('shop');
-Route::post('/add-item', [ItemController::class, 'store'])->name('item.store');
-Route::get('/add-items', function () {
-    return view('add-items');
-});
+
+
 
 // Google Socialite login routes
 Route::get('/deldeals/redirect', [DelDealsSocialiteController::class, 'redirect']);
 Route::get('/deldeals/google/callback', [DelDealsSocialiteController::class, 'callback'])->middleware('web');
 
-// Image upload route
-Route::get('/upload', [ImageUploadController::class, 'store']);
-
+// Keranjang routes
 Route::post('/keranjang/add/{id}', [KeranjangController::class, 'addToKeranjang'])->name('keranjang.add');
 Route::get('/keranjang', [KeranjangController::class, 'showKeranjang'])->name('keranjang');
 Route::delete('/keranjang/remove/{id}', [KeranjangController::class, 'removeFromKeranjang'])->name('keranjang.remove');
@@ -89,3 +84,13 @@ Route::delete('/keranjang/remove/{id}', [KeranjangController::class, 'removeFrom
 Route::get('/item/{id}', [PenggunaController::class, 'show'])->name('item.details');
 
 Route::delete('/toko/{id}', [ItemController::class, 'remove'])->name('item.remove');
+
+Route::put('/item/{id}', [ItemController::class, 'update'])->name('item.update');
+
+Route::post('/add-item', [ItemController::class, 'store'])->name('item.store');
+Route::get('/add-items', function () {
+    return view('add-items');
+});
+
+Route::get('/edit-item/{id}', [ItemController::class, 'edit'])->name('item.edit');
+

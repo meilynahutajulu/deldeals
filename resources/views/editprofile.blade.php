@@ -23,7 +23,15 @@
 
         <div class="form-group">
             <label for="telepon">No. Telp</label>
-            <input type="text" id="telepon" name="telepon" class="form-control" value="{{ old('telepon', $user->telepon) }}">
+            <input 
+            type="text" 
+            id="telepon" 
+            name="telepon" 
+            class="form-control" 
+            value="{{ old('telepon', $user->telepon) }}" 
+            pattern="^\+62[0-9]{9,13}$" 
+            title="Nomor telepon harus dalam format +62 dan 9-13 digit angka." 
+            required>
         </div>
         
         <div class="form-group">

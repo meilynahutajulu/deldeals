@@ -69,8 +69,8 @@ class ProfileController extends Controller
             'full_name' => 'required',
             'email' => 'required|email|unique:pengguna,email,' . $user->id,
             'nim' => 'required|unique:pengguna,nim,' . $user->id,
-            'telepon' => 'required',
-            'alamat' => 'required',
+            'telepon' => 'required|regex:/^\+62[0-9]{9,13}$/',
+            'alamat' => '',
         ]);
 
         $update = $user->update([
