@@ -5,6 +5,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DELDEALS - Keranjang</title>
     <link rel="stylesheet" href="{{ asset('css/keranjang.css') }}">
+    <style>
+        /* Modal styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+        }
+        .modal-content {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            width: 300px;
+        }
+        .modal-buttons {
+            margin-top: 15px;
+            display: flex;
+            justify-content: space-between;
+        }
+        .btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .btn-confirm {
+            background-color: #d9534f;
+            color: white;
+        }
+        .btn-cancel {
+            background-color: green;
+            color: white;
+        }
+    </style>
 </head>
 <body>
     <!-- wallpaper -->
@@ -31,10 +72,10 @@
                         </h2>
                         <p>Rp {{ number_format($item->item->price, 2, ',', '.') }}</p>
                     </div>
-                    <form action="{{ route('keranjang.remove', $item->item->id) }}" method="POST">
+                    <form id="deleteCartItem-{{ $item->item->id }}" action="{{ route('keranjang.remove', $item->item->id) }}" method="POST">
                         @csrf
                         @method('DELETE')
-                        <button class="remove-item">Hapus</button>
+                        <button type="button" class="remove-item" data-id="{{ $item->item->id }}">Hapus</button>
                     </form>
                 </div>
                 @empty
@@ -49,5 +90,53 @@
             </div>
         </main>
     </div>
+
+    <!-- Modal structure -->
+    <div id="confirmModal" class="modal">
+        <div class="modal-content">
+            <p>Yakin ingin menghapus barang ini?</p>
+            <div class="modal-buttons">
+                <button id="confirmDelete" class="btn btn-confirm">Ya</button>
+                <button id="cancelDelete" class="btn btn-cancel">Batal</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let modal = document.getElementById('confirmModal');
+        let confirmDeleteButton = document.getElementById('confirmDelete');
+        let cancelDeleteButton = document.getElementById('cancelDelete');
+        let deleteFormId = null;
+
+        // Open modal and set the form ID
+        document.querySelectorAll('.remove-item').forEach(button => {
+            button.addEventListener('click', function () {
+                deleteFormId = this.getAttribute('data-id');
+                modal.style.display = 'flex';
+            });
+        });
+
+        // Confirm delete
+        confirmDeleteButton.addEventListener('click', function () {
+            if (deleteFormId) {
+                document.getElementById(`deleteCartItem-${deleteFormId}`).submit();
+            }
+            modal.style.display = 'none';
+        });
+
+        // Cancel delete
+        cancelDeleteButton.addEventListener('click', function () {
+            modal.style.display = 'none';
+            deleteFormId = null;
+        });
+
+        // Close modal when clicking outside of it
+        window.addEventListener('click', function (event) {
+            if (event.target === modal) {
+                modal.style.display = 'none';
+                deleteFormId = null;
+            }
+        });
+    </script>
 </body>
 </html>

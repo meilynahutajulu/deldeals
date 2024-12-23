@@ -4,7 +4,48 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DELDEALS</title>
-    <link rel="stylesheet" href="{{asset('css/tokosaya.css')}}">
+    <link rel="stylesheet" href="{{ asset('css/tokosaya.css') }}">
+    <style>
+        /* Modal styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+        }
+        .modal-content {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            width: 300px;
+        }
+        .modal-buttons {
+            margin-top: 15px;
+            display: flex;
+            justify-content: space-between;
+        }
+        .btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .btn-confirm {
+            background-color: #d9534f;
+            color: white;
+        }
+        .btn-cancel {
+            background-color: green;
+            color: white;
+        }
+    </style>
 </head>
 <body>
 @include('layout.wallpaper')
@@ -28,10 +69,10 @@
                         </div>
                         <div class="card-footer">
                             <span class="text-title">Rp {{ number_format($items->price, 2, ',', '.') }}</span>
-                            <form action="{{ route('item.remove', $items->id) }}" method="POST">
+                            <form id="deleteForm-{{ $items->id }}" action="{{ route('item.remove', $items->id) }}" method="POST">
                                 @csrf
                                 @method('DELETE')
-                                <button type="submit" onclick="return confirm('Yakin ingin menghapus barang ini?')">-</button>
+                                <button type="button" class="delete-btn" data-id="{{ $items->id }}">-</button>
                             </form>
                             <button>
                                 <a href="{{ route('item.edit', $items->id) }}">Edit</a>
@@ -45,5 +86,53 @@
         <button class="add-btn" onclick="location.href='/add-items'">Add New Items</button>
     </main>
 </div>
+
+<!-- Modal structure -->
+<div id="confirmModal" class="modal">
+    <div class="modal-content">
+        <p>Yakin ingin menghapus barang ini?</p>
+        <div class="modal-buttons">
+            <button id="confirmDelete" class="btn btn-confirm">Ya</button>
+            <button id="cancelDelete" class="btn btn-cancel">Batal</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    let modal = document.getElementById('confirmModal');
+    let confirmDeleteButton = document.getElementById('confirmDelete');
+    let cancelDeleteButton = document.getElementById('cancelDelete');
+    let deleteFormId = null;
+
+    // Open modal and set the form ID
+    document.querySelectorAll('.delete-btn').forEach(button => {
+        button.addEventListener('click', function () {
+            deleteFormId = this.getAttribute('data-id');
+            modal.style.display = 'flex';
+        });
+    });
+
+    // Confirm delete
+    confirmDeleteButton.addEventListener('click', function () {
+        if (deleteFormId) {
+            document.getElementById(`deleteForm-${deleteFormId}`).submit();
+        }
+        modal.style.display = 'none';
+    });
+
+    // Cancel delete
+    cancelDeleteButton.addEventListener('click', function () {
+        modal.style.display = 'none';
+        deleteFormId = null;
+    });
+
+    // Close modal when clicking outside of it
+    window.addEventListener('click', function (event) {
+        if (event.target === modal) {
+            modal.style.display = 'none';
+            deleteFormId = null;
+        }
+    });
+</script>
 </body>
 </html>
