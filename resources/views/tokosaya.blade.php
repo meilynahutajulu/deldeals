@@ -164,7 +164,7 @@
     // Confirm delete
     confirmDeleteButton.addEventListener('click', function () {
         if (deleteFormId) {
-            document.getElementById(`deleteForm-${deleteFormId}`).submit();
+            document.getElementById(deleteForm-${deleteFormId}).submit();
         }
         modal.style.display = 'none';
     });
