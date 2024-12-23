@@ -28,6 +28,7 @@ body {
 
 /* Main content */
 .content {
+    margin-top: 20px;
     margin-left: 110px; /* Sesuaikan sesuai kebutuhan */
     padding: 20px;
     flex-grow: 1;
