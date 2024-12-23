@@ -5,6 +5,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DelDeals Dashboard</title>
     <link rel="stylesheet" href="{{ asset('css/utama.css') }}">
+    <style>
+        /* Modal styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+        }
+        .modal-content {
+            background-color: black;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            width: 300px;
+        }
+        .modal-buttons {
+            margin-top: 15px;
+            display: flex;
+            justify-content: space-between;
+        }
+        .btn {
+            padding: 10px 135px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .btn-cancel {
+            background-color: green;
+            color: white;
+        }
+    </style>
 </head>
 <body>
     @include('layout.wallpaper')
@@ -44,5 +81,29 @@
             </div>
         </main>
     </div>
+
+    <!-- Modal structure -->
+    @if(session('error'))
+    <div id="errorModal" class="modal">
+        <div class="modal-content">
+            <p>{{ session('error') }}</p>
+            <div class="modal-buttons">
+                <button onclick="closeModal()" class="btn btn-cancel">Tutup</button>
+            </div>
+        </div>
+    </div>
+    @endif
+
+    <script>
+        // Fungsi untuk menutup modal
+        function closeModal() {
+            document.getElementById("errorModal").style.display = "none";
+        }
+
+        // Jika ada error, tampilkan modal
+        @if(session('error'))
+            document.getElementById("errorModal").style.display = "flex";
+        @endif
+    </script>
 </body>
 </html>
