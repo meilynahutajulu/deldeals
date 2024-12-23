@@ -45,6 +45,55 @@
             background-color: green;
             color: white;
         }
+
+        /* Card footer */
+        .card-footer {
+            display: flex;
+            justify-content: space-between; /* Ensure price and buttons are spaced out */
+            align-items: center;
+            width: 100%;
+            gap: 10px;
+        }
+
+        /* Action buttons */
+        .action-buttons {
+            display: flex;
+            gap: 10px;
+        }
+
+        /* Styling for delete and edit buttons */
+        .delete-btn,
+        .edit-button {
+            background-color: black;
+            color: white;
+            text-decoration: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            display: inline-block;
+            text-align: center; /* Ensures text is centered */
+        }
+
+        /* Hover effect for both delete and edit buttons */
+        .delete-btn:hover,
+        .edit-button:hover {
+            background-color: gray;
+        }
+
+        /* General styles for Add New Items button */
+        .add-btn {
+            background-color: black;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+        }
+        .add-btn:hover {
+            background-color: gray;
+        }
     </style>
 </head>
 <body>
@@ -69,14 +118,14 @@
                         </div>
                         <div class="card-footer">
                             <span class="text-title">Rp {{ number_format($items->price, 2, ',', '.') }}</span>
-                            <form id="deleteForm-{{ $items->id }}" action="{{ route('item.remove', $items->id) }}" method="POST">
-                                @csrf
-                                @method('DELETE')
-                                <button type="button" class="delete-btn" data-id="{{ $items->id }}">-</button>
-                            </form>
-                            <button>
-                                <a href="{{ route('item.edit', $items->id) }}">Edit</a>
-                            </button>                           
+                            <div class="action-buttons">
+                                <form id="deleteForm-{{ $items->id }}" action="{{ route('item.remove', $items->id) }}" method="POST" style="display: inline;">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="button" class="delete-btn" data-id="{{ $items->id }}">Hapus</button>
+                                </form>
+                                <a href="{{ route('item.edit', $items->id) }}" class="edit-button">Edit</a>
+                            </div>
                         </div>
                     </div>
                 @endforeach

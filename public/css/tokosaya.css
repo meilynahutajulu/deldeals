@@ -52,7 +52,6 @@ body {
     background-color: #444;
     border-radius: 8px;
     padding: 15px;
-    width: 200px;
     text-align: center;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     display: flex;
@@ -102,16 +101,14 @@ body {
 .card-footer {
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
+    gap:10px;
 }
 
 .card-footer button {
-    background-color: #ff4d4d;
+    background-color: #000000;
     color: white;
-    border: none;
-    border-radius: 50%;
-    width: 30px;
     height: 30px;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -121,6 +118,18 @@ body {
     background-color: white;
     color: black;
     transform: scale(1.1);
+}
+
+
+.card-footer .edit-button {
+    color: white; 
+    text-decoration: none; 
+    font-size: 0.9rem; 
+}
+
+/* Link "Edit" saat hover */
+.card-footer .edit-button:hover {
+    color: lightgray; 
 }
 
 /* Add Button */
