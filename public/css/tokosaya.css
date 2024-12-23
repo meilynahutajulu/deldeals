@@ -128,7 +128,7 @@ body {
 }
 
 /* Link "Edit" saat hover */
-.card-footer .edit-button:hover {
+.card-footer {
     color: lightgray; 
 }
 
@@ -147,7 +147,7 @@ body {
 }
 
 .add-btn:hover {
-    background-color: #444;
+    background-color: #ffffff;
 }
 
 .modal {
@@ -221,7 +221,8 @@ body {
 /* Hover effect for both delete and edit buttons */
 .delete-btn:hover,
 .edit-button:hover {
-    background-color: gray;
+    background-color: rgb(255, 255, 255);
+    color: black;
 }
 
 /* General styles for Add New Items button */
