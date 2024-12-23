@@ -33,8 +33,6 @@
 
             <!-- Ikon navigasi tambahan -->
             <div class="icons" style="display: flex; align-items: center; gap: 15px; position: relative;">
-                <!-- Ikon Lonceng -->
-                @include('layout.bell')
 
                 <!-- Ikon Profil -->
                 @include('layout.profileicon')
