@@ -67,7 +67,7 @@
                 </div>
                 <div class="button-group">
                     <button type="submit" class="upload-button">Upload</button>
-                    <button type="button" class="cancel-button" onclick="window.location.reload()">Batal</button>
+                    <button type="button" class="cancel-button" onclick="window.location.href='{{ route('tokosaya') }}'">Batal</button>
                 </div>
             </form>
         </div>

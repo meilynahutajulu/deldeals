@@ -21,7 +21,7 @@
     gap: 20px;
     justify-content: flex-start; /* Memastikan elemen dimulai dari kiri */
    
-    margin: 0; /* Hilangkan margin tambahan */
+    margin: 15px; /* Hilangkan margin tambahan */
     padding: 0; /* Hilangkan padding tambahan */
     width: 100%; /* Pastikan grid menyesuaikan lebarnya */
 }
