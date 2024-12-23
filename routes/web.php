@@ -24,31 +24,38 @@ Route::post('/login', [AuthController::class, 'authenticate']);
 Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 
 // Route for main item page
-Route::get('/main', [MainController::class, 'index'])->name('main'); //menampilkan beranda
+Route::group(['middleware' => 'auth'], function () {
+    Route::get('/main', [MainController::class, 'index'])->name('main'); //menampilkan beranda
+    Route::get('/tokosaya', [TokoSayaController::class, 'index'])->name('tokosaya');
+    Route::get('/shop', [PenggunaController::class, 'index'])->name('shop');
+});
 
 
 // Toko Saya routes
-Route::get('/tokosaya', [TokoSayaController::class, 'index'])->name('tokosaya');
 
-
-Route::get('/profile', [ProfileController::class, 'profile'])->name('profile');
-Route::get('/profile/edit', [ProfileController::class, 'showEditProfile'])->name('profile.edit');
-Route::post('/profile/update', [ProfileController::class, 'update'])->name('profile.update');
+Route::group(['middleware' => 'auth'], function () {
+    Route::get('/profile', [ProfileController::class, 'profile'])->name('profile');
+    Route::get('/profile/edit', [ProfileController::class, 'showEditProfile'])->name('profile.edit');
+    Route::post('/profile/update', [ProfileController::class, 'update'])->name('profile.update');
+});
 
 // Authentication routes
 
-
-Route::get('/forgot-pass', [AuthController::class, 'forgotPass'])->name('forgot-password');
-Route::post('/forgot-pass-act', [AuthController::class, 'forgotPassAct'])->name('forgot-password-act');
-Route::get('/validasi-forgot-pass/{token}', [AuthController::class, 'validasiForgotPass'])->name('validasi-forgot-pass');
-Route::post('/validasi-forgot-pass-act', [AuthController::class, 'validasiForgotPassAct'])->name('validasi-forgot-pass-act');
+Route::group(['middleware' => 'guest'], function () {
+    Route::get('/forgot-pass', [AuthController::class, 'forgotPass'])->name('forgot-password');
+    Route::post('/forgot-pass-act', [AuthController::class, 'forgotPassAct'])->name('forgot-password-act');
+    Route::get('/validasi-forgot-pass/{token}', [AuthController::class, 'validasiForgotPass'])->name('validasi-forgot-pass');
+    Route::post('/validasi-forgot-pass-act', [AuthController::class, 'validasiForgotPassAct'])->name('validasi-forgot-pass-act');
+});
 
 
 
 
 // Registration routes
-Route::get('/registrasi', [UserController::class, 'create'])->name('register');
-Route::post('/registrasi', [UserController::class, 'store'])->name('pengguna.store');
+Route::group(['middleware' => 'guest'], function () {
+    Route::get('/registrasi', [UserController::class, 'create'])->name('register');
+    Route::post('/registrasi', [UserController::class, 'store'])->name('pengguna.store');
+});
 
 // Password recovery routes
 Route::get('/forgot_password', function () {
@@ -76,21 +83,27 @@ Route::get('/deldeals/redirect', [DelDealsSocialiteController::class, 'redirect'
 Route::get('/deldeals/google/callback', [DelDealsSocialiteController::class, 'callback'])->middleware('web');
 
 // Keranjang routes
-Route::post('/keranjang/add/{id}', [KeranjangController::class, 'addToKeranjang'])->name('keranjang.add');
-Route::get('/keranjang', [KeranjangController::class, 'showKeranjang'])->name('keranjang');
-Route::delete('/keranjang/remove/{id}', [KeranjangController::class, 'removeFromKeranjang'])->name('keranjang.remove');
 
-
-Route::get('/item/{id}', [PenggunaController::class, 'show'])->name('item.details');
-
-Route::delete('/toko/{id}', [ItemController::class, 'remove'])->name('item.remove');
-
-Route::put('/item/{id}', [ItemController::class, 'update'])->name('item.update');
-
-Route::post('/add-item', [ItemController::class, 'store'])->name('item.store');
-Route::get('/add-items', function () {
-    return view('add-items');
+Route::group(['middleware' => 'auth'], function () {
+    Route::get('/keranjang', [KeranjangController::class, 'showKeranjang'])->name('keranjang');
+    Route::post('/keranjang/add/{id}', [KeranjangController::class, 'addToKeranjang'])->name('keranjang.add');
+    Route::delete('/keranjang/remove/{id}', [KeranjangController::class, 'removeFromKeranjang'])->name('keranjang.remove');
 });
 
-Route::get('/edit-item/{id}', [ItemController::class, 'edit'])->name('item.edit');
+Route::group(['middleware' => 'auth'], function () {
+    Route::get('/item/{id}', [PenggunaController::class, 'show'])->name('item.details');
+    Route::delete('/toko/{id}', [ItemController::class, 'remove'])->name('item.remove');
+    Route::put('/item/{id}', [ItemController::class, 'update'])->name('item.update');
+    Route::post('/add-item', [ItemController::class, 'store'])->name('item.store');
+    Route::get('/edit-item/{id}', [ItemController::class, 'edit'])->name('item.edit');
+});
+
+
+
+
+
+// Route::get('/add-items', function () {
+//     return view('add-items');
+// });
+
 
